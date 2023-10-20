@@ -1,0 +1,169 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =Set(
+            AppColors,
+            {
+                DarkBlue: RGBA(
+                    66,
+                    89,
+                    130,
+                    100
+                ),
+                Blue: RGBA(
+                    23,
+                    92,
+                    211,
+                    1
+                ),
+                LightBlue: RGBA(
+                    200,
+                    221,
+                    244,
+                    1
+                ),
+                Grey: RGBA(
+                    197,
+                    197,
+                    197,
+                    1
+                ),
+                DarkGray: RGBA(
+                    86,
+                    85,
+                    84,
+                    1
+                ),
+                LightGray: RGBA(
+                    244,
+                    244,
+                    244,
+                    1
+                ),
+                Orange: RGBA(
+                    240,
+                    96,
+                    35,
+                    1
+                ),
+                FlashWhite: RGBA(
+                    235,
+                    236,
+                    237,
+                    1
+                ),
+                White: RGBA(
+                    255,
+                    255,
+                    255,
+                    1
+                ),
+                Black: RGBA(
+                    0,
+                    0,
+                    0,
+                    1
+                ),
+                GrayOut: RGBA(
+                    143,
+                    143,
+                    143,
+                    0.5
+                ),
+                LightOrange: RGBA(
+                    255,
+                    223,
+                    182,
+                    1
+                ),
+                SkyBlue: RGBA(
+                    239,
+                    248,
+                    255,
+                    1
+                ),
+                WhiteSmoke: RGBA(
+                    246,
+                    247,
+                    248,
+                    1
+                ),
+                Red: RGBA(
+                    255,
+                    0,
+                    0,
+                    1
+                ),
+                LightBlueforHeader: RGBA(
+                    235,
+                    236,
+                    237,
+                    1
+                )
+            }
+        );
+        Set(
+            gvNavBarMinWidth,
+            56
+        );
+        Set(
+            AppFonts,
+            {
+                FontStyle: Font.Verdana,
+                fontSize: 11,
+                titleFontSize: 14,
+                subTitleFontSize: 12,
+                FieldHeight: 35,
+                fontSizeForErrorMessage: 8,
+                lblHeightForErrorMessage: 18
+            }
+        );
+        Set(
+            gv_SortOrder,
+            SortOrder.Descending
+        );
+        ClearCollect(
+            collBookRequests,
+            'Book Requests'
+        );
+        ClearCollect(
+            collBookRequestforGallery,
+            Filter('Book Requests',
+            'Book Status' <> 'Book Status (Book Requests)'.Waitlisted)
+        );
+        ClearCollect(
+            collRosters,
+            Rosters
+        );
+        ClearCollect(
+            collATCRequests,
+            'ATC Requests'
+        );
+        ClearCollect(
+            collBookHealthHistory,
+            'Book Health Histories'
+        );
+        ClearCollect(
+            collFacility,
+            'Facility Mappings'
+        );
+        ClearCollect(
+            collBookInventoryAdditional,
+            AddColumns(Filter('Book Inventories', 'Is Active' = true),
+                "Book Status",
+                If(
+                    'Available Copies' > 0,
+                    "Available",
+                    "Not Available"
+                )
+            )
+        );
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

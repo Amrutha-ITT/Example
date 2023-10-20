@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_paralegals",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_paralegal",
+    "MaxGetRowsCount": 500,
+    "Name": "Paralegals",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_idoc_atcrequest_ParalegalID_idoc_paralega": "ATC Requests (idoc_idoc_atcrequest_ParalegalID_idoc_paralega)",
+      "idoc_idoc_atcrequest_RequestCompletedBy_idoc_p": "ATC Requests (idoc_idoc_atcrequest_RequestCompletedBy_idoc_p)",
+      "idoc_idoc_bookrequests_CheckedOutBy_idoc_paral": "Book Requests",
+      "idoc_name": "Paralegal Name",
+      "idoc_paralegal_AsyncOperations": "System Jobs",
+      "idoc_paralegal_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_paralegal_DuplicateBaseRecord": "Duplicate Records (idoc_paralegal_DuplicateBaseRecord)",
+      "idoc_paralegal_DuplicateMatchingRecord": "Duplicate Records (idoc_paralegal_DuplicateMatchingRecord)",
+      "idoc_paralegal_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_paralegal_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_paralegal_ProcessSession": "Process Sessions",
+      "idoc_paralegal_SyncErrors": "Sync Errors",
+      "idoc_paralegalid": "Paralegal",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Paralegals",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Paralegals (Views)",
+    "Name": "_idoc_paralegal_views",
+    "RelatedEntityName": "Paralegals",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "81920cb4-f79c-426f-b335-57f2f965fc52": "Paralegal Advanced Find View",
+      "94e2e08d-b3e0-498b-9076-a54558b79154": "Paralegal Lookup View",
+      "a8fa46e8-f40e-4072-b3a1-484577ebae65": "Inactive Paralegals",
+      "bdfed292-52e8-4c7f-a3a6-5c63a68b8353": "Active Paralegals",
+      "c4cd0209-e6fa-4a37-8f50-6f810659443d": "Paralegal Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Paralegals)",
+    "Name": "idoc_paralegal_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Paralegals"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Paralegals",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Paralegals)",
+    "Name": "idoc_paralegal_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Paralegals"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Paralegals",
+    "Type": "OptionSetInfo"
+  }
+]

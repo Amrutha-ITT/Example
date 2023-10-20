@@ -1,0 +1,1776 @@
+BookHistory As screen:
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |
+        =Set(varShowMenu, true);
+        Set(gvPageNumber,1);
+        UpdateContext({lv_SortColumn: "createdon"});
+        Set(gv_SortOrder, SortOrder.Descending);
+        UpdateContext({ lv_ShowActionMenu: false});
+        Reset(cmbBookStatus);
+        Reset(DateCheckOut);
+        Reset(DateDueDateFrom);
+        Reset(DateDueDateTo);
+
+    BookHistoryScreenContainer As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =1
+
+        MainContainerBookHistory As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Height: =Parent.Height - HeaderContainerBookHistory.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingLeft: =25
+            PaddingRight: =25
+            PaddingTop: =25
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =If(LeftNavigationBookHistory.Width=gvNavBarMinWidth || BookHistory.Size = 2 || BookHistory.Size = 1,BookHistory.Width,BookHistory.Width-LeftNavigationBookHistory.Width)
+            X: |-
+                =If(
+                    LeftNavigationBookHistory.Width = gvNavBarMinWidth || BookHistory.Size = 2 || BookHistory.Size = 1,
+                    0,
+                    LeftNavigationBookHistory.Width
+                )
+            Y: =HeaderContainerBookHistory.Height
+            ZIndex: =1
+
+            cntBookHistoryHeader As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =If(BookHistory.Size = 1, 218, 168)
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =10
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                Y: =40
+                ZIndex: =1
+
+                cntBookTitleandButton As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =If (BookHistory.Size = 1, 90, 40)
+                    LayoutGap: =5
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutWrap: =true
+                    Width: =Parent.Width - 2
+                    ZIndex: =1
+
+                    cntTitleBookHistory As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =40
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =3
+
+                        lblTitleBookHistory As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            FontWeight: =FontWeight.Bold
+                            Height: =Parent.Height
+                            Size: =AppFonts.titleFontSize
+                            Text: ="Book History"
+                            Width: =350
+                            ZIndex: =1
+
+                    cntViewWaitlist As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =40
+                        LayoutJustifyContent: =If(BookHistory.Size = 1, LayoutJustifyContent.Start, LayoutJustifyContent.End)
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingRight: =1
+                        Width: =Parent.Width / 2
+                        ZIndex: =4
+
+                        btnViewWaitlist As button:
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            Color: =AppColors.White
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =AppColors.Orange
+                            Font: =AppFonts.FontStyle
+                            FontWeight: =FontWeight.Semibold
+                            HoverBorderColor: =
+                            HoverColor: =RGBA(255, 255, 255, 1)
+                            HoverFill: =
+                            OnSelect: |-
+                                =UpdateContext({lv_ShowWaitlistPopUp: true});
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            PressedBorderColor: =
+                            PressedColor: =AppColors.White
+                            PressedFill: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =AppFonts.fontSize
+                            Text: ="View Waitlist"
+                            Width: =180
+                            ZIndex: =1
+
+                rctBookTitleLine As rectangle:
+                    BorderColor: =AppColors.Grey
+                    Fill: =AppColors.Grey
+                    Height: =1
+                    Width: =Parent.Width - 3
+                    ZIndex: =2
+
+                cntFilterSearchBar As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =75
+                    LayoutGap: =20
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width - 2
+                    ZIndex: =3
+
+                    cntFilterBar As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =1.5
+                        Height: =Parent.Height
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingRight: =2
+                        Width: =300
+                        ZIndex: =1
+
+                        cntBookStatusFilter As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Height: =Parent.Height
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =2
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =150
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =1
+                            PaddingRight: =2
+                            Width: =165
+                            ZIndex: =1
+
+                            lblBookStatusFilter As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                Height: =20
+                                PaddingLeft: =2
+                                Size: =AppFonts.fontSize
+                                Text: ="Book Status"
+                                ZIndex: =1
+
+                            cmbBookStatus As combobox:
+                                BorderColor: =AppColors.Grey
+                                BorderThickness: =1
+                                ChevronBackground: =
+                                ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                                ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                                ChevronFill: =AppColors.DarkGray
+                                ChevronHoverBackground: =
+                                ChevronHoverFill: =
+                                Color: =AppColors.Black
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
+                                DisplayFields: =["Value"]
+                                FocusedBorderThickness: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.FieldHeight
+                                HoverColor: =
+                                HoverFill: =
+                                InputTextPlaceholder: =
+                                IsSearchable: =false
+                                Items: =Choices('Book Status (Book Requests)')
+                                NoSelectionText: ="All Items"
+                                PressedColor: =
+                                PressedFill: =
+                                SearchFields: =["Value"]
+                                SearchItems: =[]
+                                SelectionColor: =
+                                SelectionFill: =
+                                Size: =AppFonts.fontSize
+                                Width: =Parent.Width - 10
+                                ZIndex: =3
+
+                            lblBookStatusErrorTextBookHistory As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Red
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.lblHeightForErrorMessage
+                                PaddingLeft: =2
+                                Size: =AppFonts.fontSizeForErrorMessage
+                                Text: = "Results not found"
+                                Visible: |-
+                                    =If(
+                                        IsBlank(cmbBookStatus.Selected.Value) && IsBlank(cmbBookStatus.SearchText),
+                                        false,
+                                        If(
+                                            cmbBookStatus.SearchText in cmbBookStatus.Selected.Value,
+                                            false,
+                                            true
+                                        )
+                                    )
+                                Width: =Parent.Width
+                                ZIndex: =4
+
+                        cntCheckOutDateFilter As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Height: =Parent.Height
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =2
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =150
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =2
+                            PaddingRight: =2
+                            Width: =165
+                            ZIndex: =2
+
+                            lblCheckOutDateFilter As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                Height: =20
+                                PaddingLeft: =2
+                                Size: =AppFonts.fontSize
+                                Text: ="Check Out Date"
+                                ZIndex: =1
+
+                            DateCheckOut As datepicker:
+                                BorderColor: =AppColors.Grey
+                                BorderThickness: =1
+                                CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                                Color: =AppColors.Black
+                                DefaultDate: =Blank()
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
+                                FocusedBorderThickness: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.FieldHeight
+                                HoverDateFill: =RGBA(205, 209, 213, 1)
+                                IconBackground: =AppColors.White
+                                IconFill: =AppColors.DarkGray
+                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), "MM/DD/YYYY")
+                                PaddingTop: =5
+                                SelectedDateFill: =RGBA(100, 118, 132, 1)
+                                Size: =AppFonts.fontSize
+                                Width: =Parent.Width - 10
+                                ZIndex: =2
+
+                        cntDueDateFromFilter As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Height: =Parent.Height
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =2
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =150
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =2
+                            PaddingRight: =2
+                            Width: =165
+                            ZIndex: =3
+
+                            lblDueDateFromFilter As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                Height: =20
+                                PaddingLeft: =2
+                                Size: =AppFonts.fontSize
+                                Text: ="Due Date From"
+                                ZIndex: =1
+
+                            DateDueDateFrom As datepicker:
+                                BorderColor: =AppColors.Grey
+                                BorderThickness: =1
+                                CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                                Color: =AppColors.Black
+                                DefaultDate: =Blank()
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
+                                FocusedBorderThickness: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.FieldHeight
+                                HoverDateFill: =RGBA(205, 209, 213, 1)
+                                IconBackground: =AppColors.White
+                                IconFill: =AppColors.DarkGray
+                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), "MM/DD/YYYY")
+                                PaddingTop: =5
+                                SelectedDateFill: =RGBA(100, 118, 132, 1)
+                                Size: =AppFonts.fontSize
+                                Width: =Parent.Width - 10
+                                ZIndex: =2
+
+                            lblDueDateErrorTextBookHistory_1 As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Red
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.lblHeightForErrorMessage
+                                PaddingLeft: =2
+                                Size: =AppFonts.fontSizeForErrorMessage
+                                Text: ="Provide Due From"
+                                Visible: =If(IsBlank(DateDueDateFrom.SelectedDate) && !IsBlank(DateDueDateTo.SelectedDate), true, false)
+                                Width: =Parent.Width
+                                ZIndex: =3
+
+                        cntDueDateToFilter As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            Height: =Parent.Height
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =2
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =150
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =2
+                            Width: =165
+                            ZIndex: =4
+
+                            lblDueDateToFilter As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                Height: =20
+                                PaddingLeft: =2
+                                Size: =AppFonts.fontSize
+                                Text: ="Due Date To"
+                                ZIndex: =1
+
+                            DateDueDateTo As datepicker:
+                                BorderColor: =AppColors.Grey
+                                BorderThickness: =1
+                                CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                                Color: =AppColors.Black
+                                DefaultDate: =Blank()
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
+                                FocusedBorderThickness: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.FieldHeight
+                                HoverDateFill: =RGBA(205, 209, 213, 1)
+                                IconBackground: =AppColors.White
+                                IconFill: =AppColors.DarkGray
+                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), "MM/DD/YYYY")
+                                PaddingTop: =5
+                                SelectedDateFill: =RGBA(100, 118, 132, 1)
+                                Size: =AppFonts.fontSize
+                                Width: =Parent.Width - 12
+                                ZIndex: =2
+
+                            lblDueDateErrorTextBookHistory As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Red
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.lblHeightForErrorMessage
+                                PaddingLeft: =2
+                                Size: =AppFonts.fontSizeForErrorMessage
+                                Text: =If(IsBlank(DateDueDateTo.SelectedDate), "Provide Due Date To", "Enter valid date")
+                                Visible: =If(DateDueDateTo.SelectedDate < DateDueDateFrom.SelectedDate && !IsBlank(DateDueDateTo.SelectedDate) || IsBlank(DateDueDateTo.SelectedDate) && !IsBlank(DateDueDateFrom.SelectedDate), true, false)
+                                Width: =Parent.Width
+                                ZIndex: =3
+
+                    cntBookSearchBar As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =Parent.Height
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =2
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =1
+                        Width: =437
+                        ZIndex: =2
+
+                        lblSearchTitleBookHistory As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =19
+                            PaddingLeft: =2
+                            Size: =AppFonts.fontSize
+                            Text: ="Search By"
+                            ZIndex: =1
+
+                        cntBookHistorySearchBox As groupContainer.manualLayoutContainer:
+                            FillPortions: =0
+                            Height: =AppFonts.FieldHeight + 3
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            PaddingRight: =2
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            txtBookHistorySearchBox As text:
+                                BorderColor: =AppColors.Grey
+                                Color: =AppColors.Black
+                                Default: =""
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
+                                FocusedBorderThickness: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =AppFonts.FieldHeight
+                                HintText: ="Search.."
+                                HoverBorderColor: =
+                                HoverColor: =
+                                HoverFill: =
+                                PaddingLeft: =35
+                                PressedBorderColor: =
+                                PressedColor: =
+                                PressedFill: =
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Size: =AppFonts.fontSize
+                                Width: =Parent.Width - 4
+                                X: =2
+                                Y: =1
+                                ZIndex: =1
+
+                            icnBookSearch As icon.Search:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.DarkGray
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =20
+                                Icon: =Icon.Search
+                                Width: =20
+                                X: =txtBookHistorySearchBox.X + 8
+                                Y: =txtBookHistorySearchBox.Y + 8
+                                ZIndex: =2
+
+                rctBookSearchbarline As rectangle:
+                    BorderColor: =AppColors.Grey
+                    Fill: =AppColors.Grey
+                    Height: =1
+                    Width: =Parent.Width - 3
+                    ZIndex: =5
+
+            cntBookHistoryGrid As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Start
+                BorderColor: =RGBA(170, 172, 173, 1)
+                FillPortions: =0
+                Height: =gallBookHistory.Y + gallBookHistory.Height + 2
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowX: =LayoutOverflow.Scroll
+                PaddingRight: =2
+                Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                Y: =
+                ZIndex: =2
+
+                cntBookHistoryGalHeader As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Start
+                    FillPortions: =0
+                    Height: =40
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =350
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =1
+                    PaddingRight: =1
+                    PaddingTop: =1
+                    Width: =Parent.Width - 2
+                    ZIndex: =1
+
+                    cntBookHistoryID As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =AppColors.LightBlueforHeader
+                        FillPortions: =0
+                        Height: =Parent.Height - 1
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =96
+                        Width: |-
+                            =120
+                            //Parent.Width * 10%
+                        Y: =10
+                        ZIndex: =1
+
+                        lblTitleBookHistoryId As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Book ID "
+                            Width: =Parent.Width - 5
+                            ZIndex: =1
+
+                        cntBookHistoryIDIcon As groupContainer.verticalAutoLayoutContainer:
+                            Height: =20
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Width: =12
+                            X: =cntBookHistoryID.Width * 78%
+                            Y: =10
+                            ZIndex: =2
+
+                            icnBookIdUp As icon.ChevronUp:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =RGBA(0, 0, 0, 0.87)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronUp
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "sort_bookid"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            icnBookIdDown As icon.ChevronDown:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =RGBA(0, 0, 0, 0.87)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "sort_bookid"});
+                                    Set(gv_SortOrder, SortOrder.Descending);
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                    cntBookHistoryTitle As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =AppColors.LightBlueforHeader
+                        FillPortions: =1.5
+                        Height: =Parent.Height - 1
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =180
+                        Width: =Parent.Width * 22.85%
+                        ZIndex: =2
+
+                        lblTitleBookTitle As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            PaddingLeft: =12
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Book Title"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        cntBookHistoryNameSortIcons As groupContainer.verticalAutoLayoutContainer:
+                            Height: =20
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Width: =12
+                            X: =cntBookHistoryTitle.Width * 75%
+                            Y: =10
+                            ZIndex: =2
+
+                            icnTitleUp_1 As icon.ChevronUp:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronUp
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "sort_booktitle"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            icnTitleDown_1 As icon.ChevronDown:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "sort_booktitle"});
+                                    Set(gv_SortOrder, SortOrder.Descending);
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                    cntCheckOutDate As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =AppColors.LightBlueforHeader
+                        FillPortions: =0
+                        Height: =Parent.Height - 1
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =170
+                        Width: |-
+                            =170
+                            //Parent.Width * 15%
+                        ZIndex: =7
+
+                        lblTitleCheckOutDate As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Check Out date"
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        cntCheckOutDateSortIcons As groupContainer.verticalAutoLayoutContainer:
+                            Height: =20
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Width: =12
+                            X: =cntCheckOutDate.Width * 90%
+                            Y: =10
+                            ZIndex: =3
+
+                            icnTitleUp_2 As icon.ChevronUp:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronUp
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_bookcheckoutdate"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            icnTitleDown_2 As icon.ChevronDown:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_bookcheckoutdate"});
+                                    Set(gv_SortOrder, SortOrder.Descending);
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                    cntCheckedOutBy As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =AppColors.LightBlueforHeader
+                        FillPortions: =0.5
+                        Height: =Parent.Height - 1
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =170
+                        Width: =Parent.Width * 17%
+                        ZIndex: =8
+
+                        lblTitleCheckedOutBy As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Checked Out By"
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        cntCheckOutBySortIcons As groupContainer.verticalAutoLayoutContainer:
+                            Height: =20
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Width: =12
+                            X: =cntCheckedOutBy.Width * 90%
+                            Y: =10
+                            ZIndex: =3
+
+                            icnTitleUp_3 As icon.ChevronUp:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronUp
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "sort_checkedoutbyname"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            icnTitleDown_3 As icon.ChevronDown:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "sort_checkedoutbyname"});
+                                    Set(gv_SortOrder, SortOrder.Descending);
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                    cntDueDate As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =AppColors.LightBlueforHeader
+                        FillPortions: =0
+                        Height: =Parent.Height - 1
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =170
+                        Width: =140
+                        ZIndex: =9
+
+                        lblTitleDueDate As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            PaddingLeft: =12
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Due Date"
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        cntDueDateSortIcons As groupContainer.verticalAutoLayoutContainer:
+                            Height: =20
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Width: =12
+                            X: =cntDueDate.Width * 82%
+                            Y: =10
+                            ZIndex: =3
+
+                            icnTitleUp_4 As icon.ChevronUp:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronUp
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_bookduedate"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            icnTitleDown_4 As icon.ChevronDown:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_bookduedate"});
+                                    Set(gv_SortOrder, SortOrder.Descending);
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                    cntBookHistoryStatus As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =AppColors.LightBlueforHeader
+                        FillPortions: =0
+                        Height: =Parent.Height - 1
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =135
+                        Width: |-
+                            =140
+                            //Parent.Width * 13%
+                        ZIndex: =10
+
+                        lblTitleBookStatus As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            PaddingLeft: =12
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Status"
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                        cntBookHistoryStatusSortIcons As groupContainer.verticalAutoLayoutContainer:
+                            Height: =20
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMode: =LayoutMode.Auto
+                            RadiusBottomLeft: =4
+                            RadiusBottomRight: =4
+                            RadiusTopLeft: =4
+                            RadiusTopRight: =4
+                            Width: =12
+                            X: =cntBookHistoryStatus.Width * 75%
+                            Y: =10
+                            ZIndex: =3
+
+                            icnTitleUp_5 As icon.ChevronUp:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronUp
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_bookstatus"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                            icnTitleDown_5 As icon.ChevronDown:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =Parent.Height / 2
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_bookstatus"});
+                                    Set(gv_SortOrder, SortOrder.Descending);
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                    cntBookHistoryAction As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =AppColors.LightBlueforHeader
+                        FillPortions: =0
+                        Height: =Parent.Height - 1
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =80
+                        Width: =94
+                        ZIndex: =12
+
+                        lblTitleActionBookHistory As label:
+                            Align: =Align.Center
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Black
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            PaddingLeft: =12
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Action"
+                            Width: =Parent.Width
+                            X: =
+                            ZIndex: =1
+
+                lblGallErrorTextBookHistory As label:
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Start
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =AppColors.DarkGray
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Font: =AppFonts.FontStyle
+                    Height: =40//AppFonts.lblHeightForErrorMessage
+                    PaddingLeft: =2
+                    PaddingTop: =10
+                    Size: =12//AppFonts.fontSizeForErrorMessage
+                    Text: = "Results not found"
+                    Visible: |-
+                        =If(
+                            gallBookHistory.AllItemsCount = 0,
+                            true,
+                            false
+                        )
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                gallBookHistory As gallery.galleryVertical:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =AppColors.DarkGray
+                    DelayItemLoading: =true
+                    FillPortions: =0
+                    Height: |-
+                        =If(
+                            gallBookHistory.AllItemsCount <= 2,
+                            gallBookHistory.AllItemsCount * gallBookHistory.TemplateHeight + 70,
+                            gallBookHistory.AllItemsCount * gallBookHistory.TemplateHeight + 1
+                        )
+                    Items: |-
+                        =If (
+                            icnNextPageBookHistory.DisplayMode = DisplayMode.Disabled,
+                            LastN(
+                                FirstN(
+                                    SortByColumns(
+                                        AddColumns(
+                                            Filter(
+                                                collBookRequestforGallery,
+                                                Or(IsBlank(cmbBookStatus.Selected.Value), IsEmpty(cmbBookStatus.SelectedItems), 'Book Status' in cmbBookStatus.SelectedItems),
+                                                Or(IsBlank(DateCheckOut.SelectedDate),'Book Checkout Date' = DateCheckOut.SelectedDate),
+                                                Or(IsBlank(DateDueDateFrom.SelectedDate),'Book Due Date' >= DateDueDateFrom.SelectedDate),
+                                                Or(IsBlank(DateDueDateTo.SelectedDate),'Book Due Date' <= DateDueDateTo.SelectedDate),
+                                                Or(
+                                                    txtBookHistorySearchBox.Text in 'Book Id'.'Book Id',
+                                                    txtBookHistorySearchBox.Text in 'Book Id'.'Book Title',
+                                                    txtBookHistorySearchBox.Text in 'Book Checkout Date',
+                                                    txtBookHistorySearchBox.Text in 'Checked Out By'.'Paralegal Name',
+                                                    txtBookHistorySearchBox.Text in 'Book Due Date',
+                                                    txtBookHistorySearchBox.Text in 'Book Status')
+                                                ),
+                                        "sort_bookid", 'Book Id'.'Book Id', "sort_booktitle", 'Book Id'.'Book Title', "sort_checkedoutbyname", 'Checked Out By'.'Paralegal Name'),
+                                        lv_SortColumn,
+                                        gv_SortOrder
+                                    ),
+                                    ddBookHistoryFetchCount.Selected.Value * gvPageNumber
+                                ),
+                                ddBookHistoryFetchCount.Selected.Value - (ddBookHistoryFetchCount.Selected.Value * gvPageNumber - CountRows(collBookRequestforGallery))
+                            ),
+                            
+                            LastN(
+                                FirstN(
+                                    SortByColumns(
+                                        AddColumns(
+                                            Filter(
+                                                collBookRequestforGallery,
+                                                Or(IsBlank(cmbBookStatus.Selected.Value), IsEmpty(cmbBookStatus.SelectedItems), 'Book Status' in cmbBookStatus.SelectedItems),
+                                                Or(IsBlank(DateCheckOut.SelectedDate),'Book Checkout Date' = DateCheckOut.SelectedDate),
+                                                Or(IsBlank(DateDueDateFrom.SelectedDate),'Book Due Date' >= DateDueDateFrom.SelectedDate),
+                                                Or(IsBlank(DateDueDateTo.SelectedDate),'Book Due Date' <= DateDueDateTo.SelectedDate),
+                                                Or(
+                                                    txtBookHistorySearchBox.Text in 'Book Id'.'Book Id',
+                                                    txtBookHistorySearchBox.Text in 'Book Id'.'Book Title',
+                                                    txtBookHistorySearchBox.Text in 'Book Checkout Date',
+                                                    txtBookHistorySearchBox.Text in 'Checked Out By'.'Paralegal Name',
+                                                    txtBookHistorySearchBox.Text in 'Book Due Date',
+                                                    txtBookHistorySearchBox.Text in 'Book Status'
+                                                )
+                                            ),
+                                            "sort_bookid", 'Book Id'.'Book Id', "sort_booktitle", 'Book Id'.'Book Title', "sort_checkedoutbyname", 'Checked Out By'.'Paralegal Name'),
+                                        lv_SortColumn,
+                                        gv_SortOrder
+                                    ),
+                                    ddBookHistoryFetchCount.Selected.Value * gvPageNumber
+                                ),
+                                ddBookHistoryFetchCount.Selected.Value
+                            )
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =cntBookHistoryGalHeader.LayoutMinWidth
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: |-
+                        =UpdateContext({lv_ShowActionMenu: false});
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =40//If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
+                    Width: =Parent.Width 
+                    X: =cntBookHistoryID.X
+                    ZIndex: =3
+
+                    icnBookHistoryAction As icon.More:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Color: =AppColors.Black
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        Height: =40
+                        Icon: =Icon.More
+                        OnSelect: |+
+                            =UpdateContext({ lv_ShowActionMenu: !lv_ShowActionMenu });
+                            UpdateContext({LastBookId: Last(gallBookHistory.AllItems).'Book Requests'});
+                            UpdateContext({CurrentBookId: ThisItem.'Book Requests'});
+                            UpdateContext({SecondLastId: First(LastN(gallBookHistory.AllItems,2)).'Book Requests'});
+                            UpdateContext({ThirdLastId: First(LastN(gallBookHistory.AllItems,3)).'Book Requests'});
+                            
+                        PaddingBottom: =8
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =8
+                        Rotation: =90
+                        Width: =cntBookHistoryAction.Width
+                        X: =cntBookHistoryAction.X
+                        ZIndex: =1
+
+                    lblBookHistoryStatusText As label:
+                        Align: =Align.Center
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =12
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Book Status'
+                        Width: =cntBookHistoryStatus.Width
+                        X: =cntBookHistoryStatus.X
+                        ZIndex: =8
+
+                    lblDueDateText As label:
+                        Align: =Align.Center
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =12
+                        Size: =AppFonts.fontSize
+                        Text: =Text(ThisItem.'Book Due Date', "[$-en-US]m/d/yyyy")
+                        Width: =cntDueDate.Width
+                        X: =cntDueDate.X
+                        ZIndex: =9
+
+                    lblCheckedOutByText As label:
+                        Align: =Align.Center
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =12
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Checked Out By'.'Paralegal Name'
+                        Width: =cntCheckedOutBy.Width
+                        X: =cntCheckedOutBy.X
+                        ZIndex: =10
+
+                    lblCheckOutDateText As label:
+                        Align: =Align.Center
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =12
+                        Size: =AppFonts.fontSize
+                        Text: =Text(ThisItem.'Book Checkout Date', "[$-en-US]m/d/yyyy")
+                        Width: =cntCheckOutDate.Width
+                        X: =cntCheckOutDate.X
+                        ZIndex: =11
+
+                    lblBookHistoryTitleText As label:
+                        Align: =Align.Center
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =12
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Book Id'.'Book Title'
+                        Width: =cntBookHistoryTitle.Width
+                        Wrap: =false
+                        X: =cntBookHistoryTitle.X
+                        ZIndex: =12
+
+                    lblBookHistoryIDText As label:
+                        Align: =Align.Center
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =12
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Book Id'.'Book Id'
+                        Width: =cntBookHistoryID.Width
+                        X: =cntBookHistoryID.X
+                        ZIndex: =13
+
+                    cntActionMenuBookHistory As groupContainer.verticalAutoLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        DropShadow: =DropShadow.Light
+                        Fill: =AppColors.Grey
+                        Height: =70
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Visible: =If(ThisItem.IsSelected, lv_ShowActionMenu)
+                        Width: =151
+                        X: =cntBookHistoryAction.X - 120
+                        Y: |
+                            =If(
+                                (LastBookId = CurrentBookId || SecondLastId = CurrentBookId) && gallBookHistory.AllItemsCount > 2,
+                                icnBookHistoryAction.Y + icnBookHistoryAction.Height - 70,
+                                icnBookHistoryAction.Y + icnBookHistoryAction.Height - 10
+                            )
+                        ZIndex: =14
+
+                        btnCheckInBook As button:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =AppColors.Black
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =ColorFade(AppColors.LightBlueforHeader,60%)
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =35
+                            HoverBorderColor: =
+                            HoverColor: =
+                            HoverFill: =
+                            PressedBorderColor: =
+                            PressedColor: =
+                            PressedFill: =
+                            RadiusBottomLeft: =2
+                            RadiusBottomRight: =2
+                            RadiusTopLeft: =2
+                            RadiusTopRight: =2
+                            Size: =AppFonts.fontSize
+                            Text: ="Check In Book"
+                            Width: =150
+                            X: =350
+                            ZIndex: =1
+
+                        btnExtendBook As button:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =AppColors.Black
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =ColorFade(AppColors.LightBlueforHeader,60%)
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =35
+                            HoverBorderColor: =
+                            HoverColor: =
+                            HoverFill: =
+                            PressedBorderColor: =
+                            PressedColor: =
+                            PressedFill: =
+                            RadiusBottomLeft: =2
+                            RadiusBottomRight: =2
+                            RadiusTopLeft: =2
+                            RadiusTopRight: =2
+                            Size: =AppFonts.fontSize
+                            Text: ="Extend Book"
+                            Width: =150
+                            ZIndex: =2
+
+                    lblCreatedOnHiddenBookHistory As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        OnSelect: =Select(Parent)
+                        Size: =13
+                        Text: =ThisItem.'Created On'
+                        Visible: =false
+                        X: =40
+                        ZIndex: =15
+
+            cntBookHistoryPagination As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Start
+                Height: =If (BookHistory.Size = 1, 100, 50)
+                LayoutAlignItems: =LayoutAlignItems.End
+                LayoutMinHeight: =70
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutWrap: =true
+                PaddingBottom: =10
+                Width: =Parent.Width - Parent.PaddingLeft - Parent.PaddingRight
+                Y: =
+                ZIndex: =3
+
+                cntBookRecordCount As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    Height: =37
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingTop: =1
+                    Width: =550
+                    ZIndex: =1
+
+                    lblBookHistoryPageSize As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.Height - 2
+                        Size: =AppFonts.fontSize
+                        Text: ="Items per page"
+                        Width: =130
+                        ZIndex: =1
+
+                    ddBookHistoryFetchCount As dropdown:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                        ChevronFill: =RGBA(86, 85, 84, 1)
+                        ChevronHoverBackground: =
+                        ChevronHoverFill: =
+                        Color: =AppColors.Black
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        Height: =35
+                        HoverColor: =
+                        HoverFill: =
+                        Items: =[5,10,15]
+                        OnSelect: |-
+                            =UpdateContext({lv_ShowActionMenu: false});
+                        PressedBorderColor: =
+                        PressedColor: =
+                        PressedFill: =
+                        SelectionColor: =
+                        SelectionFill: =RGBA(205, 209, 213, 1)
+                        Size: =AppFonts.fontSize
+                        Width: =65
+                        Y: =1
+                        ZIndex: =2
+
+                    lblBookRecordCount As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.Height - 2
+                        PaddingLeft: =10
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            =If
+                            (
+                                gvPageNumber > 0,
+                            
+                                (ddBookHistoryFetchCount.Selected.Value * (gvPageNumber - 1)) + 1 & " - " & (ddBookHistoryFetchCount.Selected.Value * (gvPageNumber - 1)) + gallBookHistory.AllItemsCount & " of " &         CountRows(collBookRequestforGallery) & " items "
+                                
+                            )
+                             
+                        Width: =170
+                        ZIndex: =3
+
+                cntBookPageNumberSequence As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    Height: =37
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =15
+                    LayoutJustifyContent: =If (BookManagement.Size = 1, LayoutJustifyContent.Center, LayoutJustifyContent.End)
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =550
+                    ZIndex: =2
+
+                    icnPreviousPageBookHistory As icon.ChevronLeft:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Black
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =If(gvPageNumber =1, DisplayMode.Disabled, DisplayMode.Edit)
+                        Height: =Parent.Height
+                        Icon: =Icon.ChevronLeft
+                        OnSelect: |-
+                            =Set(gvPageNumber, gvPageNumber-1);
+                            UpdateContext({lv_ShowActionMenu: false});
+                        Width: =25
+                        ZIndex: =1
+
+                    icnNextPageBookHistory As icon.ChevronRight:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Black
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =If(ddBookHistoryFetchCount.Selected.Value * gvPageNumber < CountRows(collBookRequestforGallery), DisplayMode.Edit, DisplayMode.Disabled)
+                        Height: =Parent.Height
+                        Icon: =Icon.ChevronRight
+                        OnSelect: |-
+                            =Set(gvPageNumber, gvPageNumber+1);
+                            UpdateContext({lv_ShowActionMenu: false});
+                        Width: =25
+                        ZIndex: =4
+
+        HeaderContainerBookHistory As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(66, 89, 130, 100)
+            Height: =45
+            Width: =Parent.Width
+            ZIndex: =2
+
+            Header_3 As Header:
+                Height: =Parent.Height
+                Width: =Parent.Width
+
+        LeftNavigationBookHistory As LeftNavigation:
+            Height: =App.Height
+            NavMenu: |-
+                =Table(
+                    {
+                        MenuLabel: "Dashboard",
+                        MenuIcon: 'home Img_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 1
+                    },
+                    {
+                        MenuLabel: "ATC Request",
+                        MenuIcon: 'ATC Request Img_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 2
+                    },
+                    {
+                        MenuLabel: "Activity Log",
+                        MenuIcon: 'Activity Log_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 3
+                    },
+                    {
+                        MenuLabel: "Roster",
+                        MenuIcon: 'Roster Img_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 4
+                    },
+                    {
+                        MenuLabel: "Reports",
+                        MenuIcon: 'Reports Img_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 5
+                    },
+                    {
+                        MenuLabel: "Mail Logs",
+                        MenuIcon: 'mail Img_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 6
+                    },
+                    {
+                        MenuLabel: "Books",
+                        MenuIcon: 'books Img_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 7,
+                        SubMenu: Table(
+                            {
+                                MenuLabel: "Book History",
+                                MenuScreenNavigate: BookHistory,
+                                MenuID: 7
+                            },
+                            {
+                                MenuLabel: "Book Management",
+                                MenuScreenNavigate: BookManagement,
+                                MenuID: 7
+                            }
+                        )
+                    },
+                    {
+                        MenuLabel: "Packets",
+                        MenuIcon: 'documents Img_1',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 8
+                    }
+                )
+            Width: |-
+                =//LeftNavigation.MenuWidth
+                If(App.ActiveScreen.Size <3, LeftNavigationBookHistory.MenuWidth, 200)
+            ZIndex: =3
+
+    CntWaitlistGrayOut As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =AppColors.GrayOut
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.End
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Visible: =lv_ShowWaitlistPopUp
+        Width: =Parent.Width
+        ZIndex: =2
+
+        cntBookWaitlist As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.Light
+            Fill: =AppColors.White
+            FillPortions: =0
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =5
+            PaddingLeft: =1
+            PaddingRight: =5
+            PaddingTop: =10
+            Width: =530
+            ZIndex: =1
+
+            cntWaitlistHeader As groupContainer.horizontalAutoLayoutContainer:
+                FillPortions: =0
+                Height: =35
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width - 10
+                ZIndex: =1
+
+                cntBookWaitlistTitle As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =10
+                    ZIndex: =1
+
+                    icnBookWaitlistBackArrow As arrow.backArrow:
+                        BorderColor: =AppColors.DarkGray
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =AppColors.Black
+                        FillPortions: =
+                        Height: =20
+                        OnSelect: |-
+                            =UpdateContext({lv_ShowWaitlistPopUp: false});
+                        Width: =20
+                        ZIndex: =1
+
+                    lblTitleBookWaitlist As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Black
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        FontWeight: =FontWeight.Semibold
+                        Height: =Parent.Height - 10
+                        PaddingLeft: =8
+                        Size: =AppFonts.titleFontSize
+                        Text: ="Book Waitlist"
+                        Width: =200
+                        ZIndex: =2
+
+                cntPrintWaitlistButton As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.Start
+                    Height: =Parent.Height
+                    LayoutJustifyContent: =LayoutJustifyContent.End
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =200
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingRight: =5
+                    Width: =200
+                    ZIndex: =2
+
+                    btnPrintWaitlist As button:
+                        BorderColor: =
+                        BorderThickness: =
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Fill: =AppColors.DarkBlue
+                        FocusedBorderThickness: =
+                        Font: =AppFonts.FontStyle
+                        FontWeight: =FontWeight.Semibold
+                        Height: =32
+                        HoverBorderColor: =
+                        HoverColor: =AppColors.White
+                        HoverFill: =
+                        PressedBorderColor: =
+                        PressedColor: =AppColors.White
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AppFonts.fontSize
+                        Text: ="Print Waitlist"
+                        Width: =130
+                        ZIndex: =1
+
+            gallBookWaitlist As gallery.galleryVertical:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DelayItemLoading: =true
+                Items: |-
+                    =SortByColumns(
+                        AddColumns(Filter(collBookRequests, 'Book Status' = 'Book Status (Book Requests)'.Waitlisted),
+                        "sort_DateRequested", 'ATC Request Id'.'Date Received by Paralegal'),
+                        "sort_DateRequested",
+                        SortOrder.Descending
+                    )
+                        
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =10
+                TemplateSize: =100
+                Width: =Parent.Width - 10
+                ZIndex: =2
+
+                cntBookWaitlistData As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    Fill: =AppColors.SkyBlue
+                    Height: =gallBookWaitlist.TemplateHeight 
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =Parent.Width - 30
+                    ZIndex: =1
+
+                    cntWaitlistDetails As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =Parent.Height
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =2
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =300
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingTop: =6
+                        ZIndex: =2
+
+                        cntDateRequested As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =20
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                            lblTitleDateRequested As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height
+                                Size: =AppFonts.fontSize
+                                Text: |-
+                                    ="Date Reqested:"
+                                Width: =136
+                                ZIndex: =1
+
+                            lblDateRequested As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =Parent.Height
+                                PaddingLeft: =0
+                                Size: =AppFonts.fontSize
+                                Text: |
+                                    =Text(ThisItem.'ATC Request Id'.'Date Received by Paralegal', "[$-en-US]m/d/yyyy")
+                                ZIndex: =2
+
+                        cntIDOC As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =20
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: = 10 * Len(lblIDOC.Text) + lblTitleIDOC.Width
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            lblTitleIDOC As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height
+                                Size: =AppFonts.fontSize
+                                Text: |-
+                                    ="IDOC#:"
+                                Width: =72
+                                ZIndex: =1
+
+                            lblIDOC As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =Parent.Height
+                                LayoutMinWidth: =
+                                PaddingLeft: =0
+                                Size: =AppFonts.fontSize
+                                Text: =LookUp(collATCRequests, 'ATC Request' = ThisItem.'ATC Request Id'.'ATC Request').'Roster Id'.'IDOC Number'
+                                Width: =100
+                                ZIndex: =2
+
+                        cntPersonName As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =20
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =10 * Len(lblName.Text) + lblTitleName.Width
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =3
+
+                            lblTitleName As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height
+                                Size: =AppFonts.fontSize
+                                Text: |-
+                                    ="Name:"
+                                Width: =64
+                                ZIndex: =1
+
+                            lblName As label:
+                                AlignInContainer: =AlignInContainer.Start
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =Parent.Height
+                                PaddingLeft: =0
+                                Size: =AppFonts.fontSize
+                                Text: =LookUp(collATCRequests,'ATC Request'=ThisItem.'ATC Request Id'.'ATC Request').'Roster Id'.'First Name'& " " & LookUp(collATCRequests,'ATC Request'=ThisItem.'ATC Request Id'.'ATC Request').'Roster Id'.'Last Name'
+                                Wrap: =false
+                                ZIndex: =2
+
+                        cntBookName As groupContainer.horizontalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =20
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =4
+
+                            lblTitleBook As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Font: =AppFonts.FontStyle
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height
+                                Size: =AppFonts.fontSize
+                                Text: |-
+                                    ="Book:"
+                                Width: =58
+                                ZIndex: =1
+
+                            lblBook As label:
+                                BorderColor: =RGBA(32, 54, 71, 1)
+                                Color: =AppColors.Black
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FillPortions: =1
+                                Font: =AppFonts.FontStyle
+                                Height: =Parent.Height
+                                PaddingLeft: =0
+                                Size: =AppFonts.fontSize
+                                Text: =ThisItem.'Book Id'.'Book Title'
+                                Wrap: =false
+                                ZIndex: =2
+
+                    cntCheckOutBook As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0.5
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =120
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        ZIndex: =3
+
+                        rctSeperator As rectangle:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            ContentLanguage: =1
+                            Fill: =AppColors.Grey
+                            Height: =Parent.Height - 20
+                            Width: =2
+                            ZIndex: =1
+
+                        btnCheckOutBook As button:
+                            BorderColor: =
+                            BorderThickness: =0
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =AppColors.Orange
+                            FocusedBorderColor: =
+                            FocusedBorderThickness: =
+                            Font: =AppFonts.FontStyle
+                            FontWeight: =FontWeight.Semibold
+                            Height: =32
+                            HoverBorderColor: =AppColors.Orange
+                            HoverColor: =AppColors.White
+                            HoverFill: =
+                            PressedBorderColor: =AppColors.Orange
+                            PressedColor: =AppColors.White
+                            PressedFill: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =AppFonts.fontSize
+                            Text: ="Check Out Book"
+                            Width: =140
+                            ZIndex: =2
+

@@ -1,0 +1,63 @@
+Header As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =45
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    cntHeaderATCRequest_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: |-
+            =RGBA(
+                        66,
+                        89,
+                        130,
+                        100
+                    )
+        Height: =Parent.Height
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =If(App.ActiveScreen.Size<3, 50, 15)
+        PaddingRight: =10
+        PaddingTop: =2.5
+        Width: =Parent.Width
+        ZIndex: =1
+
+        imgDepartmentLogoATCRequest_1 As image:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =Parent.Height-5
+            Image: =bfe88e618acb187d4693478b2c9ca015
+            Width: =50
+            ZIndex: =1
+
+        lblDepartmentATCRequest_1 As label:
+            Align: =Align.Justify
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FillPortions: =1
+            Font: =Font.Verdana
+            FontWeight: =FontWeight.Bold
+            Height: =Parent.Height-5
+            PaddingLeft: =2
+            Size: =12
+            Text: ="Idaho Department of Correction"
+            Width: =500
+            X: =imgDepartmentLogoATCRequest_1.Width
+            ZIndex: =2
+
+        Image1 As image:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =40
+            Image: =User().Image
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Width: =40
+            ZIndex: =3
+

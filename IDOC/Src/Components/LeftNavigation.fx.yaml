@@ -1,0 +1,238 @@
+LeftNavigation As CanvasComponent:
+    ExpandMenu: =varShowMenu
+    Fill: =RGBA(0, 0, 0, 0)
+    HamburgerIconVisibility: |
+        =If(App.ActiveScreen.Size<3,true,false)
+    Height: =Self.MenuHeight
+    MenuHeight: =If(showMenu,Self.ScreenHeight,Icon2.Height)
+    MenuWidth: |-
+        =If(showMenu,200,Icon2.Width)
+        
+        //If(App.ActiveScreen.Size<3,If(showMenu,200,Icon2.Width), 200)
+    NavMenu: |-
+        =Table(
+            {
+                MenuLabel: "Dashboard",
+                MenuIcon: 'home Img_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 1
+            },
+            {
+                MenuLabel: "ATC Request",
+                MenuIcon: 'ATC Request Img_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 2
+            },
+            {
+                MenuLabel: "Activity Log",
+                MenuIcon: 'Activity Log_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 3
+            },
+            {
+                MenuLabel: "Roster",
+                MenuIcon: 'Roster Img_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 4
+            },
+            {
+                MenuLabel: "Reports",
+                MenuIcon: 'Reports Img_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 5
+            },
+            {
+                MenuLabel: "Mail Logs",
+                MenuIcon: 'mail Img_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 6
+            },
+            {
+                MenuLabel: "Books",
+                MenuIcon: 'books Img_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 7,
+                SubMenu: Table(
+                    {
+                        MenuLabel: "Book History",
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 7
+                    },
+                    {
+                        MenuLabel: "Book Management",
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 7
+                    }
+                )
+            },
+            {
+                MenuLabel: "Packets",
+                MenuIcon: 'documents Img_1',
+                MenuScreenNavigate: App.ActiveScreen,
+                MenuID: 8
+            }
+        )
+    OnReset: |-
+        =Set(showMenu, LeftNavigation.ExpandMenu)
+        
+        // If(App.ActiveScreen.Size<3,Set(showMenu, LeftNavigation.ExpandMenu), true)
+    ScreenHeight: =500
+    Width: |-
+        =//LeftNavigation.MenuWidth
+        If(App.ActiveScreen.Size <3, LeftNavigation.MenuWidth, 200)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Icon2 As icon.Hamburger:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =45
+        Icon: =Icon.Hamburger
+        OnSelect: |-
+            =//If(App.ActiveScreen.Size <3,Set(showMenu, !showMenu), false)  ;
+            
+            Set(showMenu, !showMenu)
+        PaddingBottom: =10
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =10
+        Visible: =LeftNavigation.HamburgerIconVisibility
+        Width: =56
+        ZIndex: =1
+
+    galMenu As gallery.variableTemplateHeightGallery:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        DelayItemLoading: =true
+        Fill: =RGBA(97, 119, 157, 1)
+        Height: =Parent.Height- Icon2.Height
+        Items: =LeftNavigation.NavMenu
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =280
+        Visible: |
+            =//If(App.ActiveScreen.Size<3,showMenu,true)
+            
+            showMenu
+        Width: =Parent.Width
+        Y: =Icon2.Height
+        ZIndex: =2
+
+        recShape As rectangle:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =lblMenu.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.MenuScreenNavigate = App.ActiveScreen
+            Width: =2
+            ZIndex: =1
+
+        icoMenu As image:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =25
+            Image: =ThisItem.MenuIcon
+            OnSelect: =Select(Parent)
+            Width: =25
+            X: =8
+            Y: =7
+            ZIndex: =2
+
+        lblMenu As label:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.Arial
+            Height: =30
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.MenuLabel
+            Width: =Parent.TemplateWidth-icoMenu.Width-recShape.Width-30
+            X: =icoMenu.X + icoMenu.Width 
+            Y: =4
+            ZIndex: =3
+
+        Button1 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Semibold
+            Height: =lblMenu.Height+lblMenu.Y
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =
+            OnSelect: =Navigate(ThisItem.MenuScreenNavigate)
+            PressedBorderColor: =
+            PressedColor: =
+            Size: =15
+            Text: =""
+            Width: =Parent.TemplateWidth
+            ZIndex: =4
+
+        galSubMenu As gallery.variableTemplateHeightGallery:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            DelayItemLoading: =true
+            Fill: =RGBA(97, 119, 157, 1)
+            Height: =CountRows(ThisItem.SubMenu)*40
+            Items: =ThisItem.SubMenu
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplateSize: =CountRows(ThisItem.SubMenu)*50
+            Visible: |-
+                =//If(App.ActiveScreen.Size<3,showMenu,true)
+                
+                showMenu
+            Width: =Parent.Width - 25
+            X: =15
+            Y: =lblMenu.Height+lblMenu.Y
+            ZIndex: =5
+
+            recShape_1 As rectangle:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =30
+                OnSelect: =Select(Parent)
+                Visible: =ThisItem.MenuScreenNavigate = App.ActiveScreen
+                Width: =2
+                ZIndex: =1
+
+            lblMenu_1 As label:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.Arial
+                Height: =34
+                OnSelect: =Select(Parent)
+                Size: =12
+                Text: =ThisItem.MenuLabel
+                Width: =Parent.TemplateWidth-recShape_1.Width-10
+                X: =6
+                ZIndex: =3
+
+            Button1_1 As button:
+                BorderColor: =
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(0, 0, 0, 0)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =
+                OnSelect: =Navigate(ThisItem.MenuScreenNavigate)
+                PressedBorderColor: =
+                PressedColor: =
+                Size: =15
+                Text: =""
+                Width: =Parent.TemplateWidth-recShape_1.Width-10
+                ZIndex: =4
+

@@ -1,0 +1,24 @@
+SampleScreenLayout As screen:
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+
+    ScreenContainer_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer_1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Height: =Parent.Height/13.5
+            Width: =Parent.Width
+            Y: =2
+            ZIndex: =1
+
+        MainContainer_1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height - HeaderContainer_1.Height
+            Width: =Parent.Width
+            Y: =HeaderContainer_1.Height
+            ZIndex: =2
+

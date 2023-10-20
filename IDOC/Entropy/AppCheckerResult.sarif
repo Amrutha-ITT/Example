@@ -1,0 +1,4595 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LeftNavigation.Icon2.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LeftNavigation.Icon2.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 24,
+                  "charOffset": 14,
+                  "snippet": {
+                    "text": ".HamburgerIconVisibility"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "LeftNavigation",
+                "type": "LeftNavigation.Icon2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Boolean",
+              "Text"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnBooleanExpected",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LeftNavigation.Icon2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LeftNavigation.Icon2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LeftNavigation",
+                "type": "LeftNavigation.Icon2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LeftNavigation.Icon2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LeftNavigation.Icon2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "LeftNavigation",
+                "type": "LeftNavigation.Icon2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LeftNavigation",
+                "type": "LeftNavigation.galMenu"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "LeftNavigation",
+                "type": "LeftNavigation.galMenu"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.galSubMenu.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.galSubMenu.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "LeftNavigation",
+                "type": "LeftNavigation.galMenu.galSubMenu"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.galSubMenu.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "LeftNavigation.galMenu.galSubMenu.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "LeftNavigation",
+                "type": "LeftNavigation.galMenu.galSubMenu"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen1"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "Screen1",
+                "type": "Screen1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-ReadableScreenNameNeeded",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntBookStatusFilter.cmbBookStatus.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntBookStatusFilter.cmbBookStatus.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntBookStatusFilter.cmbBookStatus"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntCheckOutDateFilter.DateCheckOut.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntCheckOutDateFilter.DateCheckOut.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntCheckOutDateFilter.DateCheckOut"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntDueDateFromFilter.DateDueDateFrom.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntDueDateFromFilter.DateDueDateFrom.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntDueDateFromFilter.DateDueDateFrom"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntDueDateToFilter.DateDueDateTo.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntDueDateToFilter.DateDueDateTo.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntFilterBar.cntDueDateToFilter.DateDueDateTo"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntBookSearchBar.cntBookHistorySearchBox.txtBookHistorySearchBox.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntBookSearchBar.cntBookHistorySearchBox.txtBookHistorySearchBox.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryHeader.cntFilterSearchBar.cntBookSearchBar.cntBookHistorySearchBox.txtBookHistorySearchBox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdUp.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdUp.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdUp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdUp.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdUp.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdUp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdDown.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdDown.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdDown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdDown.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdDown.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryID.cntBookHistoryIDIcon.icnBookIdDown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleUp_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleUp_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleUp_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleUp_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleUp_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleUp_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleDown_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleDown_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleDown_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleDown_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleDown_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryTitle.cntBookHistoryNameSortIcons.icnTitleDown_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleUp_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleUp_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleUp_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleUp_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleUp_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleUp_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleDown_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleDown_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleDown_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleDown_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleDown_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckOutDate.cntCheckOutDateSortIcons.icnTitleDown_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleUp_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleUp_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleUp_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleUp_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleUp_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleUp_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleDown_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleDown_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleDown_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleDown_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleDown_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntCheckedOutBy.cntCheckOutBySortIcons.icnTitleDown_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleUp_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleUp_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleUp_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleUp_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleUp_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleUp_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleDown_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleDown_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleDown_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleDown_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleDown_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntDueDate.cntDueDateSortIcons.icnTitleDown_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleUp_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleUp_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleUp_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleUp_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleUp_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleUp_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleDown_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleDown_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleDown_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleDown_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleDown_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.cntBookHistoryGalHeader.cntBookHistoryStatus.cntBookHistoryStatusSortIcons.icnTitleDown_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.icnBookHistoryAction.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.icnBookHistoryAction.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.icnBookHistoryAction"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.icnBookHistoryAction.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.icnBookHistoryAction.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryGrid.gallBookHistory.icnBookHistoryAction"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookRecordCount.ddBookHistoryFetchCount.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookRecordCount.ddBookHistoryFetchCount.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookRecordCount.ddBookHistoryFetchCount"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnPreviousPageBookHistory.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnPreviousPageBookHistory.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnPreviousPageBookHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnPreviousPageBookHistory.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnPreviousPageBookHistory.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnPreviousPageBookHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnNextPageBookHistory.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnNextPageBookHistory.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnNextPageBookHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnNextPageBookHistory.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnNextPageBookHistory.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.icnNextPageBookHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.cntWaitlistHeader.cntBookWaitlistTitle.icnBookWaitlistBackArrow.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.cntWaitlistHeader.cntBookWaitlistTitle.icnBookWaitlistBackArrow.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.cntWaitlistHeader.cntBookWaitlistTitle.icnBookWaitlistBackArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.cntWaitlistHeader.cntBookWaitlistTitle.icnBookWaitlistBackArrow.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.cntWaitlistHeader.cntBookWaitlistTitle.icnBookWaitlistBackArrow.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.cntWaitlistHeader.cntBookWaitlistTitle.icnBookWaitlistBackArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.gallBookWaitlist.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.gallBookWaitlist.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookHistory",
+                "type": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.gallBookWaitlist"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.gallBookWaitlist.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.gallBookWaitlist.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookHistory",
+                "type": "BookHistory.CntWaitlistGrayOut.cntBookWaitlist.gallBookWaitlist"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileTitle.BackArrow.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileTitle.BackArrow.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileTitle.BackArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileTitle.BackArrow.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileTitle.BackArrow.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileTitle.BackArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfile.cntDescription.txtDescription.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfile.cntDescription.txtDescription.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfile.cntDescription.txtDescription"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookHistoryTitleBookProfile.cntBookHistoryTitleandButton.cntAddNewEntry.btnAddNewEntry.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookHistoryTitleBookProfile.cntBookHistoryTitleandButton.cntAddNewEntry.btnAddNewEntry.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookHistoryTitleBookProfile.cntBookHistoryTitleandButton.cntAddNewEntry.btnAddNewEntry"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionUpArrow_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionUpArrow_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionUpArrow_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionUpArrow_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionUpArrow_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionUpArrow_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionDownArrow_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionDownArrow_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionDownArrow_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionDownArrow_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionDownArrow_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckOutDateBookProfile.cntCheckOutDateSortIconsBookProfile.icnBookConditionDownArrow_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionUpArrow_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionUpArrow_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionUpArrow_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionUpArrow_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionUpArrow_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionUpArrow_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionDownArrow_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionDownArrow_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionDownArrow_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionDownArrow_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionDownArrow_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckedOutByBookProfile.cntCheckOutBySortIconsBookProfile.icnBookConditionDownArrow_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionUpArrow_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionUpArrow_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionUpArrow_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionUpArrow_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionUpArrow_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionUpArrow_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionDownArrow_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionDownArrow_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionDownArrow_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionDownArrow_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionDownArrow_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntExtendedBookProfile.cntExtendedSortIconsBookProfile.icnBookConditionDownArrow_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionUpArrow_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionUpArrow_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionUpArrow_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionUpArrow_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionUpArrow_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionUpArrow_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionDownArrow_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionDownArrow_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionDownArrow_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionDownArrow_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionDownArrow_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntCheckInDateBookProfile.cntCheckInDateSortIconsBookProfile.icnBookConditionDownArrow_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionUpArrow.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionUpArrow.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionUpArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionUpArrow.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionUpArrow.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionUpArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionDownArrow.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionDownArrow.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionDownArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionDownArrow.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionDownArrow.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.cntBookProfileGalHeader.cntBookCondition.cntBookConditionIcons.icnBookConditionDownArrow"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.gallBookHealthHistory.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.gallBookHealthHistory.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.gallBookHealthHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.gallBookHealthHistory.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.gallBookHealthHistory.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntBookProfileHistoryGrid.gallBookHealthHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookRecordCountBookProfile.ddFetchCountBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookRecordCountBookProfile.ddFetchCountBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookRecordCountBookProfile.ddFetchCountBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnPreviousPageBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnPreviousPageBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnPreviousPageBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnPreviousPageBookProfile.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnPreviousPageBookProfile.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnPreviousPageBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnNextPageBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnNextPageBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnNextPageBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnNextPageBookProfile.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnNextPageBookProfile.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.icnNextPageBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntBookFacilityBookProfile.cmbFacilityBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntBookFacilityBookProfile.cmbFacilityBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntBookFacilityBookProfile.cmbFacilityBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntNewBookIdBookProfile.txtNewBookIdBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntNewBookIdBookProfile.txtNewBookIdBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntNewBookIdBookProfile.txtNewBookIdBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntBookPriceBookProfile.txtBookPriceBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntBookPriceBookProfile.txtBookPriceBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer.cntBookPriceBookProfile.txtBookPriceBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer2.cntNewBookTitleBookProfile.txtNewBookTitleBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer2.cntNewBookTitleBookProfile.txtNewBookTitleBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer2.cntNewBookTitleBookProfile.txtNewBookTitleBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer2.cntVolumeBookProfile.txtVolumeBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer2.cntVolumeBookProfile.txtVolumeBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer2.cntVolumeBookProfile.txtVolumeBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer3.txtNewBookSupplementYearBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer3.txtNewBookSupplementYearBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer3.txtNewBookSupplementYearBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer4.txtBookDescriptionBookProfile.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer4.txtBookDescriptionBookProfile.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntEditBook.cntEditDetails.cntEditBookDetailsContainer4.txtBookDescriptionBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntDateCheckedOut.DateCheckedOutDate.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntDateCheckedOut.DateCheckedOutDate.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntDateCheckedOut.DateCheckedOutDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntCheckedOutByNewEntry.cmbBookCheckedOutBy.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntCheckedOutByNewEntry.cmbBookCheckedOutBy.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntCheckedOutByNewEntry.cmbBookCheckedOutBy"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntDateCheckedIn.DateCheckedInNewEntry.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntDateCheckedIn.DateCheckedInNewEntry.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntDateCheckedIn.DateCheckedInNewEntry"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookExtentionStatus.cntBookExtend.cmbBookExtended.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookExtentionStatus.cntBookExtend.cmbBookExtended.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookExtentionStatus.cntBookExtend.cmbBookExtended"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookExtentionStatus.cntBookConditionNewEntry.cmbBookCondition.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookExtentionStatus.cntBookConditionNewEntry.cmbBookCondition.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookExtentionStatus.cntBookConditionNewEntry.cmbBookCondition"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookDescription.txtBookEntryDescription.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookDescription.txtBookEntryDescription.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookProfile",
+                "type": "BookProfile.cntGrayOutEditBook.cntNewEntry.cntNewEntryDetails.cntBookDescription.txtBookEntryDescription"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookManagmentHeader.cntSearchbar.cntSearchBox.txtSearchBox.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookManagmentHeader.cntSearchbar.cntSearchBox.txtSearchBox.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookManagmentHeader.cntSearchbar.cntSearchBox.txtSearchBox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdUp.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdUp.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdUp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdUp.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdUp.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdUp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdDown.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdDown.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdDown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdDown.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdDown.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookID.cntBookIDIcon.icnIdDown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleUp.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleUp.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleUp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleUp.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleUp.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleUp"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleDown.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleDown.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleDown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleDown.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleDown.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntBookTitle.cntBookTitleIcon.icnTitleDown"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdUp_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdUp_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdUp_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdUp_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdUp_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdUp_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdDown_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdDown_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdDown_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdDown_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdDown_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntSupplementYear.cntSupplementYearSortIcons.icnIdDown_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdUp_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdUp_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdUp_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdUp_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdUp_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdUp_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdDown_4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdDown_4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdDown_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdDown_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdDown_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.cntBookGalHeader.cntStatus.cntStatusSortIcons.icnIdDown_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.icnAction.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.icnAction.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.icnAction"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.icnAction.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.icnAction.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookGrid.gallBookManagment.icnAction"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntRecordCount.ddFetchCountBookManagment.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntRecordCount.ddFetchCountBookManagment.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntRecordCount.ddFetchCountBookManagment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnPreviousPageBookManagment.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnPreviousPageBookManagment.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnPreviousPageBookManagment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnPreviousPageBookManagment.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnPreviousPageBookManagment.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnPreviousPageBookManagment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnNextPageBookManagment.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnNextPageBookManagment.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnNextPageBookManagment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnNextPageBookManagment.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnNextPageBookManagment.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BookManagement",
+                "type": "BookManagement.ScreenContainer.MainContainer.cntBookPagination.cntPageNumberSequence.icnNextPageBookManagment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntBookFacility.cmbFacility.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntBookFacility.cmbFacility.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntBookFacility.cmbFacility"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntNewBookId.txtNewBookId.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntNewBookId.txtNewBookId.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntNewBookId.txtNewBookId"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntBookPrice.txtBookPrice.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntBookPrice.txtBookPrice.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer1.cntBookPrice.txtBookPrice"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer2.cntNewBookTitle.txtNewBookTitle.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer2.cntNewBookTitle.txtNewBookTitle.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer2.cntNewBookTitle.txtNewBookTitle"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer2.cntVolume.txtVolume.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer2.cntVolume.txtVolume.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer2.cntVolume.txtVolume"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer3.txtNewBookSupplementYear.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer3.txtNewBookSupplementYear.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer3.txtNewBookSupplementYear"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer4.txtBookDescription.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer4.txtBookDescription.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BookManagement",
+                "type": "BookManagement.cntGrayOutNewBook.cntAddNewBook.cntNewBookDetails.cntDetailsContainer4.txtBookDescription"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Activity Log"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Activity Log",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Activity Log",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.ATC Request Img"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.ATC Request Img",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "ATC Request Img",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.books Img"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.books Img",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "books Img",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.documents Img"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.documents Img",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "documents Img",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.home Img"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.home Img",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "home Img",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.mail Img"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.mail Img",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "mail Img",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Reports Img"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Reports Img",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Reports Img",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Roster Img"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Roster Img",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Roster Img",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.dots"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.dots",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "dots",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.OnStart"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.OnStart",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "OnStart",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-CollectDelegatableDataSource",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.ThirdLastId"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.ThirdLastId",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "ThirdLastId",
+                "module": "BookHistory",
+                "type": "BookHistory"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.LayoutJustifyContent"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence.LayoutJustifyContent",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "LayoutJustifyContent",
+                "module": "BookHistory",
+                "type": "BookHistory.BookHistoryScreenContainer.MainContainerBookHistory.cntBookHistoryPagination.cntBookPageNumberSequence"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.lv_CheckInDateErrorVisibility"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.lv_CheckInDateErrorVisibility",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "lv_CheckInDateErrorVisibility",
+                "module": "BookProfile",
+                "type": "BookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.LayoutJustifyContent"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile.LayoutJustifyContent",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "LayoutJustifyContent",
+                "module": "BookProfile",
+                "type": "BookProfile.BookProfileScreenContainer.MainContainerBookProfile.cntPaginationBookProfile.cntBookPageNumberSequenceBookProfile"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.ThirdLastId"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.ThirdLastId",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "ThirdLastId",
+                "module": "BookManagement",
+                "type": "BookManagement"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BookManagement.lv_OnlyNumericErrorVisibility"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BookManagement.lv_OnlyNumericErrorVisibility",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "lv_OnlyNumericErrorVisibility",
+                "module": "BookManagement",
+                "type": "BookManagement"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 7
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "PowerApps app checker",
+          "name": "PowerApps app checker",
+          "rules": [
+            {
+              "id": "app-WarnBooleanExpected",
+              "messageStrings": {
+                "issue": {
+                  "text": "Warning: Expecting a true or false value. The current value may cause unexpected behavior."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "Medium",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "acc-AccessibleLabelNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing accessible label"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Edit the accessible label property to describe the item."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "If there's no accessible text, people who can’t see the screen won't understand what’s in images and controls."
+              }
+            },
+            {
+              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing tab stop"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "acc-ReadableScreenNameNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Revise screen name"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Give the screen  a title that describes what's on the screen or what it's used for."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
+              }
+            },
+            {
+              "id": "acc-FocusBorderShouldBeVisible",
+              "messageStrings": {
+                "issue": {
+                  "text": "Focus isn't showing"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Change the FocusedBorderThickness property to be more than 0."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "If the focus isn't visible, people who don't use a mouse won't be able to see it when they're interacting with the app."
+              }
+            },
+            {
+              "id": "app-UnusedMediaResources",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unused media files"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove the unused media file in the Media pane."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "This media file is not referenced by any control formulas so it is not needed. Removing it will improve performance."
+              }
+            },
+            {
+              "id": "app-CollectDelegatableDataSource",
+              "messageStrings": {
+                "issue": {
+                  "text": "The rows retrieved from the data source may not be complete."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Limit the data collected from the data source by updating the formula \"ClearCollect(collBookRequests, 'Book Requests')\" to include a filtering function, such as 'Filter' or 'Search'."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "Using the 'Collect' function to create a collection directly from a connected data source may not load every row if the data source is too large."
+              }
+            },
+            {
+              "id": "app-UnusedVariables",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unused variable"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove the unused variable."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
+              }
+            },
+            {
+              "id": "app-InefficientDelayLoading",
+              "messageStrings": {
+                "issue": {
+                  "text": "Inefficient delay loading"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Use variables, collections, and navigation context to share state across screens instead."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
+              }
+            }
+          ],
+          "version": "1.335"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}
