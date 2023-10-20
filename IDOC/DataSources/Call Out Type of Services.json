@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_callouttypeofservices",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_callouttypeofservice",
+    "MaxGetRowsCount": 2000,
+    "Name": "Call Out Type of Services",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_callouttypeofservice_AsyncOperations": "System Jobs",
+      "idoc_callouttypeofservice_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_callouttypeofservice_DuplicateBaseRecord": "Duplicate Records (idoc_callouttypeofservice_DuplicateBaseRecord)",
+      "idoc_callouttypeofservice_DuplicateMatchingRecord": "Duplicate Records (idoc_callouttypeofservice_DuplicateMatchingRecord)",
+      "idoc_callouttypeofservice_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_callouttypeofservice_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_callouttypeofservice_ProcessSession": "Process Sessions",
+      "idoc_callouttypeofservice_SyncErrors": "Sync Errors",
+      "idoc_callouttypeofserviceid": "Call Out Type of Service",
+      "idoc_idoc_callout_CallOutTypeOfService_idoc_ca": "Call Out Requests",
+      "idoc_idoc_calloutvisitservices_CallOutServiceI": "Call Out and Visit Services",
+      "idoc_name": "Service Name",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Call Out Type of Services",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Call Out Type of Services (Views)",
+    "Name": "_idoc_callouttypeofservice_views",
+    "RelatedEntityName": "Call Out Type of Services",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2107f230-0345-4104-8926-a469c591d741": "Active Call Out Type of Services",
+      "4f636096-223a-4de3-8292-3c5ce45ffbbe": "Inactive Call Out Type of Services",
+      "8eb385cc-914d-4b97-bb60-d08656bc7b43": "Call Out Type of Service Associated View",
+      "9e80c40b-63cb-40c7-a785-c698a58874df": "Call Out Type of Service Lookup View",
+      "c719363d-fd44-4695-9c99-88758a628d20": "Call Out Type of Service Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Call Out Type of Services)",
+    "Name": "idoc_callouttypeofservice_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Call Out Type of Services"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Call Out Type of Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Call Out Type of Services)",
+    "Name": "idoc_callouttypeofservice_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Call Out Type of Services"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Call Out Type of Services",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_addressdetailses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_addressdetails",
+    "MaxGetRowsCount": 2000,
+    "Name": "Address Details",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_address2": "Address 2",
+      "idoc_addressdetails_AsyncOperations": "System Jobs",
+      "idoc_addressdetails_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_addressdetails_DuplicateBaseRecord": "Duplicate Records (idoc_addressdetails_DuplicateBaseRecord)",
+      "idoc_addressdetails_DuplicateMatchingRecord": "Duplicate Records (idoc_addressdetails_DuplicateMatchingRecord)",
+      "idoc_addressdetails_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_addressdetails_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_addressdetails_ProcessSession": "Process Sessions",
+      "idoc_addressdetails_SyncErrors": "Sync Errors",
+      "idoc_addressdetailsid": "Address Details",
+      "idoc_city": "City",
+      "idoc_LegalMail_AddressDetails_idoc_Addres": "Legal Mails",
+      "idoc_name": "Address 1",
+      "idoc_state": "State",
+      "idoc_zip": "Zip",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Address Details",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Address Details (Views)",
+    "Name": "_idoc_addressdetails_views",
+    "RelatedEntityName": "Address Details",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "155cb791-1fe7-4d06-9604-339cbb3c0693": "Address Details Advanced Find View",
+      "195e2052-adf5-4fd8-a3d0-72d9520345c1": "Address Details Associated View",
+      "8b87964f-e839-4185-bfaf-53b61aa48981": "Inactive Address Details",
+      "c5dffc6f-c9e0-49fb-b7ef-8e375a255bb6": "Address Details Lookup View",
+      "f44c9ffa-1120-429d-b88d-4388b43e4d51": "Active Address Details"
+    }
+  },
+  {
+    "DisplayName": "Status (Address Details)",
+    "Name": "idoc_addressdetails_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Address Details"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Address Details",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Address Details)",
+    "Name": "idoc_addressdetails_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Address Details"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Address Details",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,254 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_idoc_packets_forms",
+      "Namespace": "Packets (Forms)",
+      "Values": {
+        "Information": "4ca6b5fe-22ed-415c-a4c0-eb4abe70de39"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_atcrequest_forms",
+      "Namespace": "ATC Requests (Forms)",
+      "Values": {
+        "Information": "ab4950ab-264a-42d3-bb73-a421da4b1ecb"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_callouttypeofservice_forms",
+      "Namespace": "Call Out Type of Services (Forms)",
+      "Values": {
+        "Information": "0d15e642-c49b-4eb6-a213-f5c50c93c8db"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_roster_forms",
+      "Namespace": "Rosters (Forms)",
+      "Values": {
+        "Information": "d9fb4cdd-39fb-41ce-9d8a-adf479ba2215"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Users (Forms)",
+      "Values": {
+        "Application User": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Information": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_facilitymapping_forms",
+      "Namespace": "Facility Mappings (Forms)",
+      "Values": {
+        "Information": "9aa03072-3477-4c9c-9e54-b0b0c680f9f8"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_bookinventory_forms",
+      "Namespace": "Book Inventories (Forms)",
+      "Values": {
+        "Information": "678cc616-2e85-4eb2-8ad6-cc3f06291fcd"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_visittypeofservice_forms",
+      "Namespace": "Visit Type of Services (Forms)",
+      "Values": {
+        "Information": "16652063-15e2-46cb-8419-fc3086bc9183"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_addressdetails_forms",
+      "Namespace": "Address Details (Forms)",
+      "Values": {
+        "Information": "50838904-0f72-44a7-a0c1-818e27b713ac"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_court_forms",
+      "Namespace": "Courts (Forms)",
+      "Values": {
+        "Information": "b4dead22-9530-451e-b2de-995ef63b71c6"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_paralegal_forms",
+      "Namespace": "Paralegals (Forms)",
+      "Values": {
+        "Information": "ee1dde94-8df0-4991-a244-dd1fd0e10655"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_residentresponse_forms",
+      "Namespace": "Resident Responses (Forms)",
+      "Values": {
+        "Information": "eab751e1-b6a8-4b4e-bd52-f0339b73b147"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_bookrequests_forms",
+      "Namespace": "Book Requests (Forms)",
+      "Values": {
+        "Information": "d82670ba-4d1e-451f-8a3e-d20e06971772"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_indigentsupplies_forms",
+      "Namespace": "Indigent Supplies (Forms)",
+      "Values": {
+        "Information": "6fd73f5b-3e14-4a52-b2df-d893d0d1a35f"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_callout_forms",
+      "Namespace": "Call Out Requests (Forms)",
+      "Values": {
+        "Information": "f4069dfc-e056-45dd-9341-684b367690fc"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_visit_forms",
+      "Namespace": "Visit Requests (Forms)",
+      "Values": {
+        "Information": "96260ff6-cfce-4bf3-91ed-a4d9ed3eaab3"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_legalmail_forms",
+      "Namespace": "Legal Mails (Forms)",
+      "Values": {
+        "Information": "c4cf082d-de53-429d-9dfb-cf457393e9b0"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_efilerequest_forms",
+      "Namespace": "E-File Requests (Forms)",
+      "Values": {
+        "Information": "d9d0bfbf-27cf-4280-9b8f-f380e95f8c6f"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_packetrequests_forms",
+      "Namespace": "Packet Request Details (Forms)",
+      "Values": {
+        "Information": "4499490a-f500-45ba-8cba-f584d462fe62"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_calloutvisitservices_forms",
+      "Namespace": "Call Out/Visit Services (Forms)",
+      "Values": {
+        "Information": "fcfa48fe-e6ab-4880-8870-e56760d82b53"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_atcattachments_forms",
+      "Namespace": "ATC Attachments (Forms)",
+      "Values": {
+        "Information": "d0ec42ee-1616-41f9-9c53-bcb5004ded14"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_otherrequests_forms",
+      "Namespace": "Other Requests (Forms)",
+      "Values": {
+        "Information": "6a47b259-0f39-47e0-8e2e-f532c0b76a94"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_bookhealthhistory_forms",
+      "Namespace": "Book Health Histories (Forms)",
+      "Values": {
+        "Information": "47e0e6d6-bd3b-4086-b951-ba3c2e8d0a46"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_packetrequests_forms",
+      "Namespace": "Packet Requests (Forms)",
+      "Values": {
+        "Information": "4499490a-f500-45ba-8cba-f584d462fe62"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_packetrequests_forms",
+      "Namespace": "Packets Request (Forms)",
+      "Values": {
+        "Information": "4499490a-f500-45ba-8cba-f584d462fe62"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_calloutvisitservices_forms",
+      "Namespace": "Call Out and Visit Services (Forms)",
+      "Values": {
+        "Information": "fcfa48fe-e6ab-4880-8870-e56760d82b53"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_callout_forms",
+      "Namespace": "Call Outs (Forms)",
+      "Values": {
+        "Information": "f4069dfc-e056-45dd-9341-684b367690fc"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_visit_forms",
+      "Namespace": "Visits (Forms)",
+      "Values": {
+        "Information": "96260ff6-cfce-4bf3-91ed-a4d9ed3eaab3"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_calloutvisitservices_forms",
+      "Namespace": "Call Out & Visit Services (Forms)",
+      "Values": {
+        "Information": "fcfa48fe-e6ab-4880-8870-e56760d82b53"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_visits_forms",
+      "Namespace": "Visits_1 (Forms)",
+      "Values": {
+        "Information": "3599a946-ee58-4374-bb26-72d93bf0ca12"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_callouts_forms",
+      "Namespace": "Call Outs_1 (Forms)",
+      "Values": {
+        "Information": "404a48aa-6470-4e17-9278-d5ced4a050a2"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_typeofmail_forms",
+      "Namespace": "Type of mails (Forms)",
+      "Values": {
+        "Information": "275af05e-a20d-41f4-81fc-c1f399c71719"
+      }
+    },
+    {
+      "Kind": "default.cds_idoc_response_forms",
+      "Namespace": "Responses (Forms)",
+      "Values": {
+        "Information": "7ae84bee-9435-49cf-aa75-bea6346d4849"
+      }
+    },
+    {
+      "Kind": "default.cds_account_forms",
+      "Namespace": "Accounts (Forms)",
+      "Values": {
+        "Account": "8448b78f-8f42-454e-8e2a-f8196b0419af",
+        "account card": "b028db32-3619-48a5-ac51-cf3f947b0ef3",
+        "Account Card form": "cccff382-2b92-467e-bf1b-3db179512af8",
+        "Account for Interactive experience": "a72c7955-442b-4ea4-9499-b10cd18b4256",
+        "Account Hierarchy Tile Form": "69cff312-cfb6-4289-9631-249ab85d2c62",
+        "Account Quick Create": "c9e7ec2d-efca-4e4c-b3e3-f63c4bba5e4b",
+        "Account Reference Panel": "098ae145-1567-41ec-8398-86dbaac70c9b",
+        "Information": "b053a39a-041a-4356-acef-ddf00182762b",
+        "Social Profiles": "2205c86d-ed88-4a2f-a447-3b86a8781f2e"
+      }
+    }
+  ]
+}

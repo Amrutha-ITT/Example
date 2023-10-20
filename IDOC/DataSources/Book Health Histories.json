@@ -1,0 +1,144 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_bookhealthhistories",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_bookhealthhistory",
+    "MaxGetRowsCount": 2000,
+    "Name": "Book Health Histories",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_bookcheckindate": "Book Check In Date",
+      "idoc_bookcheckoutdate": "Book Check Out Date",
+      "idoc_bookcondition": "Book Condition",
+      "idoc_bookhealthhistory_AsyncOperations": "System Jobs",
+      "idoc_bookhealthhistory_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_bookhealthhistory_DuplicateBaseRecord": "Duplicate Records (idoc_bookhealthhistory_DuplicateBaseRecord)",
+      "idoc_bookhealthhistory_DuplicateMatchingRecord": "Duplicate Records (idoc_bookhealthhistory_DuplicateMatchingRecord)",
+      "idoc_bookhealthhistory_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_bookhealthhistory_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_bookhealthhistory_ProcessSession": "Process Sessions",
+      "idoc_bookhealthhistory_SyncErrors": "Sync Errors",
+      "idoc_bookhealthhistoryid": "Book Health History",
+      "idoc_BookId": "Book Id",
+      "idoc_CheckedInByResident": "Checked In By - Resident",
+      "idoc_description": "Description",
+      "idoc_name": "Name",
+      "idoc_wasbookextended": "Was Book Extended",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Book Health Histories",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Book Health Histories (Views)",
+    "Name": "_idoc_bookhealthhistory_views",
+    "RelatedEntityName": "Book Health Histories",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1230ec17-dd6e-4093-82b0-8e648efe1bd5": "Book Health History Advanced Find View",
+      "2944827d-3df4-47f6-bcc4-5a6908c9e1cb": "Book Health History Lookup View",
+      "6964b69f-eb52-4a1e-9ccc-a90f52b5478c": "Active Book Health Histories",
+      "905037b1-3d81-484b-b230-f775ff07a374": "Book Health History Associated View",
+      "bff19687-b056-4694-91d0-b362017bbac4": "Inactive Book Health Histories"
+    }
+  },
+  {
+    "DisplayName": "Book Condition (Book Health Histories)",
+    "Name": "idoc_bookhealthhistory_idoc_bookcondition",
+    "OptionSetInfoNameMapping": {
+      "926070000": "Bad",
+      "926070001": "Good"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_bookcondition",
+        "OptionSetReferenceEntityName": "Book Health Histories"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "idoc_bookcondition",
+    "RelatedEntityName": "Book Health Histories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Was Book Extended (Book Health Histories)",
+    "Name": "idoc_bookhealthhistory_idoc_wasbookextended",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_wasbookextended",
+        "OptionSetReferenceEntityName": "Book Health Histories"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_wasbookextended",
+    "RelatedEntityName": "Book Health Histories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Book Health Histories)",
+    "Name": "idoc_bookhealthhistory_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Book Health Histories"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Book Health Histories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Book Health Histories)",
+    "Name": "idoc_bookhealthhistory_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Book Health Histories"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Book Health Histories",
+    "Type": "OptionSetInfo"
+  }
+]

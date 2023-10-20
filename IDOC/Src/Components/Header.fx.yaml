@@ -1,0 +1,79 @@
+Header As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =45
+    Profile: =User().Email
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    cntHeaderATCRequest_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: |-
+            =RGBA(
+                        66,
+                        89,
+                        130,
+                        100
+                    )
+        Height: =Parent.Height
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =If(App.ActiveScreen.Size<3, 50, 15)
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Container71 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            LayoutMinHeight: =Parent.Height-Parent.PaddingTop
+            LayoutMinWidth: =250
+            PaddingTop: =2.5
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =Parent.Width-Parent.PaddingLeft
+            ZIndex: =3
+
+            imgDepartmentLogoATCRequest_1 As image:
+                BorderColor: =RGBA(0, 18, 107, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =Parent.Height-5
+                Image: =bfe88e618acb187d4693478b2c9ca015
+                Width: =50
+                Y: =3
+                ZIndex: =1
+
+            lblDepartmentATCRequest_1 As label:
+                Align: =Align.Justify
+                BorderColor: =RGBA(0, 18, 107, 1)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Bold
+                Height: =Parent.Height-5
+                PaddingLeft: =2
+                Size: =12
+                Text: ="Idaho Department of Correction"
+                Width: =500
+                X: =imgDepartmentLogoATCRequest_1.Width+imgDepartmentLogoATCRequest_1.X
+                Y: =3
+                ZIndex: =2
+
+            Image2 As image:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                Height: =40
+                Image: =User().Image
+                RadiusBottomLeft: =020
+                RadiusBottomRight: =020
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Tooltip: =Header.Profile
+                Width: =40
+                X: =Parent.Width-Self.Width-10
+                Y: =3
+                ZIndex: =3
+

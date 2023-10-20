@@ -1,0 +1,123 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_visits",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_visit",
+    "MaxGetRowsCount": 2000,
+    "Name": "Visit Requests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestId": "ATC Request Id",
+      "idoc_idoc_calloutvisitservices_VisitRequestID_": "Call Out and Visit Services",
+      "idoc_includeanatcresponsewiththisrequest": "include an ATC response with this request?",
+      "idoc_name": "Name",
+      "idoc_visit_AsyncOperations": "System Jobs",
+      "idoc_visit_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_visit_DuplicateBaseRecord": "Duplicate Records (idoc_visit_DuplicateBaseRecord)",
+      "idoc_visit_DuplicateMatchingRecord": "Duplicate Records (idoc_visit_DuplicateMatchingRecord)",
+      "idoc_visit_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_visit_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_visit_ProcessSession": "Process Sessions",
+      "idoc_visit_SyncErrors": "Sync Errors",
+      "idoc_visitdatefrom": "Visit Date From",
+      "idoc_visitdateto": "Visit Date To",
+      "idoc_visitid": "Visit",
+      "idoc_VisitTypeOfService": "Visit Type Of Service",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Visit Requests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Visit Requests (Views)",
+    "Name": "_idoc_visit_views",
+    "RelatedEntityName": "Visit Requests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "455c363a-0705-41c5-b150-b11ce948ba46": "Active Visits",
+      "81e59d93-1b8a-4a79-a46f-b7c4a0495e93": "Visit Associated View",
+      "97989f24-5574-473f-998a-4737fe1cc492": "Inactive Visits",
+      "9e143e6c-00e9-4f7d-92dd-e0c711c5349b": "Visit Lookup View",
+      "d9c1d5ce-5352-4215-9d09-913cac2ad807": "Visit Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "include an ATC response with this request? (Visit Requests)",
+    "Name": "idoc_visit_idoc_includeanatcresponsewiththisrequest",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_includeanatcresponsewiththisrequest",
+        "OptionSetReferenceEntityName": "Visit Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_includeanatcresponsewiththisrequest",
+    "RelatedEntityName": "Visit Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Visit Requests)",
+    "Name": "idoc_visit_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Visit Requests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Visit Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Visit Requests)",
+    "Name": "idoc_visit_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Visit Requests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Visit Requests",
+    "Type": "OptionSetInfo"
+  }
+]

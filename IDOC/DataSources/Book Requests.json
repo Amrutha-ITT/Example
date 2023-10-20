@@ -1,0 +1,179 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_bookrequestses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_bookrequests",
+    "MaxGetRowsCount": 2000,
+    "Name": "Book Requests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestId": "ATC Request Id",
+      "idoc_bookcheckindate": "Book Check In Date",
+      "idoc_bookcheckoutdate": "Book Checkout Date",
+      "idoc_bookdelivertype": "Book Deliver Type",
+      "idoc_bookduedate": "Book Due Date",
+      "idoc_BookId": "Book Id",
+      "idoc_bookrequests_AsyncOperations": "System Jobs",
+      "idoc_bookrequests_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_bookrequests_DuplicateBaseRecord": "Duplicate Records (idoc_bookrequests_DuplicateBaseRecord)",
+      "idoc_bookrequests_DuplicateMatchingRecord": "Duplicate Records (idoc_bookrequests_DuplicateMatchingRecord)",
+      "idoc_bookrequests_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_bookrequests_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_bookrequests_ProcessSession": "Process Sessions",
+      "idoc_bookrequests_SyncErrors": "Sync Errors",
+      "idoc_bookrequestsid": "Book Requests",
+      "idoc_bookreturntype": "Book Return Type",
+      "idoc_bookstatus": "Book Status",
+      "idoc_CheckedOutBy": "Checked Out By",
+      "idoc_deliverydate": "Delivery Date From",
+      "idoc_deliverydateto": "Delivery Date To",
+      "idoc_extendedduedate": "Extended Due Date",
+      "idoc_extensions": "Extensions",
+      "idoc_FacilityID": "Facility ID",
+      "idoc_iswaitlisted": "Is Waitlisted",
+      "idoc_name": "Name",
+      "idoc_returndate": "Return Date From",
+      "idoc_returndateto": "Return Date To",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Book Requests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Book Requests (Views)",
+    "Name": "_idoc_bookrequests_views",
+    "RelatedEntityName": "Book Requests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "20436823-bc21-4b3c-8abc-4fda88fa1a56": "Book Requests Associated View",
+      "378b98f5-4dae-445c-b6cf-68dfa5027cea": "Book Requests Lookup View",
+      "47acef25-2bea-4546-b929-62e317c0945c": "Inactive Book Requests",
+      "772df7c5-7c59-4b77-94f4-fd4b0bf198ee": "Book Requests Advanced Find View",
+      "dc7d0c67-03ac-4cd6-a16f-917cd4516891": "Active Book Requests"
+    }
+  },
+  {
+    "DisplayName": "Book Deliver/Return Type",
+    "Name": "idoc_bookdeliverreturntype",
+    "OptionSetInfoNameMapping": {
+      "926070000": "Call Out Request",
+      "926070001": "Visit Request"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_bookdelivertype",
+        "OptionSetReferenceEntityName": "Book Requests"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "idoc_bookreturntype",
+        "OptionSetReferenceEntityName": "Book Requests"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "idoc_bookdelivertype",
+    "RelatedEntityName": "Book Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Book Status (Book Requests)",
+    "Name": "idoc_bookrequests_idoc_bookstatus",
+    "OptionSetInfoNameMapping": {
+      "926070000": "Checked In",
+      "926070001": "Checked Out",
+      "926070002": "Waitlisted"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_bookstatus",
+        "OptionSetReferenceEntityName": "Book Requests"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "idoc_bookstatus",
+    "RelatedEntityName": "Book Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Waitlisted (Book Requests)",
+    "Name": "idoc_bookrequests_idoc_iswaitlisted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_iswaitlisted",
+        "OptionSetReferenceEntityName": "Book Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_iswaitlisted",
+    "RelatedEntityName": "Book Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Book Requests)",
+    "Name": "idoc_bookrequests_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Book Requests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Book Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Book Requests)",
+    "Name": "idoc_bookrequests_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Book Requests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Book Requests",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_calloutvisitserviceses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_calloutvisitservices",
+    "MaxGetRowsCount": 2000,
+    "Name": "Call Out/Visit Services",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestID": "ATC Request ID",
+      "idoc_CallOutRequestID": "Call Out Request ID",
+      "idoc_CallOutServiceID": "Call Out Service ID",
+      "idoc_calloutvisitservices_AsyncOperations": "System Jobs",
+      "idoc_calloutvisitservices_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_calloutvisitservices_DuplicateBaseRecord": "Duplicate Records (idoc_calloutvisitservices_DuplicateBaseRecord)",
+      "idoc_calloutvisitservices_DuplicateMatchingRecord": "Duplicate Records (idoc_calloutvisitservices_DuplicateMatchingRecord)",
+      "idoc_calloutvisitservices_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_calloutvisitservices_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_calloutvisitservices_ProcessSession": "Process Sessions",
+      "idoc_calloutvisitservices_SyncErrors": "Sync Errors",
+      "idoc_calloutvisitservicesid": "Call Out & Visit Services",
+      "idoc_name": "Type of Service",
+      "idoc_VisitRequestID": "Visit Request ID",
+      "idoc_VisitServiceID": "Visit Service ID",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Call Out/Visit Services",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Call Out/Visit Services (Views)",
+    "Name": "_idoc_calloutvisitservices_views",
+    "RelatedEntityName": "Call Out/Visit Services",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "51e8935b-9c2c-457e-9234-8fc625a84dbb": "Call Out & Visit Services Associated View",
+      "86e27b90-c424-4bbb-85b8-d2e19083e302": "Active Call Out & Visit Services",
+      "9eef1da8-a8c3-4fbf-8dd3-87e9a6b5c454": "Call Out & Visit Services Advanced Find View",
+      "b68d9892-cf90-4194-a261-6355920892f1": "Call Out & Visit Services Lookup View",
+      "e1920b96-4a70-4cc6-9f63-79c123f899df": "Inactive Call Out & Visit Services"
+    }
+  },
+  {
+    "DisplayName": "Status (Call Out/Visit Services)",
+    "Name": "idoc_calloutvisitservices_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Call Out/Visit Services"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Call Out/Visit Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Call Out/Visit Services)",
+    "Name": "idoc_calloutvisitservices_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Call Out/Visit Services"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Call Out/Visit Services",
+    "Type": "OptionSetInfo"
+  }
+]

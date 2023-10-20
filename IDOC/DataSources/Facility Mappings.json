@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_facilitymappings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_facilitymapping",
+    "MaxGetRowsCount": 2000,
+    "Name": "Facility Mappings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_acronymoffacility": "Acronym of Facility",
+      "idoc_facilitymapping_AsyncOperations": "System Jobs",
+      "idoc_facilitymapping_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_facilitymapping_DuplicateBaseRecord": "Duplicate Records (idoc_facilitymapping_DuplicateBaseRecord)",
+      "idoc_facilitymapping_DuplicateMatchingRecord": "Duplicate Records (idoc_facilitymapping_DuplicateMatchingRecord)",
+      "idoc_facilitymapping_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_facilitymapping_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_facilitymapping_ProcessSession": "Process Sessions",
+      "idoc_facilitymapping_SyncErrors": "Sync Errors",
+      "idoc_facilitymappingid": "Facility Mapping",
+      "idoc_idoc_atcrequest_FacilityId_idoc_facilitym": "ATC Requests",
+      "idoc_idoc_bookinventory_FacilityId_idoc_facili": "Book Inventories",
+      "idoc_idoc_bookrequests_FacilityID_idoc_facilit": "Book Requests",
+      "idoc_idoc_notesforfacility_FacilityID_idoc_fac": "Notes For Facilities",
+      "idoc_name": "Facility Name",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Facility Mappings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Facility Mappings (Views)",
+    "Name": "_idoc_facilitymapping_views",
+    "RelatedEntityName": "Facility Mappings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2b078fb9-dc1b-4d70-9697-cfa44e9b22e2": "Active Facility Mappings",
+      "37c69f91-b318-4208-8e16-7c3ff82f4e5e": "Facility Mapping Advanced Find View",
+      "a1770750-ed33-4baf-8298-e7bafb07be0c": "Facility Mapping Associated View",
+      "eb146ec8-e517-4f80-8e9c-160132fda75c": "Facility Mapping Lookup View",
+      "f8bc3055-b678-4c0d-b0ab-e0ea359fc532": "Inactive Facility Mappings"
+    }
+  },
+  {
+    "DisplayName": "Status (Facility Mappings)",
+    "Name": "idoc_facilitymapping_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Facility Mappings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Facility Mappings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Facility Mappings)",
+    "Name": "idoc_facilitymapping_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Facility Mappings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Facility Mappings",
+    "Type": "OptionSetInfo"
+  }
+]

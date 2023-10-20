@@ -1,0 +1,130 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_bookinventories",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_bookinventory",
+    "MaxGetRowsCount": 2000,
+    "Name": "Book Inventories",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "idoc_availablecopies": "Available Copies",
+      "idoc_bookid": "Book Id",
+      "idoc_bookinventory_AsyncOperations": "System Jobs",
+      "idoc_bookinventory_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_bookinventory_DuplicateBaseRecord": "Duplicate Records (idoc_bookinventory_DuplicateBaseRecord)",
+      "idoc_bookinventory_DuplicateMatchingRecord": "Duplicate Records (idoc_bookinventory_DuplicateMatchingRecord)",
+      "idoc_bookinventory_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_bookinventory_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_bookinventory_ProcessSession": "Process Sessions",
+      "idoc_bookinventory_SyncErrors": "Sync Errors",
+      "idoc_bookinventoryid": "Book Inventory",
+      "idoc_bookprice": "Book Price",
+      "idoc_bookprice_base": "Book Price (Base)",
+      "idoc_description": "Description",
+      "idoc_FacilityId": "Facility Id",
+      "idoc_idoc_bookhealthhistory_BookId_idoc_bookin": "Book Health Histories",
+      "idoc_idoc_bookrequests_BookId_idoc_bookinvento": "Book Requests",
+      "idoc_isactive": "Is Active",
+      "idoc_name": "Book Title",
+      "idoc_supplementyear": "Supplement Year",
+      "idoc_volume": "Volume",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Book Inventories",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Book Inventories (Views)",
+    "Name": "_idoc_bookinventory_views",
+    "RelatedEntityName": "Book Inventories",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "277b187e-ea01-4d13-8548-62120a5344db": "Active Book Inventories",
+      "29d8cfa4-da7d-4a0a-b4dd-d8e8e0506033": "Book Inventory Lookup View",
+      "61efbbad-895b-42e8-8136-1d2f54f29c33": "Book Inventory Associated View",
+      "8677e8fd-6929-4367-8608-165c71456566": "Book Inventory Advanced Find View",
+      "91394470-bd93-46d2-a6a9-ee0407932616": "Inactive Book Inventories"
+    }
+  },
+  {
+    "DisplayName": "Is Active (Book Inventories)",
+    "Name": "idoc_bookinventory_idoc_isactive",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_isactive",
+        "OptionSetReferenceEntityName": "Book Inventories"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_isactive",
+    "RelatedEntityName": "Book Inventories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Book Inventories)",
+    "Name": "idoc_bookinventory_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Book Inventories"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Book Inventories",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Book Inventories)",
+    "Name": "idoc_bookinventory_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Book Inventories"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Book Inventories",
+    "Type": "OptionSetInfo"
+  }
+]

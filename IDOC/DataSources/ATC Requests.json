@@ -1,0 +1,184 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_atcrequests",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_atcrequest",
+    "MaxGetRowsCount": 2000,
+    "Name": "ATC Requests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_activity": "Activity",
+      "idoc_atcformnotsubmitted": "ATC form not submitted",
+      "idoc_atcrequest_AsyncOperations": "System Jobs",
+      "idoc_atcrequest_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_atcrequest_DuplicateBaseRecord": "Duplicate Records (idoc_atcrequest_DuplicateBaseRecord)",
+      "idoc_atcrequest_DuplicateMatchingRecord": "Duplicate Records (idoc_atcrequest_DuplicateMatchingRecord)",
+      "idoc_atcrequest_FileAttachments": "FileAttachments",
+      "idoc_atcrequest_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_atcrequest_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_atcrequest_ProcessSession": "Process Sessions",
+      "idoc_atcrequest_SyncErrors": "Sync Errors",
+      "idoc_atcrequestid": "ATC Request",
+      "idoc_datereceivedbyparalegal": "Date Received by Paralegal",
+      "idoc_FacilityId": "Facility Id",
+      "idoc_formstatus": "Form Status",
+      "idoc_idoc_atcattachments_ATCRequestID_idoc_atc": "ATC Attachments",
+      "idoc_idoc_bookrequests_ATCRequestId_idoc_atcre": "Book Requests",
+      "idoc_idoc_callout_ATCRequestId_idoc_atcrequest": "Call Out Requests",
+      "idoc_idoc_calloutvisitservices_ATCRequestID_id": "Call Out and Visit Services",
+      "idoc_idoc_efilerequest_ATCRequestId_idoc_atcre": "E-File Requests",
+      "idoc_idoc_indigentsupplies_ATCRequestId_idoc_a": "Indigent Supplies",
+      "idoc_idoc_otherrequests_ATCRequestID_idoc_atcr": "Other Requests",
+      "idoc_idoc_packetrequests_ATCRequestId_idoc_atc": "Packet Request Details",
+      "idoc_idoc_residentresponse_ATCRequestID_idoc_a": "Resident Responses",
+      "idoc_idoc_visit_ATCRequestId_idoc_atcrequest": "Visit Requests",
+      "idoc_internalnotes": "Internal Notes",
+      "idoc_isresidentusedconcernform": "Is resident used concern form",
+      "idoc_issubmitteddateincorrect": "Is Submitted Date Incorrect",
+      "idoc_LegalMail_idoc_ATCRequest_idoc_ATCRe": "Legal Mails",
+      "idoc_name": "Name",
+      "idoc_ParalegalID": "Paralegal ID",
+      "idoc_RequestCompletedBy": "Request Completed By ",
+      "idoc_ResidentResponseId": "Resident Response Id",
+      "idoc_responsedate": "Response Date",
+      "idoc_RosterId": "Roster Id",
+      "idoc_submitdate": "Submit Date",
+      "idoc_unitnumber": "Unit Number",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "ATC Requests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "ATC Requests (Views)",
+    "Name": "_idoc_atcrequest_views",
+    "RelatedEntityName": "ATC Requests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "295ae367-4b15-4edd-8954-d5d9e3ed5d12": "Active ATC Requests",
+      "37fcd612-f53e-4533-a689-38ecd648fd88": "Inactive ATC Requests",
+      "4d18bc92-3459-4536-b176-e98068ef3c57": "ATC Request Associated View",
+      "b4fb79c1-1596-424f-9911-60b189323aac": "ATC Request Lookup View",
+      "fa212f9c-278b-4442-bb2d-20dce555e18a": "ATC Request Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "ATC form not submitted (ATC Requests)",
+    "Name": "idoc_atcrequest_idoc_atcformnotsubmitted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_atcformnotsubmitted",
+        "OptionSetReferenceEntityName": "ATC Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_atcformnotsubmitted",
+    "RelatedEntityName": "ATC Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is resident used concern form (ATC Requests)",
+    "Name": "idoc_atcrequest_idoc_isresidentusedconcernform",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_isresidentusedconcernform",
+        "OptionSetReferenceEntityName": "ATC Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_isresidentusedconcernform",
+    "RelatedEntityName": "ATC Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Is Submitted Date Incorrect (ATC Requests)",
+    "Name": "idoc_atcrequest_idoc_issubmitteddateincorrect",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_issubmitteddateincorrect",
+        "OptionSetReferenceEntityName": "ATC Requests"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_issubmitteddateincorrect",
+    "RelatedEntityName": "ATC Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (ATC Requests)",
+    "Name": "idoc_atcrequest_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "ATC Requests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "ATC Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (ATC Requests)",
+    "Name": "idoc_atcrequest_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "ATC Requests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "ATC Requests",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_courts",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_court",
+    "MaxGetRowsCount": 2000,
+    "Name": "Courts",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_address2": "Address 2",
+      "idoc_city": "City",
+      "idoc_court_AsyncOperations": "System Jobs",
+      "idoc_court_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_court_DuplicateBaseRecord": "Duplicate Records (idoc_court_DuplicateBaseRecord)",
+      "idoc_court_DuplicateMatchingRecord": "Duplicate Records (idoc_court_DuplicateMatchingRecord)",
+      "idoc_court_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_court_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_court_ProcessSession": "Process Sessions",
+      "idoc_court_SyncErrors": "Sync Errors",
+      "idoc_courtid": "Court",
+      "idoc_idoc_efilerequest_CourtId_idoc_court": "E-File Requests",
+      "idoc_name": "Court Name",
+      "idoc_state": "State",
+      "idoc_zip": "Zip",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Courts",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Courts (Views)",
+    "Name": "_idoc_court_views",
+    "RelatedEntityName": "Courts",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "061dc0fc-1f51-44f2-b9c3-0cafcf578f2d": "Court Advanced Find View",
+      "3912b334-1471-4055-9601-73fa2ed08e75": "Court Lookup View",
+      "4353a65a-fbd8-4d1d-a639-437a8367fc16": "Inactive Courts",
+      "825f135c-0b0d-4505-9d32-a70c3fe66a42": "Active Courts",
+      "ebebf6c3-7195-4e74-8659-e1bd8b0ac3ce": "Court Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Courts)",
+    "Name": "idoc_court_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Courts"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Courts",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Courts)",
+    "Name": "idoc_court_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Courts"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Courts",
+    "Type": "OptionSetInfo"
+  }
+]

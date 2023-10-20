@@ -1,0 +1,1169 @@
+Roster As screen:
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |
+        =If(Roster.Size<3, Set(varShowMenu, true);Set(varShowMenu, false), Set(varShowMenu, true));
+
+    cntMainRoster As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =Parent.Height
+        RadiusTopLeft: =00
+        Width: =Parent.Width
+        ZIndex: =1
+
+        cmpLeftNavRoster As LeftNavigation:
+            ExpandMenu: =If(Roster.Size<3,false,true)
+            HamburgerIconVisibility: |
+                =If(Roster.Size<3,true,false)
+            NavMenu: |-
+                =Table(
+                    {
+                        MenuLabel: "Dashboard",
+                        MenuIcon: 'home Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 1
+                    },
+                    {
+                        MenuLabel: "ATC Request",
+                        MenuIcon: 'ATC Request Img',
+                        MenuScreenNavigate: Home,
+                        MenuID: 2
+                    },
+                    {
+                        MenuLabel: "Activity Log",
+                        MenuIcon: 'Activity Log',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 3
+                    },
+                    {
+                        MenuLabel: "Roster",
+                        MenuIcon: 'Roster Img',
+                        MenuScreenNavigate: Roster,
+                        MenuID: 4
+                    },
+                    {
+                        MenuLabel: "Reports",
+                        MenuIcon: 'Reports Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 5
+                    },
+                    {
+                        MenuLabel: "Mail Logs",
+                        MenuIcon: 'mail Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 6
+                    },
+                    {
+                        MenuLabel: "Books",
+                        MenuIcon: 'books Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 7,
+                        SubMenu: Table(
+                            {
+                                MenuLabel: "Book History",
+                                MenuScreenNavigate: App.ActiveScreen,
+                                MenuID: 7
+                            },
+                            {
+                                MenuLabel: "Book Management",
+                                MenuScreenNavigate: App.ActiveScreen,
+                                MenuID: 7
+                            }
+                        )
+                    },
+                    {
+                        MenuLabel: "Packets",
+                        MenuIcon: 'documents Img',
+                        MenuScreenNavigate:PacketManager,
+                        MenuID: 8
+                    }
+                )
+            ScreenHeight: =App.Height
+            Width: |-
+                =//LeftNavigation.MenuWidth
+                If(App.ActiveScreen.Size <3, cmpLeftNavRoster.MenuWidth, 200)
+            ZIndex: =2
+
+        cmpHeaderRoster As Header:
+            Width: =Parent.Width
+            ZIndex: =3
+
+        cntInsideMainRoster As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            Height: =Parent.Height-cmpHeaderRoster.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingLeft: =25
+            PaddingRight: =25
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: |
+                =If(cmpLeftNavRoster.Width =gvNavBarMinWidth || Roster.Size=2 ||Roster.Size=1, Parent.Width, Parent.Width - cmpLeftNavRoster.Width)
+            X: =If(cmpLeftNavRoster.Width=gvNavBarMinWidth || Roster.Size=2 ||Roster.Size=1, 0, cmpLeftNavRoster.Width)
+            Y: =cmpHeaderRoster.Y+cmpHeaderRoster.Height
+            ZIndex: =4
+
+            cntMainContentRoster As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: |-
+                    =cntTableRoster.Height+cntTableRoster.Y
+                    
+                    //Parent.Height-Container75.Height
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: |
+                    =//If(LeftNavigation_3.Width =gvNavBarMinWidth || Roster.Size=2 ||Roster.Size=1, Parent.Width, Parent.Width - LeftNavigation_3.Width)
+                    
+                    Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                X: =If(cmpLeftNavRoster.Width=gvNavBarMinWidth || Roster.Size=2 ||Roster.Size=1, 0, cmpLeftNavRoster.Width)
+                Y: =cmpHeaderRoster.Y+cmpHeaderRoster.Height
+                ZIndex: =1
+
+                cntHeaderRoster As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =btnAddNewPersonRoster.Height+btnAddNewPersonRoster.Y
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingTop: =20
+                    ZIndex: =1
+
+                    lblHeaderRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        FontWeight: =FontWeight.Bold
+                        PaddingBottom: =0
+                        Size: =AppFonts.titleFontSize
+                        Text: ="Roster"
+                        Width: =400
+                        ZIndex: =1
+
+                    btnAddNewPersonRoster As button:
+                        BorderStyle: =BorderStyle.None
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Fill: =AppColors.Orange
+                        Font: =AppFonts.FontStyle
+                        FontWeight: =FontWeight.Semibold
+                        Height: =35
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =AppColors.Orange
+                        OnSelect: |-
+                            =UpdateContext({lvAddNewPerson:true});
+                            Reset('txtIDOC#Roster');
+                            Reset(txtFirstNameRoster);
+                            Reset(txtLastNameRoster);
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =ColorFade(Self.Fill,50%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AppFonts.subTitleFontSize
+                        Text: ="Add New Person"
+                        Width: =180
+                        ZIndex: =3
+
+                cnt1stSeperatorRoster As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =15
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingTop: =10
+                    ZIndex: =2
+
+                    rct1stSeperatorRoster As rectangle:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Fill: =RGBA(197, 197, 197, 1)
+                        Height: =1
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                cntSearchByRoster As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =70
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =1
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =Parent.Width-(cntDateHome.Width+cntDateHome.X)
+                    ZIndex: =3
+
+                    lblSearchByRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =30
+                        LayoutMinWidth: =100
+                        Size: =AppFonts.fontSize
+                        Text: ="Search By"
+                        ZIndex: =1
+
+                    cntInsideSearchByRoster As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: =Parent.Height-lblSearchByRoster.Height
+                        LayoutMinHeight: =60
+                        LayoutMinWidth: |+
+                            =//If(gvNavBarMinWidth =LeftNavigation_1.MenuWidth, Parent.Width-50,300)
+                            If(ATCRequest.Size=3,Parent.Width-'lblcntMainScreenIDOC#ATCRequest'.Width , Parent.Width-20)
+                            
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width
+                        ZIndex: =4
+
+                        txtSearchByRoster As text:
+                            BorderColor: =AppColors.Grey
+                            Color: =RGBA(0, 0, 0, 1)
+                            Default: =
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            EnableSpellCheck: =true
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.FieldHeight
+                            HintText: ="Search.."
+                            HoverBorderColor: =AppColors.Grey
+                            HoverColor: =RGBA(0, 0, 0, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            PaddingLeft: =35
+                            PressedFill: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =AppFonts.fontSize
+                            Width: =Parent.Width-4
+                            X: =2
+                            Y: =2
+                            ZIndex: =1
+
+                        icnSearchByRoster As icon.Search:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.DarkGray
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =20
+                            Icon: =Icon.Search
+                            Width: =20
+                            X: =txtSearchByRoster.X+8
+                            Y: =txtSearchByRoster.Y+8
+                            ZIndex: =2
+
+                cnt2ndSeperatorRoster As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =20
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =4
+
+                    rct2ndSeperatorRoster As rectangle:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Fill: =RGBA(197, 197, 197, 1)
+                        Height: =1
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                cntTableRoster As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =AppColors.Grey
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    FillPortions: =0
+                    Height: =galRosterContentRoster.Height+galRosterContentRoster.Y
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =2
+                    PaddingRight: =2
+                    PaddingTop: =2
+                    ZIndex: =6
+
+                    cntTableheaderRoster As groupContainer.horizontalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        FillPortions: =0
+                        Height: =50
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight-1
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                        ZIndex: =1
+
+                        cntIDOCNoRoster As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            DropShadow: =DropShadow.Light
+                            FillPortions: =0
+                            Height: =Parent.Height
+                            LayoutMinHeight: =Parent.Height
+                            LayoutMinWidth: =370
+                            RadiusBottomLeft: =
+                            RadiusBottomRight: =
+                            RadiusTopRight: =
+                            Width: =330
+                            ZIndex: =18
+
+                            lblIDOCNoRoster As label:
+                                Align: =Align.Center
+                                BorderColor: =AppColors.Grey
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =1
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =AppColors.LightBlueforHeader
+                                Font: =AppFonts.FontStyle
+                                Height: =Parent.Height
+                                Size: =AppFonts.subTitleFontSize
+                                Text: |-
+                                    ="IDOC #"
+                                Width: =Parent.Width
+                                ZIndex: =3
+
+                            icnDownArrowIDOCNoRoster As icon.ArrowUp:
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =10
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_idocno"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Rotation: =180
+                                Width: =12
+                                X: =Parent.Width*65%
+                                Y: =15
+                                ZIndex: =9
+
+                            icnUpArrowIDOCNoRoster As icon.ArrowUp:
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =10
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn:"idoc_idocno"});Set(gv_SortOrder,SortOrder.Descending);
+                                Width: =12
+                                X: =Parent.Width*65%
+                                Y: =25
+                                ZIndex: =10
+
+                        cntFirstNameHeaderRoster As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            DropShadow: =DropShadow.Light
+                            Height: =Parent.Height
+                            LayoutMinHeight: =Parent.Height
+                            LayoutMinWidth: =310
+                            RadiusBottomLeft: =
+                            RadiusBottomRight: =
+                            RadiusTopRight: =
+                            Width: =370
+                            ZIndex: =19
+
+                            lblFirstNameHeaderRoster As label:
+                                Align: =Align.Center
+                                BorderColor: =AppColors.Grey
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =1
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =AppColors.LightBlueforHeader
+                                Font: =AppFonts.FontStyle
+                                Height: =50
+                                Size: =AppFonts.subTitleFontSize
+                                Text: ="First Name"
+                                Width: =Parent.Width
+                                X: =
+                                ZIndex: =7
+
+                            icnDownArrowFirstNameHeaderRoster As icon.ArrowUp:
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =10
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_name"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Rotation: =180
+                                Width: =12
+                                X: =Parent.Width*65%
+                                Y: =15
+                                ZIndex: =8
+
+                            icnUpArrowFirstNameHeaderRoster As icon.ArrowUp:
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =10
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn:"idoc_name"});Set(gv_SortOrder,SortOrder.Descending);
+                                Width: =12
+                                X: =Parent.Width*65%
+                                Y: =25
+                                ZIndex: =9
+
+                        cntLastNameHeaderRoster As groupContainer.manualLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            DropShadow: =DropShadow.Light
+                            Height: =Parent.Height
+                            LayoutMinHeight: =Parent.Height
+                            LayoutMinWidth: =300
+                            RadiusBottomLeft: =
+                            RadiusBottomRight: =
+                            RadiusTopRight: =
+                            Width: =370
+                            ZIndex: =20
+
+                            lblLastNameHeaderRoster As label:
+                                Align: =Align.Center
+                                BorderColor: =AppColors.Grey
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =1
+                                Color: =RGBA(0, 0, 0, 1)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                Fill: =AppColors.LightBlueforHeader
+                                Font: =AppFonts.FontStyle
+                                Height: =50
+                                Size: =AppFonts.subTitleFontSize
+                                Text: ="Last Name"
+                                Width: =Parent.Width
+                                X: =
+                                ZIndex: =7
+
+                            icnUpArrowLastNameHeaderRoster As icon.ArrowUp:
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =10
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn: "idoc_lastname"});
+                                    Set(gv_SortOrder, SortOrder.Ascending);
+                                Rotation: =180
+                                Width: =12
+                                X: =Parent.Width*65%
+                                Y: =15
+                                ZIndex: =8
+
+                            icnDownArrowLastNameHeaderRoster As icon.ArrowUp:
+                                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                                DisabledColor: =RGBA(244, 244, 244, 1)
+                                Height: =10
+                                Icon: =Icon.ChevronDown
+                                OnSelect: |-
+                                    =UpdateContext({lv_SortColumn:"idoc_lastname"});Set(gv_SortOrder,SortOrder.Descending);
+                                Width: =12
+                                X: =Parent.Width*65%
+                                Y: =25
+                                ZIndex: =9
+
+                    galRosterContentRoster As gallery.galleryVertical:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        DelayItemLoading: =true
+                        FillPortions: =0
+                        Height: =Self.AllItemsCount*Self.TemplateHeight+1
+                        Items: |-
+                            =/*If(
+                                icnRightArrowRoster.DisplayMode = DisplayMode.Disabled,
+                                LastN(
+                                    FirstN(
+                                        CollRosters,
+                                        ddItemsCountRoster.Selected.Value * gvPageNumber
+                                    ),
+                                    ddItemsCountRoster.Selected.Value - (ddItemsCountRoster.Selected.Value * gvPageNumber - CountRows(CollRosters))
+                                ),
+                                LastN(
+                                    FirstN(
+                                        CollRosters,
+                                        ddItemsCountRoster.Selected.Value * gvPageNumber
+                                    ),
+                                    ddItemsCountRoster.Selected.Value
+                                )
+                            ) */
+                             
+                             
+                             If(
+                                icnRightArrowRoster.DisplayMode = DisplayMode.Disabled,
+                                LastN(
+                                    FirstN(
+                                        SortByColumns(
+                                            Filter(
+                                                CollRosters,
+                                                Or(
+                                                    txtSearchByRoster.Text in 'IDOC No',
+                                                    txtSearchByRoster.Text in 'First Name',
+                                                    txtSearchByRoster.Text in 'Last Name'
+                                                )
+                                            ),
+                                            lv_SortColumn,
+                                            gv_SortOrder
+                                        ),
+                                        ddItemsCountRoster.Selected.Value * gvPageNumber
+                                    ),
+                                    ddItemsCountRoster.Selected.Value - (ddItemsCountRoster.Selected.Value * gvPageNumber - CountRows(CollRosters))
+                                ),
+                                LastN(
+                                    FirstN(
+                                        SortByColumns(
+                                            Filter(
+                                                CollRosters,
+                                                Or(
+                                                    txtSearchByRoster.Text in 'IDOC No',
+                                                    txtSearchByRoster.Text in 'First Name',
+                                                    txtSearchByRoster.Text in 'Last Name'
+                                                )
+                                            ),
+                                            lv_SortColumn,
+                                            gv_SortOrder
+                                        ),
+                                        ddItemsCountRoster.Selected.Value * gvPageNumber
+                                    ),
+                                    ddItemsCountRoster.Selected.Value
+                                )
+                            ) 
+                        Layout: =Layout.Vertical
+                        LayoutMinHeight: =287
+                        LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                        LoadingSpinner: =LoadingSpinner.Data
+                        OnSelect: |-
+                            =UpdateContext({lvEditPerson:true});
+                            Set(gvEditPerson, ThisItem)
+                        TemplatePadding: =0
+                        TemplateSize: =40
+                        Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                        ZIndex: =2
+
+                        lblIDOCContentRoster As label:
+                            Align: =Align.Center
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.TemplateHeight
+                            OnSelect: =Select(Parent)
+                            Size: =AppFonts.fontSize
+                            Text: =ThisItem.'IDOC No'
+                            Width: =cntIDOCNoRoster.Width
+                            X: =cntIDOCNoRoster.X
+                            ZIndex: =1
+
+                        lblLastNameContentRoster As label:
+                            Align: =Align.Center
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.TemplateHeight
+                            OnSelect: =Select(Parent)
+                            Size: =AppFonts.fontSize
+                            Text: =ThisItem.'Last Name'
+                            Width: =cntLastNameHeaderRoster.Width
+                            X: =cntLastNameHeaderRoster.X
+                            ZIndex: =2
+
+                        lblFirstNameContentRoster As label:
+                            Align: =Align.Center
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.TemplateHeight
+                            OnSelect: =Select(Parent)
+                            Size: =AppFonts.fontSize
+                            Text: =ThisItem.'First Name'
+                            Width: =cntFirstNameHeaderRoster.Width
+                            X: =cntFirstNameHeaderRoster.X
+                            ZIndex: =3
+
+                        btnRosterContentButton As button:
+                            Color: =RGBA(0, 0, 0, 0)
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            Fill: =RGBA(0, 0, 0, 0)
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.TemplateHeight
+                            HoverBorderColor: =
+                            HoverColor: =RGBA(0, 0, 0, 0)
+                            HoverFill: =
+                            OnSelect: =Select(Parent)
+                            PressedBorderColor: =
+                            PressedColor: =
+                            PressedFill: =
+                            Size: =15
+                            Text: =""
+                            Width: =Parent.Width-2
+                            ZIndex: =4
+
+            cntFooterRoster As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =70
+                LayoutAlignItems: =LayoutAlignItems.End
+                LayoutMinHeight: =70
+                LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =010
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =2
+
+                cnt1stFooterRoster As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =37
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutMinHeight: =050
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =(Parent.Width-Parent.PaddingLeft-Parent.PaddingRight)/2
+                    ZIndex: =2
+
+                    lblItemsPerPageRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =35
+                        Size: =AppFonts.fontSize
+                        Text: ="Items per page"
+                        Width: =130
+                        X: =20
+                        Y: =16
+                        ZIndex: =1
+
+                    ddItemsCountRoster As dropdown:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                        ChevronFill: =AppColors.DarkGray
+                        ChevronHoverBackground: =
+                        ChevronHoverFill: =AppColors.DarkGray
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        Height: =35
+                        HoverBorderColor: =
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        Items: =[5,10,15]
+                        OnChange: =Set(gvPageNumber, 1)
+                        PressedColor: =AppColors.DarkGray
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(205, 209, 213, 1)
+                        Size: =AppFonts.fontSize
+                        Width: =65
+                        X: =141
+                        Y: =16
+                        ZIndex: =2
+
+                    lblCountofItemsRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =35
+                        PaddingLeft: =10
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            =If
+                            (
+                                gvPageNumber > 0,
+                            
+                                (ddItemsCountRoster.Selected.Value * (gvPageNumber - 1)) + 1 & " - " & ddItemsCountRoster.Selected.Value * gvPageNumber & " of " &         CountRows(Filter(
+                                                CollRosters,
+                                                Or(
+                                                    txtSearchByRoster.Text in 'IDOC No',
+                                                    txtSearchByRoster.Text in 'First Name',
+                                                    txtSearchByRoster.Text in 'Last Name'
+                                                )
+                                            )) & " items "
+                            )
+                        Width: =200
+                        X: =252
+                        Y: =16
+                        ZIndex: =3
+
+                cntArrowsRoster As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =37
+                    LayoutAlignItems: =LayoutAlignItems.End
+                    LayoutGap: =15
+                    LayoutJustifyContent: =LayoutJustifyContent.End
+                    LayoutMinHeight: =50
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =(Parent.Width-Parent.PaddingLeft-Parent.PaddingRight)/2-20
+                    ZIndex: =3
+
+                    icnLeftArrowRoster As icon.ChevronLeft:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =If(gvPageNumber =1, DisplayMode.Disabled, DisplayMode.Edit)
+                        Height: =Parent.Height
+                        Icon: =Icon.ChevronLeft
+                        OnSelect: =Set(gvPageNumber, gvPageNumber-1)
+                        Width: =25
+                        X: =Parent.Width-icnRightArrowRoster.Width-60
+                        Y: =16
+                        ZIndex: =1
+
+                    icnRightArrowRoster As icon.ArrowRight:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(32, 54, 71, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        DisplayMode: |-
+                            =If(ddItemsCountRoster.Selected.Value * gvPageNumber <= CountRows(Filter(
+                                                CollRosters,
+                                                Or(
+                                                    txtSearchByRoster.Text in 'IDOC No',
+                                                    txtSearchByRoster.Text in 'First Name',
+                                                    txtSearchByRoster.Text in 'Last Name'
+                                                )
+                                            )), DisplayMode.Edit, DisplayMode.Disabled)
+                        Height: =Parent.Height
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Set(gvPageNumber, gvPageNumber+1)
+                        Width: =25
+                        X: =Parent.Width-Self.Width-20
+                        Y: =16
+                        ZIndex: =2
+
+    cntPopupGrayOutRoster As groupContainer.verticalAutoLayoutContainer:
+        Fill: =AppColors.GrayOut
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Visible: =lvAddNewPerson=true || lvEditPerson=true
+        Width: =Parent.Width
+        ZIndex: =2
+
+        cntAddNewPersonPopupRoster As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =cntAddNewPersonButtonsRoster.Height+cntAddNewPersonButtonsRoster.Y
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =04
+            RadiusBottomRight: =04
+            RadiusTopLeft: =04
+            RadiusTopRight: =04
+            Width: =600
+            ZIndex: =1
+
+            lblAddNewPersonHeaderRoster As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(32, 54, 71, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(255, 223, 182, 1)
+                Font: =AppFonts.FontStyle
+                FontWeight: =FontWeight.Bold
+                Height: =50
+                Size: =AppFonts.subTitleFontSize
+                Text: =If(lvEditPerson=true, "Edit Person Details","Add New Person")
+                Width: =Parent.Width
+                ZIndex: =1
+
+            cntAddNewPersonFieldsRoster As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =cntLastNameRoster.Height+cntLastNameRoster.Y
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =20
+                PaddingRight: =20
+                PaddingTop: =30
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =Parent.Width
+                ZIndex: =2
+
+                "'cntIDOC#Roster' As groupContainer.verticalAutoLayoutContainer":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =90
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =10
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =(Parent.Width-Parent.PaddingLeft-Parent.PaddingRight)/3
+                    ZIndex: =1
+
+                    "'lblIDOC#Roster' As label":
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            ="IDOC #:"
+                        ZIndex: =1
+
+                    "'txtIDOC#Roster' As text":
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =2
+                        Color: =RGBA(0, 0, 0, 1)
+                        Default: =If(lvEditPerson=true, gvEditPerson.idoc_idocno,"")
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =2
+                        Font: =AppFonts.FontStyle
+                        Format: =TextFormat.Number
+                        Height: =AppFonts.FieldHeight
+                        HoverBorderColor: =AppColors.Grey
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AppFonts.fontSize
+                        Width: =170
+                        ZIndex: =2
+
+                    "'lblErrorMessageIDOC#Roster' As label":
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Red
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =AppFonts.lblHeightForErrorMessage
+                        PaddingLeft: =0
+                        Size: =AppFonts.fontSizeForErrorMessage
+                        Text: |-
+                            =If(IsBlank('txtIDOC#Roster'.Text),"IDOC # is required" , "Enter a valid IDOC #")
+                        Visible: |-
+                            =If(IsBlank('txtIDOC#Roster'.Text), lvMandatoryAddNewPerson,If(!IsMatch('txtIDOC#Roster'.Text,"[0-9]+"),true, false))
+                        Width: =Parent.Width-Parent.PaddingLeft
+                        ZIndex: =3
+
+                cntFirstNameRoster As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =90
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =10
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =(Parent.Width-Parent.PaddingLeft-Parent.PaddingRight)/3
+                    ZIndex: =2
+
+                    lblFirstNameRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            ="First Name:"
+                        ZIndex: =1
+
+                    txtFirstNameRoster As text:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =2
+                        Color: =RGBA(0, 0, 0, 1)
+                        Default: =If(lvEditPerson=true, gvEditPerson.idoc_name,"")
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =2
+                        Font: =AppFonts.FontStyle
+                        Height: =AppFonts.FieldHeight
+                        HoverBorderColor: =AppColors.Grey
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AppFonts.fontSize
+                        Width: =170
+                        ZIndex: =2
+
+                    lblErrorMessageFirstNameRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Red
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =AppFonts.lblHeightForErrorMessage
+                        PaddingLeft: =0
+                        Size: =AppFonts.fontSizeForErrorMessage
+                        Text: =If(IsBlank(txtFirstNameRoster.Text),"First Name is required","Enter a valid First Name")
+                        Visible: |-
+                            =
+                            If(IsBlank(txtFirstNameRoster.Text), lvMandatoryAddNewPerson)
+                            //If(IsBlank(TextInput7_4.Text), lvMandatoryAddNewPerson, If(!IsMatch(TextInput7_4.Text,"^[A-Za-z.,\- ]*$"),true))
+                            
+                            //single space
+                            //If(IsBlank(txtFirstNameATCRequesttxtFirstNameATCRequest.Text), lvMandatoryAddNewPerson, If(!IsMatch(txtFirstNameATCRequesttxtFirstNameATCRequest.Text,"^[A-Za-z.,\-]+( [A-Za-z.,\-]+)*$"),true))
+                        Width: =Parent.Width-Parent.PaddingLeft
+                        ZIndex: =3
+
+                cntLastNameRoster As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =100
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =10
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =(Parent.Width-Parent.PaddingLeft-Parent.PaddingRight)/3
+                    ZIndex: =3
+
+                    lblLastNameRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            ="Last Name:"
+                        ZIndex: =1
+
+                    txtLastNameRoster As text:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =2
+                        Color: =RGBA(0, 0, 0, 1)
+                        Default: =If(lvEditPerson=true, gvEditPerson.idoc_lastname,"")
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =2
+                        Font: =AppFonts.FontStyle
+                        Height: =AppFonts.FieldHeight
+                        HoverBorderColor: =AppColors.Grey
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AppFonts.fontSize
+                        Width: =170
+                        ZIndex: =2
+
+                    lblErrorMessageLastNameRoster As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =AppColors.Red
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =AppFonts.lblHeightForErrorMessage
+                        PaddingLeft: =0
+                        Size: =AppFonts.fontSizeForErrorMessage
+                        Text: ="Enter a valid Last Name"
+                        Visible: |-
+                            =false
+                            
+                            //If(IsBlank(TextInput7_5.Text),false,  If(!IsMatch(TextInput7_5.Text,"^[A-Za-z.,\- ]*$"),true))
+                            
+                            //single space
+                            //If(IsBlank(txtFirstNameATCRequesttxtFirstNameATCRequest.Text), lvMandatoryAddNewPerson, If(!IsMatch(txtFirstNameATCRequesttxtFirstNameATCRequest.Text,"^[A-Za-z.,\-]+( [A-Za-z.,\-]+)*$"),true))
+                        Width: =Parent.Width-Parent.PaddingLeft
+                        ZIndex: =3
+
+            cntAddNewPersonButtonsRoster As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =80
+                LayoutGap: =20
+                LayoutJustifyContent: =LayoutJustifyContent.End
+                LayoutMinHeight: =100
+                LayoutMinWidth: =Parent.Width
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =20
+                PaddingRight: =28
+                PaddingTop: =20
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =Parent.Width
+                ZIndex: =3
+
+                btnCancelRoster As button:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =1
+                    Font: =AppFonts.FontStyle
+                    FontWeight: =FontWeight.Semibold
+                    Height: =AppFonts.FieldHeight
+                    HoverColor: =RGBA(0, 0, 0, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    OnSelect: |+
+                        =UpdateContext({lvAddNewPerson:false}); UpdateContext({lvEditPerson:false});UpdateContext({lvMandatoryAddNewPerson:false});
+                        
+                    PressedColor: =ColorFade(RGBA(0,0,0,1),50%)
+                    PressedFill: =ColorFade(RGBA(255,255,255,1),-5%)
+                    RadiusBottomLeft: =
+                    RadiusBottomRight: =
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =
+                    Size: =AppFonts.fontSize
+                    Text: ="Cancel"
+                    Width: =90
+                    ZIndex: =1
+
+                btnAddtoRosterRoster As button:
+                    BorderStyle: =BorderStyle.None
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(255, 255, 255, 1)
+                    DisabledFill: =RGBA(199, 127, 127, 0.84)
+                    Fill: =AppColors.Orange
+                    Font: =AppFonts.FontStyle
+                    FontWeight: =FontWeight.Semibold
+                    Height: =AppFonts.FieldHeight
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =AppColors.Orange
+                    OnSelect: |
+                        =If(!IsBlank('txtIDOC#Roster'.Text) && !IsBlank(txtFirstNameRoster.Text) &&
+                          If(IsMatch('txtIDOC#Roster'.Text,"[0-9]+"),true) , 
+                            If(
+                                lvAddNewPerson = true,
+                                Patch(
+                                    Rosters,
+                                    Defaults(Rosters),
+                                    {
+                                        'IDOC No': Value('txtIDOC#Roster'.Text),
+                                        'First Name': txtFirstNameRoster.Text,
+                                        'Last Name': txtLastNameRoster.Text
+                                    }
+                                );
+                                Notify(
+                                    "Person Added Successfully",
+                                    NotificationType.Success
+                                ),
+                                Patch(
+                                    Rosters,
+                                    LookUp(
+                                        Rosters,
+                                        Roster= gvEditPerson.Roster
+                                    ),
+                                    {
+                                        'IDOC No': Value('txtIDOC#Roster'.Text),
+                                        'First Name': txtFirstNameRoster.Text,
+                                        'Last Name': txtLastNameRoster.Text
+                                    }
+                                );
+                                Notify(
+                                    "Person Edited Successfully",
+                                    NotificationType.Success
+                                )
+                            );
+                            
+                            UpdateContext({lvAddNewPerson: false});
+                            UpdateContext({lvEditPerson: false});
+                            ClearCollect(
+                                CollRosters,
+                                Rosters
+                            );
+                            ,
+                            UpdateContext({lvMandatoryAddNewPerson: true})
+                        );
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =ColorFade(AppColors.Orange,50%)
+                    RadiusBottomLeft: =
+                    RadiusBottomRight: =
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =
+                    Size: =AppFonts.fontSize
+                    Text: =  If(lvAddNewPerson=true,"Add to Roster","Update Roster")
+                    Width: =150
+                    ZIndex: =2
+

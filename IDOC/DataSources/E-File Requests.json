@@ -1,0 +1,105 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_efilerequests",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_efilerequest",
+    "MaxGetRowsCount": 2000,
+    "Name": "E-File Requests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestId": "ATC Request Id",
+      "idoc_CourtId": "Court Id",
+      "idoc_description": "Description",
+      "idoc_efiledon": "E Filed On",
+      "idoc_efilerequest": "E-File Request ID",
+      "idoc_efilerequest_AsyncOperations": "System Jobs",
+      "idoc_efilerequest_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_efilerequest_DuplicateBaseRecord": "Duplicate Records (idoc_efilerequest_DuplicateBaseRecord)",
+      "idoc_efilerequest_DuplicateMatchingRecord": "Duplicate Records (idoc_efilerequest_DuplicateMatchingRecord)",
+      "idoc_efilerequest_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_efilerequest_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_efilerequest_ProcessSession": "Process Sessions",
+      "idoc_efilerequest_SyncErrors": "Sync Errors",
+      "idoc_efilerequestid": "E-File Request",
+      "idoc_filereceivedondate": "File Received On Date",
+      "idoc_name": "Case Number",
+      "idoc_temporarycourtname": "Temporary Court Name",
+      "idoc_typeoffiling": "Type Of Filing",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "E-File Requests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "E-File Requests (Views)",
+    "Name": "_idoc_efilerequest_views",
+    "RelatedEntityName": "E-File Requests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "060c32f6-b3af-4d98-9fc3-5da5d760e5ca": "Inactive E-File Requests",
+      "8a16366e-1988-4ca0-9a6a-d18366850d39": "E-File Request Lookup View",
+      "967851a1-15a0-47b0-87c3-d00700f722f8": "E-File Request Associated View",
+      "b945f44b-0311-4ea1-bf50-97ab34852e56": "E-File Request Advanced Find View",
+      "c119519d-267e-4677-b538-513591f581c0": "Active E-File Requests"
+    }
+  },
+  {
+    "DisplayName": "Status (E-File Requests)",
+    "Name": "idoc_efilerequest_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "E-File Requests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "E-File Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (E-File Requests)",
+    "Name": "idoc_efilerequest_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "E-File Requests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "E-File Requests",
+    "Type": "OptionSetInfo"
+  }
+]

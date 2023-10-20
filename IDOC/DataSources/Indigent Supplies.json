@@ -1,0 +1,125 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_indigentsupplieses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_indigentsupplies",
+    "MaxGetRowsCount": 2000,
+    "Name": "Indigent Supplies",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestId": "ATC Request Id",
+      "idoc_attachment": "Attachment",
+      "idoc_description": "Description",
+      "idoc_indigentsupplies_Annotations": "Notes",
+      "idoc_indigentsupplies_AsyncOperations": "System Jobs",
+      "idoc_indigentsupplies_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_indigentsupplies_DuplicateBaseRecord": "Duplicate Records (idoc_indigentsupplies_DuplicateBaseRecord)",
+      "idoc_indigentsupplies_DuplicateMatchingRecord": "Duplicate Records (idoc_indigentsupplies_DuplicateMatchingRecord)",
+      "idoc_indigentsupplies_FileAttachments": "FileAttachments",
+      "idoc_indigentsupplies_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_indigentsupplies_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_indigentsupplies_ProcessSession": "Process Sessions",
+      "idoc_indigentsupplies_SyncErrors": "Sync Errors",
+      "idoc_indigentsuppliesid": "Indigent Supplies",
+      "idoc_isthispersonindigent": "Is this Person Indigent?",
+      "idoc_name": "Name",
+      "idoc_supplytype": "Supply Type",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Indigent Supplies",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Indigent Supplies (Views)",
+    "Name": "_idoc_indigentsupplies_views",
+    "RelatedEntityName": "Indigent Supplies",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0b2ff649-4e2c-45b5-8661-ba4a9eeaa51e": "Indigent Supplies Lookup View",
+      "115fb816-f036-4a0a-98be-861ad6a65147": "Indigent Supplies Advanced Find View",
+      "2adeeb4d-274e-4a42-ab3b-93c7aee6e357": "Active Indigent Supplies",
+      "409f9ff1-cc99-411f-9005-dd00e8d61427": "Inactive Indigent Supplies",
+      "44aff579-f792-4959-8a9d-cd2a12808254": "Indigent Supplies Associated View"
+    }
+  },
+  {
+    "DisplayName": "Is this Person Indigent? (Indigent Supplies)",
+    "Name": "idoc_indigentsupplies_idoc_isthispersonindigent",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_isthispersonindigent",
+        "OptionSetReferenceEntityName": "Indigent Supplies"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_isthispersonindigent",
+    "RelatedEntityName": "Indigent Supplies",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Indigent Supplies)",
+    "Name": "idoc_indigentsupplies_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Indigent Supplies"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Indigent Supplies",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Indigent Supplies)",
+    "Name": "idoc_indigentsupplies_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Indigent Supplies"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Indigent Supplies",
+    "Type": "OptionSetInfo"
+  }
+]

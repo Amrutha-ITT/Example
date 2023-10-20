@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_atcattachmentses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_atcattachments",
+    "MaxGetRowsCount": 2000,
+    "Name": "ATC Attachments",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_atcattachments_AsyncOperations": "System Jobs",
+      "idoc_atcattachments_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_atcattachments_DuplicateBaseRecord": "Duplicate Records (idoc_atcattachments_DuplicateBaseRecord)",
+      "idoc_atcattachments_DuplicateMatchingRecord": "Duplicate Records (idoc_atcattachments_DuplicateMatchingRecord)",
+      "idoc_atcattachments_FileAttachments": "FileAttachments",
+      "idoc_atcattachments_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_atcattachments_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_atcattachments_ProcessSession": "Process Sessions",
+      "idoc_atcattachments_SyncErrors": "Sync Errors",
+      "idoc_atcattachmentsid": "ATC Attachments",
+      "idoc_ATCRequestID": "ATC Request ID",
+      "idoc_content": "Content",
+      "idoc_name": "Name",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "ATC Attachments",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "ATC Attachments (Views)",
+    "Name": "_idoc_atcattachments_views",
+    "RelatedEntityName": "ATC Attachments",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "198aa818-453b-43d6-8fe9-7ff13fa662ab": "ATC Attachments Advanced Find View",
+      "30d2362f-a335-4b4f-8ae2-7ebafe20d8a1": "Active ATC Attachments",
+      "6094f244-5467-4e12-872e-7cd9030c9def": "ATC Attachments Associated View",
+      "89a7906e-ddc1-46c3-8f42-5f76abdefe88": "Inactive ATC Attachments",
+      "a6fa33ab-4f85-42d9-a551-cb61759ccbd0": "ATC Attachments Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (ATC Attachments)",
+    "Name": "idoc_atcattachments_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "ATC Attachments"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "ATC Attachments",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (ATC Attachments)",
+    "Name": "idoc_atcattachments_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "ATC Attachments"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "ATC Attachments",
+    "Type": "OptionSetInfo"
+  }
+]

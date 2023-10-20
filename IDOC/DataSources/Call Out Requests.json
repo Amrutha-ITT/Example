@@ -1,0 +1,103 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_callouts",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_callout",
+    "MaxGetRowsCount": 2000,
+    "Name": "Call Out Requests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestId": "ATC Request Id",
+      "idoc_callout_AsyncOperations": "System Jobs",
+      "idoc_callout_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_callout_DuplicateBaseRecord": "Duplicate Records (idoc_callout_DuplicateBaseRecord)",
+      "idoc_callout_DuplicateMatchingRecord": "Duplicate Records (idoc_callout_DuplicateMatchingRecord)",
+      "idoc_callout_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_callout_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_callout_ProcessSession": "Process Sessions",
+      "idoc_callout_SyncErrors": "Sync Errors",
+      "idoc_calloutid": "Call Out",
+      "idoc_CallOutTypeOfService": "CallOut Type Of  Service",
+      "idoc_idoc_callouts_CallOutRequestID_idoc_callo": "Call Outs",
+      "idoc_idoc_calloutvisitservices_CallOutRequestI": "Call Out and Visit Services",
+      "idoc_name": "Name",
+      "idoc_servicefromdate": "Service From Date",
+      "idoc_servicetodate": "Service To Date",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Call Out Requests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Call Out Requests (Views)",
+    "Name": "_idoc_callout_views",
+    "RelatedEntityName": "Call Out Requests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "69599511-c809-40e0-bc1f-2a40e102d15d": "Call Out Lookup View",
+      "8dc6cec0-201d-4ef4-ba82-1b04e15bac3c": "Call Out Associated View",
+      "93661a39-034d-4fdd-8ba9-cb62d538e016": "Active Call Outs",
+      "9bc6c6c3-0aa5-4fbb-9a00-6fc4cd6ecbdd": "Call Out Advanced Find View",
+      "e2ac369f-a73f-470f-8b5e-2ba320177e56": "Inactive Call Outs"
+    }
+  },
+  {
+    "DisplayName": "Status (Call Out Requests)",
+    "Name": "idoc_callout_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Call Out Requests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Call Out Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Call Out Requests)",
+    "Name": "idoc_callout_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Call Out Requests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Call Out Requests",
+    "Type": "OptionSetInfo"
+  }
+]

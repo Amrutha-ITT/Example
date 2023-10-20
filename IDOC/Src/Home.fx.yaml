@@ -1,0 +1,1763 @@
+Home As screen:
+    Height: |+
+        =Max(App.Height, App.MinScreenHeight)
+        
+        //If(Self.Printing, Gallery5.TemplateHeight * Gallery5.AllItemsCount + Gallery5.Y, Max(App.Height, App.MinScreenHeight))
+        
+        
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |+
+        =If(Home.Size<3, Set(varShowMenu, true);Set(varShowMenu, false), Set(varShowMenu, true));
+        
+        Set(gvPageNumber, 1)
+        
+
+    cntMainHome As groupContainer.manualLayoutContainer:
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =4
+
+        cntMainContentHome As groupContainer.verticalAutoLayoutContainer:
+            Height: =Parent.Height-cmpHeaderATCRequest.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingLeft: =25
+            PaddingRight: =25
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: |
+                =If(cmpLeftNavigationHome.Width =gvNavBarMinWidth || ATCRequest.Size=2 ||ATCRequest.Size=1, Parent.Width, Parent.Width - cmpLeftNavigationHome.Width)
+            X: =If(cmpLeftNavigationHome.Width=gvNavBarMinWidth || ATCRequest.Size=2 ||ATCRequest.Size=1, 0, cmpLeftNavigationHome.Width)
+            Y: =cmpHeaderATCRequest.Y+cmpHeaderATCRequest.Height
+            ZIndex: =1
+
+            "'cntATCLabel&CreateNewATCButtonHome' As groupContainer.horizontalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =btnCreateNewATCHome.Height+btnCreateNewATCHome.Y
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =100
+                LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                LayoutMode: =LayoutMode.Auto
+                PaddingTop: =20
+                ZIndex: =1
+
+                lblATCRequestHome As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Font: =AppFonts.FontStyle
+                    FontWeight: =FontWeight.Bold
+                    PaddingBottom: =0
+                    Size: =AppFonts.titleFontSize
+                    Text: ="Access To Court History"
+                    Width: =400
+                    ZIndex: =1
+
+                btnCreateNewATCHome As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderThickness: =1
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    Fill: =AppColors.Orange
+                    FocusedBorderThickness: =1
+                    Font: =AppFonts.FontStyle
+                    FontWeight: =FontWeight.Semibold
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =Self.Fill
+                    OnSelect: |+
+                        =
+                        Set(
+                            gvTabSelected,
+                            1
+                        );
+                        
+                        
+                        Set(
+                            gvNewATCRequest,
+                            true
+                        );
+                        Navigate(ATCRequest);
+                        Set(
+                            gvNewRecord,
+                            Blank()
+                        );
+                        
+                        
+                        
+                        //Packets
+                        
+                        
+                        
+                        ClearCollect(collPackets,  Filter(Packets, Status= 'Status (Packets)'.Active));
+                        
+                        //ATC Request
+                        Reset('cmbMainScreenIDOC#ATCRequest');
+                        Reset(txtMainScreenFirstNameATCRequest);
+                        Reset(txtMainScreenLastNameATCRequest);
+                        Reset(txtMainScreenUnitNumberATCRequest);
+                        Reset(txtMainScreenLastNameATCRequest);
+                        Reset(cbxFacilityATCRequest);
+                        Reset(txtMainScreenFirstNameATCRequest);
+                        Reset(dateSubmitDateATCRequest);
+                        Reset(dateResposnseDateATCRequest);
+                        Reset(dateDateReceivedbyParalegalATCRequest);
+                        Reset(dateSubmitDateATCRequest);
+                        Reset('cmbMainScreenIDOC#ATCRequest');
+                        Reset(ddServiceDateToCallOutATCRequest);
+                        Reset(dateServiceDateCallOutATCRequest);
+                        Reset(ddServiceDateFromCallOutATCRequest);
+                        Reset(cbxSubmitDateATCRequest);
+                        Reset(cbxConcerFormUsedATCRequest);
+                        Reset(cbxATCFormNotSubmittedATCRequest);
+                        Reset(cbxRequestCompletedByATCRequest);
+                        Reset(ATCAttachmentATCRequest);
+                        Reset(rteATCMessageATCRequest);
+                        
+                        
+                        
+                        
+                        //Indegient Supply 
+                        Reset(rdoOptionsIsPersonIndigentATCRequest);
+                        Reset(txtDescriptionATCRequest);
+                        Reset(AttachmentATCRequest);
+                        
+                        
+                        //Call Out Request
+                        Reset(ddServiceDateToCallOutATCRequest);
+                        Reset(ddServiceDateFromCallOutATCRequest);
+                        Reset(dateServiceDateCallOutATCRequest);
+                        //ForAll(Gallery4_2.AllItems, Patch(collCallOutServices, LookUp(collCallOutServices,'Callout Service ID'=Gallery4_2.Selected.'Callout Service ID'),{'Service Name':false}));
+                        Clear(collCallOutServices);
+                        ClearCollect(
+                            collCallOutServices,
+                            'Call Out Type of Services'
+                        );
+                        
+                        
+                        //Visit Request 
+                        Reset(dateServiceDateVisitATCRequest);
+                        Reset(rdoIncludeATCResponseVisitATCRequest);
+                        Reset(ddServiceDateFromATCRequest);
+                        Reset(ddServiceDateToATCRequest);
+                        Clear(collVisitServices);
+                        ClearCollect(
+                            collVisitServices,
+                            'Visit Type of Services'
+                        );
+                        
+                        
+                        //Legal Mail
+                        Reset(dateMailSentOnATCRequest);
+                        Reset(dateReceivedOnATCRequest);
+                        Reset(txtCaseNumberATCRequest);
+                        Reset(txtTypeOfMailATCRequest);
+                        Reset(cmbRegisteredAddressATCRequest);
+                        Reset(txtRegisteredAddressATCRequest);
+                        Reset(cbxRegisteredAddressATCRequest);
+                        
+                        
+                        //E-File Request
+                        Reset(txtTypeOfFilingATCRequest);
+                        Reset(txtCaseNumberEFileATCRequest);
+                        Reset(dateFilingReceivedOnATCRequest);
+                        Reset(dateEFiledOnATCRequest);
+                        Reset(cmbCourtATCRequest);
+                        Reset(txtCourtATCRequest);
+                        Reset(txtEFileDescriptionATCRequest);
+                        Reset(cbxCourtATCRequest);
+                        
+                        
+                        //Other
+                        Reset(txtDescriptionOtherATCRequest);
+                        Reset(dateDenailDateOtherATCRequest);
+                        Reset(dateRequestDateOtherATCRequest);
+                        
+                        
+                        Reset(cbxPrintAlsoATCRequest);
+                        Reset(rteATCMessageATCRequest);
+                        
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =ColorFade(Self.Fill,15%)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =AppFonts.fontSize
+                    Text: ="Create New ATC"
+                    Width: =155
+                    ZIndex: =2
+
+            cnt1stSeperatorHome As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =20
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                LayoutMode: =LayoutMode.Auto
+                PaddingTop: =10
+                ZIndex: =2
+
+                rctSeperatorHome As rectangle:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Fill: =RGBA(197, 197, 197, 1)
+                    Height: =1
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+            cntFieldsHome As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =cntSearchByHome.Height+cntSearchByHome.Y
+                LayoutMinHeight: =100
+                LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =3
+
+                cntIDOCParalegalDateContainerHome As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =cntDateHome.Height+cntDateHome.Y
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =Parent.Width/2+250
+                    ZIndex: =1
+
+                    "'cntIDOC#Home' As groupContainer.verticalAutoLayoutContainer":
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: =110
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =90
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =1
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width/4
+                        ZIndex: =1
+
+                        "'lblIDOC#Home' As label":
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Size: =AppFonts.fontSize
+                            Text: |-
+                                ="IDOC #"
+                            ZIndex: =1
+
+                        "'cmbIDOC#Home' As combobox":
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            ChevronBackground: =RGBA(0, 0, 0, 0)
+                            ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                            ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                            ChevronFill: =AppColors.DarkGray
+                            ChevronHoverBackground: =
+                            ChevronHoverFill: =AppColors.DarkGray
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            DisplayFields: =["idoc_idocno"]
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.FieldHeight
+                            HoverBorderColor: |
+                                =ColorFade(Self.BorderColor, 15%)
+                            HoverColor: =RGBA(0, 0, 0, 1)
+                            HoverFill: =RGBA(205, 209, 213, 1)
+                            InputTextPlaceholder: |-
+                                ="Select IDOC #"
+                            Items: =CollRosters
+                            LayoutMinWidth: =500
+                            PressedColor: =AppColors.DarkGray
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            SearchFields: =["idoc_idocno"]
+                            SearchItems: |-
+                                =Search(CollRosters,'cmbIDOC#Home'.SearchText,"idoc_idocno")
+                            SelectionColor: =RGBA(0, 0, 0, 1)
+                            SelectionFill: =RGBA(255, 255, 255, 1)
+                            Size: =AppFonts.fontSize
+                            Width: =Parent.Width-25
+                            X: =40
+                            Y: =40
+                            ZIndex: =2
+
+                        "'lblErrorMessageIDOC#Home' As label":
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Red
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.lblHeightForErrorMessage
+                            Size: =AppFonts.fontSizeForErrorMessage
+                            Text: |
+                                =
+                                    If(
+                                        !('cmbIDOC#Home'.SearchText in 'cmbIDOC#Home'.Selected.'First Name'),
+                                        "Result Not Found"
+                                    )
+                            Visible: |-
+                                =//If(IsBlank(cbxFacilityATCRequest.Selected.Name), lvMandatoryField)
+                                
+                                If(
+                                    IsBlank('cmbIDOC#Home'.Selected.'First Name') && IsBlank('cmbIDOC#Home'.SearchText),
+                                    false,
+                                    If(
+                                        'cmbIDOC#Home'.SearchText in 'cmbIDOC#Home'.Selected.'First Name',
+                                        false,
+                                        true
+                                    )
+                                )
+                            Width: =250
+                            ZIndex: =3
+
+                    cntParalegalHome As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: =110
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =90
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =1
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width/4
+                        ZIndex: =2
+
+                        lblParalegalHome As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Size: =AppFonts.fontSize
+                            Text: ="Paralegal"
+                            ZIndex: =1
+
+                        cmbParalegalHome As combobox:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            ChevronBackground: =RGBA(0, 0, 0, 0)
+                            ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                            ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                            ChevronFill: =AppColors.DarkGray
+                            ChevronHoverBackground: =
+                            ChevronHoverFill: =AppColors.DarkGray
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            DisplayFields: =["idoc_name"]
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.FieldHeight
+                            HoverColor: =RGBA(0, 0, 0, 1)
+                            HoverFill: =RGBA(205, 209, 213, 1)
+                            InputTextPlaceholder: ="Select Paralegal"
+                            Items: =collParalegal
+                            LayoutMinWidth: =500
+                            PressedColor: =AppColors.DarkGray
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            SearchFields: =["idoc_name"]
+                            SearchItems: =Search(collParalegal,cmbParalegalHome.SearchText,"idoc_name")
+                            SelectionColor: =RGBA(0, 0, 0, 1)
+                            SelectionFill: =RGBA(255, 255, 255, 1)
+                            Size: =AppFonts.fontSize
+                            Width: =Parent.Width-25
+                            X: =40
+                            Y: =40
+                            ZIndex: =2
+
+                        lblErrorMessageParalegalHome As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Red
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.lblHeightForErrorMessage
+                            Size: =AppFonts.fontSizeForErrorMessage
+                            Text: |
+                                =
+                                    If(
+                                        !(cmbParalegalHome.SearchText in cmbParalegalHome.Selected.'Paralegal Name'),
+                                        "Result Not Found"
+                                    )
+                            Visible: |-
+                                =//If(IsBlank(cbxFacilityATCRequest.Selected.Name), lvMandatoryField)
+                                
+                                If(
+                                    IsBlank(cmbParalegalHome.Selected.'Paralegal Name') && IsBlank(cmbParalegalHome.SearchText),
+                                   false,
+                                    If(
+                                        cmbParalegalHome.SearchText in cmbParalegalHome.Selected.'Paralegal Name',
+                                        false,
+                                        true
+                                    )
+                                )
+                            Width: =250
+                            ZIndex: =3
+
+                    cntDateHome As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: =110
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =90
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =1
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width/4
+                        ZIndex: =3
+
+                        lblFromDateHome As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Size: =AppFonts.fontSize
+                            Text: ="From Date"
+                            ZIndex: =1
+
+                        dateFromDateHome As datepicker:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DefaultDate: =
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.FieldHeight
+                            HoverDateFill: =RGBA(205, 209, 213, 1)
+                            IconBackground: =RGBA(255, 255, 255, 1)
+                            IconFill: =AppColors.DarkGray
+                            InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), "MM/DD/YYYY")
+                            SelectedDateFill: =RGBA(100, 118, 132, 1)
+                            Size: =AppFonts.fontSize
+                            Width: =Parent.Width-25
+                            ZIndex: =2
+
+                        lblErrorMessageFromDateHome As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Red
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.lblHeightForErrorMessage+5
+                            Size: =AppFonts.fontSizeForErrorMessage
+                            Text: =If(!IsBlank(dateToDateHome.SelectedDate) && IsBlank(dateFromDateHome.SelectedDate),"Provide From Date")
+                            Visible: =If(IsBlank(dateFromDateHome.SelectedDate) && !IsBlank(dateToDateHome.SelectedDate), true, false)
+                            Width: =Parent.Width
+                            ZIndex: =3
+
+                    cntToDateHome As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: =110
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =90
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =1
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width/4
+                        ZIndex: =4
+
+                        lblToDateHome As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Size: =AppFonts.fontSize
+                            Text: ="To Date"
+                            ZIndex: =1
+
+                        dateToDateHome As datepicker:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                            Color: =RGBA(0, 0, 0, 1)
+                            DefaultDate: =
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.FieldHeight
+                            HoverDateFill: =RGBA(205, 209, 213, 1)
+                            IconBackground: =RGBA(255, 255, 255, 1)
+                            IconFill: =AppColors.DarkGray
+                            InputTextPlaceholder: =If(IsBlank(Self.SelectedDate),"MM/DD/YYYY")
+                            Reset: =true
+                            SelectedDateFill: =RGBA(100, 118, 132, 1)
+                            Size: =AppFonts.fontSize
+                            Width: =Parent.Width-25
+                            ZIndex: =2
+
+                        lblErrorMessageToDateHome As label:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.Red
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.lblHeightForErrorMessage+5
+                            Size: =AppFonts.fontSizeForErrorMessage
+                            Text: =If((dateToDateHome.SelectedDate < dateFromDateHome.SelectedDate && !IsBlank(dateToDateHome.SelectedDate)),"From Date should be greater than To Date" ,If(IsBlank(dateToDateHome.SelectedDate),"Provide To Date"))
+                            Visible: =If((dateToDateHome.SelectedDate < dateFromDateHome.SelectedDate && !IsBlank(dateToDateHome.SelectedDate)) || (IsBlank(dateToDateHome.SelectedDate) && !IsBlank(dateFromDateHome.SelectedDate)), true, false)
+                            Width: =Parent.Width
+                            ZIndex: =3
+
+                cntSearchByHome As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: |-
+                        =If('lblErrorMessageIDOC#Home'.Visible=true ||lblErrorMessageParalegalHome.Visible=true ||lblErrorMessageToDateHome.Visible=true || lblErrorMessageFromDateHome.Visible=true,110, 90)
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =1
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: |-
+                        =//Parent.Width-(Container63.Width+Container63.X)
+                        
+                        Parent.Width/2-250
+                    ZIndex: =5
+
+                    lblSearchByHome As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =38
+                        LayoutMinWidth: =100
+                        Size: =AppFonts.fontSize
+                        Text: ="Search By"
+                        ZIndex: =1
+
+                    cntSearchByTextInputHome As groupContainer.manualLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        FillPortions: =0
+                        Height: =Parent.Height-lblSearchByHome.Height
+                        LayoutMinHeight: =60
+                        LayoutMinWidth: |+
+                            =//If(gvNavBarMinWidth =LeftNavigation_1.MenuWidth, Parent.Width-50,300)
+                            If(ATCRequest.Size=3,Parent.Width-'lblcntMainScreenIDOC#ATCRequest'.Width , Parent.Width-20)
+                            
+                        RadiusBottomLeft: =4
+                        RadiusBottomRight: =4
+                        RadiusTopLeft: =4
+                        RadiusTopRight: =4
+                        Width: =Parent.Width
+                        ZIndex: =4
+
+                        txtSearchByHome As text:
+                            BorderColor: =AppColors.Grey
+                            Color: =RGBA(0, 0, 0, 1)
+                            Default: =
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            DisabledFill: =RGBA(244, 244, 244, 1)
+                            EnableSpellCheck: =true
+                            FocusedBorderThickness: =1
+                            Font: =AppFonts.FontStyle
+                            Height: =AppFonts.FieldHeight
+                            HintText: ="Search.."
+                            HoverBorderColor: =AppColors.Grey
+                            HoverColor: =RGBA(0, 0, 0, 1)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            PaddingLeft: =35
+                            PressedFill: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Size: =AppFonts.fontSize
+                            Width: =Parent.Width-5
+                            X: =2
+                            Y: =2
+                            ZIndex: =1
+
+                        icnSearchHome As icon.Search:
+                            BorderColor: =RGBA(32, 54, 71, 1)
+                            Color: =AppColors.DarkGray
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =20
+                            Icon: =Icon.Search
+                            Width: =20
+                            X: =txtSearchByHome.X+8
+                            Y: =txtSearchByHome.Y+8
+                            ZIndex: =2
+
+            cnt2ndSeperatorHome As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.Start
+                FillPortions: =0
+                Height: =15
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =4
+
+                rct2ndSeperatorHome As rectangle:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Fill: =RGBA(197, 197, 197, 1)
+                    Height: =1
+                    LayoutMinHeight: =1
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+            "'cntGallery&HeaderHome' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                FillPortions: =0
+                Height: =galATCLogsHome.Height+galATCLogsHome.Y
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =1
+                PaddingRight: =2
+                PaddingTop: =2
+                ZIndex: =5
+
+                cntATCHeaderHome As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =AppColors.Grey
+                    BorderThickness: =1
+                    FillPortions: =0
+                    Height: =50
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                    ZIndex: =1
+
+                    cntDateHeaderHome As groupContainer.manualLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        Fill: =
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =Parent.Width
+                        Width: =100
+                        ZIndex: =18
+
+                        lblHeaderDateHome As label:
+                            BorderColor: =AppColors.Grey
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Date"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        icnDownArrowDateHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "createdon"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =Parent.Width*60%
+                            Y: =25
+                            ZIndex: =2
+
+                        icnUpArrowDateHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "createdon"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =Parent.Width*60%
+                            Y: =15
+                            ZIndex: =3
+
+                    "'cntIDOC#HeaderHome' As groupContainer.manualLayoutContainer":
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        FillPortions: =0
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =250
+                        Width: =100
+                        ZIndex: =19
+
+                        "'lblHeaderIDOC#Home' As label":
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: |-
+                                ="IDOC #"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        "'icnDownArrowIDOC#Home' As icon.ArrowUp":
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "IDOC #"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =Parent.Width*75%
+                            Y: =25
+                            ZIndex: =2
+
+                        "'icnUpArrowIDOC#Home' As icon.ArrowUp":
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "IDOC #"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =Parent.Width*75%
+                            Y: =15
+                            ZIndex: =3
+
+                    cntFirstNameHeaderHome As groupContainer.manualLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        FillPortions: =0
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =250
+                        Width: =130
+                        ZIndex: =20
+
+                        lblHeaderFirstNameHome As label:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="First Name"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        icnDownArrowFirstNameHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "FirstName"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =Parent.Width*80%
+                            Y: =25
+                            ZIndex: =2
+
+                        icnUpArrowFirstNameHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "FirstName"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =Parent.Width*80%
+                            Y: =15
+                            ZIndex: =3
+
+                    cntLastNameHeaderHome As groupContainer.manualLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        FillPortions: =0
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =250
+                        Width: =130
+                        ZIndex: =21
+
+                        lblHeaderLastNameHome As label:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Last Name"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        icnDownArrowLastNameHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "LastName"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =Parent.Width*80%
+                            Y: =25
+                            ZIndex: =2
+
+                        icnUpArrowLastNameHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "LastName"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =Parent.Width*80%
+                            Y: =15
+                            ZIndex: =3
+
+                    cntFacilityHeaderHome As groupContainer.manualLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        FillPortions: =0
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =250
+                        Width: =115
+                        ZIndex: =22
+
+                        lblHeaderFacilityHome As label:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Facility"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        icnDownArrowFacilityHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "Facility"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =Parent.Width*65%
+                            Y: =25
+                            ZIndex: =2
+
+                        icnUpArrowFacilityHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "Facility"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =Parent.Width*65%
+                            Y: =15
+                            ZIndex: =3
+
+                    cntActivityHeaderHome As groupContainer.manualLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =145
+                        Width: =200
+                        ZIndex: =23
+
+                        lblHeaderActivityHome As label:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Activity"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        icnDownArrowActivityHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "idoc_activity"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =80
+                            Y: =25
+                            ZIndex: =2
+
+                        icnUpArrowActivityHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "idoc_activity"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =80
+                            Y: =15
+                            ZIndex: =3
+
+                    cntParalegalHeaderHome As groupContainer.manualLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        FillPortions: =0
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =250
+                        Width: =130
+                        ZIndex: =24
+
+                        lblHeaderParalegalHome As label:
+                            BorderColor: =AppColors.Grey
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Paralegal"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        icnDownArrowParalegalHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "Paralegal"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =Parent.Width*70%
+                            Y: =25
+                            ZIndex: =2
+
+                        icnUpArrowParalegalHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "Paralegal"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =Parent.Width*70%
+                            Y: =15
+                            ZIndex: =3
+
+                    cntStatusHeaderHome As groupContainer.manualLayoutContainer:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        FillPortions: =0
+                        LayoutMinHeight: =Parent.Height
+                        LayoutMinWidth: =250
+                        Width: =100
+                        ZIndex: =25
+
+                        lblHeaderStatusHome As label:
+                            BorderColor: =AppColors.Grey
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =1
+                            Color: =RGBA(0, 0, 0, 1)
+                            DisabledColor: =RGBA(166, 166, 166, 1)
+                            Fill: =AppColors.LightBlueforHeader
+                            Font: =AppFonts.FontStyle
+                            Height: =Parent.Height
+                            Size: =AppFonts.subTitleFontSize
+                            Text: ="Status"
+                            Width: =Parent.Width
+                            ZIndex: =1
+
+                        icnDownArrowStatusHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "idoc_formstatus"});
+                                Set(gv_SortOrder, SortOrder.Descending);
+                            Width: =10
+                            X: =Parent.Width*70%
+                            Y: =25
+                            ZIndex: =2
+
+                        icnUpArrowStatusHome As icon.ArrowUp:
+                            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                            DisabledColor: =RGBA(244, 244, 244, 1)
+                            Height: =10
+                            Icon: =Icon.ChevronDown
+                            OnSelect: |-
+                                =UpdateContext({lv_SortColumn: "idoc_formstatus"});
+                                Set(gv_SortOrder, SortOrder.Ascending);
+                            Rotation: =180
+                            Width: =10
+                            X: =Parent.Width*70%
+                            Y: =15
+                            ZIndex: =3
+
+                galATCLogsHome As gallery.variableTemplateHeightGallery:
+                    AlignInContainer: =AlignInContainer.Start
+                    BorderColor: =AppColors.Grey
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Default: |
+                        =If(ddRowsPerPageHome.Selected.Value * gvPageNumber <= CountRows(galATCLogsHome.AllItems),Last(galATCLogsHome.AllItems))
+                    DelayItemLoading: =true
+                    FillPortions: =0
+                    Height: =Sum(Self.AllItems, Label15.Text)
+                    Items: |+
+                        =/*
+                        If(
+                            icnRightArrowHome.DisplayMode = DisplayMode.Disabled,
+                            LastN(
+                                FirstN(
+                                    collATCRequest,
+                                    ddRowsPerPageHome.Selected.Value * gvPageNumber
+                                ),
+                                ddRowsPerPageHome.Selected.Value - (ddRowsPerPageHome.Selected.Value * gvPageNumber - CountRows(collATCRequest))
+                            ),
+                            LastN(
+                                FirstN(
+                                    collATCRequest,
+                                    ddRowsPerPageHome.Selected.Value * gvPageNumber
+                                ),
+                                ddRowsPerPageHome.Selected.Value
+                            )
+                        )*/
+                        
+                        
+                        If(
+                            icnRightArrowHome.DisplayMode = DisplayMode.Disabled,
+                            LastN(
+                                FirstN(
+                                    SortByColumns(
+                                        AddColumns(
+                                            Filter(
+                                                collATCRequest,
+                                                Or(
+                                                    IsBlank('cmbIDOC#Home'.Selected.'IDOC No'),
+                                                    IsEmpty('cmbIDOC#Home'.SelectedItems),
+                                                    'Roster Id'.'IDOC No' = 'cmbIDOC#Home'.Selected.'IDOC No'
+                                                ),
+                                                Or(
+                                                    IsBlank(cmbParalegalHome.Selected.'Paralegal Name'),
+                                                    IsEmpty(cmbParalegalHome.SelectedItems),
+                                                    'Paralegal ID'.'Paralegal Name' in cmbParalegalHome.Selected.'Paralegal Name'
+                                                ),
+                                                Or(
+                                                    IsBlank(dateFromDateHome.SelectedDate),
+                                                    DateValue('Created On') >= dateFromDateHome.SelectedDate
+                                                ),
+                                                Or(
+                                                    IsBlank(dateToDateHome.SelectedDate),
+                                                    DateValue('Created On') <= dateToDateHome.SelectedDate
+                                                ),
+                                                Or(
+                                                    txtSearchByHome.Text in 'Roster Id'.'IDOC No',
+                                                    txtSearchByHome.Text in DateValue('Created On'),
+                                                    txtSearchByHome.Text in 'Roster Id'.'First Name',
+                                                    txtSearchByHome.Text in 'Roster Id'.'Last Name',
+                                                    txtSearchByHome.Text in 'Facility Id'.'Facility Name',
+                                                    txtSearchByHome.Text in Activity,
+                                                    txtSearchByHome.Text in 'Paralegal ID'.'Paralegal Name',
+                                                    txtSearchByHome.Text in Name
+                        
+                                                )
+                                            ),
+                                            
+                                            "IDOC #",
+                                            'Roster Id'.'IDOC No',
+                                            "FirstName",
+                                            'Roster Id'.'First Name',
+                                            "LastName",
+                                            'Roster Id'.'Last Name',
+                                            "Facility",
+                                            'Facility Id'.'Facility Name',
+                                            "Paralegal",
+                                            'Paralegal ID'.'Paralegal Name'
+                            
+                                        ),
+                                        lv_SortColumn,
+                                        gv_SortOrder
+                                    ),
+                                    ddRowsPerPageHome.Selected.Value * gvPageNumber
+                                ),
+                                ddRowsPerPageHome.Selected.Value - (ddRowsPerPageHome.Selected.Value * gvPageNumber - CountRows(collATCRequest))
+                            ),
+                            LastN(
+                                FirstN(
+                                    SortByColumns(
+                                        AddColumns(
+                                            Filter(
+                                    collATCRequest,
+                                    Or(
+                                                    IsBlank('cmbIDOC#Home'.Selected.'IDOC No'),
+                                                    IsEmpty('cmbIDOC#Home'.SelectedItems),
+                                                    'Roster Id'.'IDOC No' in 'cmbIDOC#Home'.Selected.'IDOC No'
+                                                ),
+                                                Or(
+                                                    IsBlank(cmbParalegalHome.Selected.'Paralegal Name'),
+                                                    IsEmpty(cmbParalegalHome.SelectedItems),
+                                                    'Paralegal ID'.'Paralegal Name' in cmbParalegalHome.Selected.'Paralegal Name'
+                                                ),
+                                                Or(
+                                                    IsBlank(dateFromDateHome.SelectedDate),
+                                                    DateValue('Created On') >= dateFromDateHome.SelectedDate
+                                                ),
+                                                Or(
+                                                    IsBlank(dateToDateHome.SelectedDate),
+                                                    DateValue('Created On') <= dateToDateHome.SelectedDate
+                                                ),
+                                                Or(
+                                                    txtSearchByHome.Text in 'Roster Id'.'IDOC No',
+                                                    txtSearchByHome.Text in DateValue('Created On'),
+                                                    txtSearchByHome.Text in 'Roster Id'.'First Name',
+                                                    txtSearchByHome.Text in 'Roster Id'.'Last Name',
+                                                    txtSearchByHome.Text in 'Facility Id'.'Facility Name',
+                                                    txtSearchByHome.Text in Activity,
+                                                    txtSearchByHome.Text in 'Paralegal ID'.'Paralegal Name',
+                                                    txtSearchByHome.Text in Name
+                                                )
+                                            ),
+                                            
+                                            "IDOC #",
+                                            'Roster Id'.'IDOC No',
+                                            "FirstName",
+                                            'Roster Id'.'First Name',
+                                            "LastName",
+                                            'Roster Id'.'Last Name',
+                                            "Facility",
+                                            'Facility Id'.'Facility Name',
+                                            "Paralegal",
+                                            'Paralegal ID'.'Paralegal Name'
+                                        ),
+                                        lv_SortColumn,
+                                        gv_SortOrder
+                                    ),
+                                    ddRowsPerPageHome.Selected.Value * gvPageNumber
+                                ),
+                                ddRowsPerPageHome.Selected.Value
+                            )
+                        ) 
+                        
+                        /*
+                        If(
+                            icnRightArrowHome.DisplayMode = DisplayMode.Disabled,
+                            LastN(
+                                FirstN(
+                                    collATCRequest,
+                                    ddRowsPerPageHome.Selected.Value * gvPageNumber
+                                ),
+                                ddRowsPerPageHome.Selected.Value - (ddRowsPerPageHome.Selected.Value * gvPageNumber - CountRows(collATCRequest))
+                            ),
+                            LastN(
+                                FirstN(
+                                    collATCRequest,
+                                    ddRowsPerPageHome.Selected.Value * gvPageNumber
+                                ),
+                                ddRowsPerPageHome.Selected.Value
+                            )
+                        )
+                        
+                        */
+                        
+                        
+                        
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: |
+                        =Self.AllItemsCount*Self.TemplateHeight
+                    LayoutMinWidth: =Parent.Width-3
+                    LoadingSpinner: =LoadingSpinner.Data
+                    OnSelect: |
+                        =Set(gvEditATCRequest,ThisItem); Navigate(ATCRequest);Set(gvNewATCRequest,false);
+                        /*ClearCollect(
+                            collPackets,
+                            Packets
+                        );*/
+                        Set(gvNewATCRequest,false)
+                    TemplateFill: =//If(ThisItem.IsSelected, RGBA(265,1,1,1),  RGBA(0, 0, 0, 0))
+                    TemplatePadding: =0
+                    TemplateSize: =50
+                    Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight+1
+                    ZIndex: =2
+
+                    lblContentDateHome As label:
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.TemplateHeight
+                        OnSelect: =Select(Parent)
+                        Size: =AppFonts.fontSize
+                        Text: |
+                            =//DateValue(ThisItem.'Created On')
+                            ThisItem.'Created On'
+                        Width: =lblHeaderDateHome.Width
+                        ZIndex: =2
+
+                    "'lblContentIDOC#Home' As label":
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.TemplateHeight
+                        OnSelect: =Select(Parent)
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Roster Id'.'IDOC No'
+                        Width: |-
+                            ='cntIDOC#HeaderHome'.Width
+                        X: |-
+                            ='cntIDOC#HeaderHome'.X
+                        ZIndex: =3
+
+                    lblContentFirstNameHome As label:
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.TemplateHeight
+                        OnSelect: =Select(Parent)
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Roster Id'.'First Name'
+                        Width: =cntFirstNameHeaderHome.Width
+                        X: =cntFirstNameHeaderHome.X
+                        ZIndex: =4
+
+                    lblContentLastNameHome As label:
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.TemplateHeight
+                        OnSelect: =Select(Parent)
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Roster Id'.'Last Name'
+                        Width: =cntLastNameHeaderHome.Width
+                        X: =cntLastNameHeaderHome.X
+                        ZIndex: =5
+
+                    lblContentFacilityHome As label:
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.TemplateHeight
+                        OnSelect: =Select(Parent)
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Facility Id'.'Facility Name'
+                        Width: =cntFacilityHeaderHome.Width
+                        X: =cntFacilityHeaderHome.X
+                        ZIndex: =6
+
+                    lblContentActivityStatusHome As label:
+                        AutoHeight: |-
+                            =//If(IsBlank(ThisItem.Activity),  false, true)
+                            true
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =
+                        LineHeight: =1.3
+                        OnSelect: =Select(Parent)
+                        Overflow: =Overflow.Scroll
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.Activity
+                        Width: =cntActivityHeaderHome.Width
+                        X: =cntActivityHeaderHome.X
+                        ZIndex: =7
+
+                    lblContentParalegalStatusHome As label:
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.TemplateHeight
+                        OnSelect: =Select(Parent)
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            =//ThisItem.'Request Completed By '.'Paralegal Name'
+                            
+                            ThisItem.'Paralegal ID'.'Paralegal Name'
+                        Width: =cntParalegalHeaderHome.Width
+                        X: =cntParalegalHeaderHome.X
+                        ZIndex: =8
+
+                    lblContentStatusHome As label:
+                        BorderColor: =AppColors.Grey
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =Parent.TemplateHeight
+                        OnSelect: =Select(Parent)
+                        Size: =AppFonts.fontSize
+                        Text: =ThisItem.'Form Status'
+                        Width: =cntStatusHeaderHome.Width
+                        X: =cntStatusHeaderHome.X
+                        ZIndex: =9
+
+                    rctHorizontalSeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.Width
+                        Y: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        ZIndex: =12
+
+                    Label15 As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Height: =34
+                        OnSelect: =Select(Parent)
+                        Size: =13
+                        Text: =rctHorizontalSeperatorHome.Height+rctHorizontalSeperatorHome.Y+1
+                        Visible: =false
+                        Width: =94
+                        X: =460
+                        Y: =8
+                        ZIndex: =13
+
+                    rct1SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        Y: =
+                        ZIndex: =14
+
+                    rct2SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: =cntDateHeaderHome.X+cntDateHeaderHome.Width
+                        ZIndex: =15
+
+                    rct3SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: |-
+                            ='cntIDOC#HeaderHome'.X+ 'cntIDOC#HeaderHome'.Width
+                        ZIndex: =16
+
+                    rct4SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: =cntFirstNameHeaderHome.X+cntFirstNameHeaderHome.Width
+                        Y: =
+                        ZIndex: =17
+
+                    rct5SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: =cntLastNameHeaderHome.Width+cntLastNameHeaderHome.X
+                        ZIndex: =18
+
+                    rct6SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: =cntFacilityHeaderHome.Width+cntFacilityHeaderHome.X
+                        ZIndex: =19
+
+                    rct7SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: =cntActivityHeaderHome.Width+cntActivityHeaderHome.X
+                        ZIndex: =20
+
+                    rct8SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: =cntParalegalHeaderHome.Width+cntParalegalHeaderHome.X
+                        ZIndex: =21
+
+                    rct9SeperatorHome As rectangle:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        Fill: =AppColors.Grey
+                        Height: =Max(Parent.TemplateHeight-1,lblContentActivityStatusHome.Y+lblContentActivityStatusHome.Height+10)
+                        OnSelect: =Select(Parent)
+                        Width: =1
+                        X: =lblContentStatusHome.X+lblContentStatusHome.Width
+                        ZIndex: =22
+
+                    btnATCLogsHome As button:
+                        BorderColor: =
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FontWeight: =FontWeight.Semibold
+                        Height: =rctHorizontalSeperatorHome.Height+rctHorizontalSeperatorHome.Y
+                        HoverBorderColor: =
+                        HoverColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =
+                        OnSelect: =Select(Parent)
+                        PressedBorderColor: =
+                        PressedColor: =
+                        PressedFill: =
+                        Size: =15
+                        Text: =""
+                        Width: =Parent.Width
+                        ZIndex: =23
+
+            cntFooterHome As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Height: =70
+                LayoutAlignItems: =LayoutAlignItems.End
+                LayoutMinHeight: =70
+                LayoutMinWidth: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =6
+
+                "'cntInsideFooterHome-1' As groupContainer.horizontalAutoLayoutContainer":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =37
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =Parent.Width/2
+                    ZIndex: =2
+
+                    lblRowsPerPageHome As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =35
+                        PaddingBottom: =0
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            ="Items per page:"
+                        Width: =130
+                        X: =20
+                        Y: =16
+                        ZIndex: =1
+
+                    ddRowsPerPageHome As dropdown:
+                        BorderColor: =AppColors.Grey
+                        BorderThickness: =1
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(166, 166, 166, 1)
+                        ChevronDisabledFill: =RGBA(244, 244, 244, 1)
+                        ChevronFill: =AppColors.DarkGray
+                        ChevronHoverBackground: =
+                        ChevronHoverFill: =AppColors.DarkGray
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        FocusedBorderThickness: =1
+                        Font: =AppFonts.FontStyle
+                        Height: =35
+                        HoverBorderColor: =
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        Items: =[5,10,15]
+                        OnChange: =Set(gvPageNumber, 1)
+                        PressedColor: =AppColors.DarkGray
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =RGBA(205, 209, 213, 1)
+                        Size: =AppFonts.fontSize
+                        Width: =65
+                        X: =141
+                        Y: =16
+                        ZIndex: =2
+
+                    lblItemsRangeHome As label:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        Font: =AppFonts.FontStyle
+                        Height: =35
+                        PaddingBottom: =0
+                        PaddingLeft: =10
+                        Size: =AppFonts.fontSize
+                        Text: |-
+                            =If (
+                                gvPageNumber > 0,
+                                (ddRowsPerPageHome.Selected.Value * (gvPageNumber - 1)) + 1 & " - " & ddRowsPerPageHome.Selected.Value * gvPageNumber & " of " & CountRows(Filter(
+                                                    collATCRequest,
+                                                    Or(
+                                                        IsBlank('cmbIDOC#Home'.Selected.'IDOC No'),
+                                                        IsEmpty('cmbIDOC#Home'.SelectedItems),
+                                                        'Roster Id'.'IDOC No' = 'cmbIDOC#Home'.Selected.'IDOC No'
+                                                    ),
+                                                    Or(
+                                                        IsBlank(cmbParalegalHome.Selected.'Paralegal Name'),
+                                                        IsEmpty(cmbParalegalHome.SelectedItems),
+                                                        'Paralegal ID'.'Paralegal Name' in cmbParalegalHome.Selected.'Paralegal Name'
+                                                    ),
+                                                    Or(
+                                                        IsBlank(dateFromDateHome.SelectedDate),
+                                                        DateValue('Created On') >= dateFromDateHome.SelectedDate
+                                                    ),
+                                                    Or(
+                                                        IsBlank(dateToDateHome.SelectedDate),
+                                                        DateValue('Created On') <= dateToDateHome.SelectedDate
+                                                    ),
+                                                    Or(
+                                                        txtSearchByHome.Text in 'Roster Id'.'IDOC No',
+                                                        txtSearchByHome.Text in DateValue('Created On'),
+                                                        txtSearchByHome.Text in 'Roster Id'.'First Name',
+                                                        txtSearchByHome.Text in 'Roster Id'.'Last Name',
+                                                        txtSearchByHome.Text in 'Facility Id'.'Facility Name',
+                                                        txtSearchByHome.Text in Activity,
+                                                        txtSearchByHome.Text in 'Paralegal ID'.'Paralegal Name',
+                                                        txtSearchByHome.Text in Name
+                            
+                                                    )
+                                                )) & " items "
+                            )
+                        Width: =300
+                        X: =252
+                        Y: =16
+                        ZIndex: =3
+
+                "'cntInsideFooterHome-2' As groupContainer.horizontalAutoLayoutContainer":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =37
+                    LayoutGap: =15
+                    LayoutJustifyContent: =LayoutJustifyContent.End
+                    LayoutMinHeight: =30
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Width: =Parent.Width/2
+                    ZIndex: =3
+
+                    icnLeftArrowHome As icon.ChevronLeft:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =If(gvPageNumber =1, DisplayMode.Disabled, DisplayMode.Edit)
+                        Height: =Parent.Height
+                        Icon: =Icon.ChevronLeft
+                        OnSelect: =Set(gvPageNumber, gvPageNumber-1)
+                        Width: =25
+                        X: =Parent.Width-icnRightArrowHome.Width-60
+                        Y: =16
+                        ZIndex: =1
+
+                    icnRightArrowHome As icon.ArrowRight:
+                        BorderColor: =RGBA(32, 54, 71, 1)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =1
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledColor: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =If(ddRowsPerPageHome.Selected.Value * gvPageNumber <= CountRows(collATCRequest), DisplayMode.Edit, DisplayMode.Disabled)
+                        Height: =Parent.Height
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Set(gvPageNumber, gvPageNumber+1)
+                        Width: =25
+                        X: =Parent.Width-Self.Width-20
+                        Y: =16
+                        ZIndex: =2
+
+        cntHeaderHome As Header:
+            Width: =Parent.Width
+            ZIndex: =2
+
+        cmpLeftNavigationHome As LeftNavigation:
+            ExpandMenu: =If(Home.Size<3,false,true)
+            HamburgerIconVisibility: |
+                =If(Home.Size<3,true,false)
+            NavMenu: |-
+                =Table(
+                    {
+                        MenuLabel: "Dashboard",
+                        MenuIcon: 'home Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 1
+                    },
+                    {
+                        MenuLabel: "ATC Request",
+                        MenuIcon: 'ATC Request Img',
+                        MenuScreenNavigate: Home,
+                        MenuID: 2
+                    },
+                    {
+                        MenuLabel: "Activity Log",
+                        MenuIcon: 'Activity Log',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 3
+                    },
+                    {
+                        MenuLabel: "Roster",
+                        MenuIcon: 'Roster Img',
+                        MenuScreenNavigate: Roster,
+                        MenuID: 4
+                    },
+                    {
+                        MenuLabel: "Reports",
+                        MenuIcon: 'Reports Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 5
+                    },
+                    {
+                        MenuLabel: "Mail Logs",
+                        MenuIcon: 'mail Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 6
+                    },
+                    {
+                        MenuLabel: "Books",
+                        MenuIcon: 'books Img',
+                        MenuScreenNavigate: App.ActiveScreen,
+                        MenuID: 7,
+                        SubMenu: Table(
+                            {
+                                MenuLabel: "Book History",
+                                MenuScreenNavigate: App.ActiveScreen,
+                                MenuID: 7
+                            },
+                            {
+                                MenuLabel: "Book Management",
+                                MenuScreenNavigate: App.ActiveScreen,
+                                MenuID: 7
+                            }
+                        )
+                    },
+                    {
+                        MenuLabel: "Packets",
+                        MenuIcon: 'documents Img',
+                        MenuScreenNavigate:PacketManager,
+                        MenuID: 8
+                    }
+                )
+            ScreenHeight: =App.Height
+            Width: |+
+                =If(Home.Size>=3,200, cmpLeftNavigationHome.MenuWidth)
+                
+            ZIndex: =3
+
