@@ -114,13 +114,13 @@
     "Id": "d51eaca6-89d6-4bf3-851a-319f354a9a2e",
     "InstrumentationKey": "",
     "ManualOfflineProfileId": "",
-    "Name": "IDOC - copy",
+    "Name": "Application ATC - copy",
     "OriginatingVersion": "1.334",
     "ParserErrorCount": 3,
     "ShowStatusBar": false
   },
   "PublishInfo": {
-    "AppName": "IDOC - copy",
+    "AppName": "Application ATC - copy",
     "BackgroundColor": "RGBA(0,176,240,1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "Edit",
