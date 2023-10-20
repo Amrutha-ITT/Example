@@ -1,0 +1,121 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_packetses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_packets",
+    "MaxGetRowsCount": 2000,
+    "Name": "Packets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_idoc_packetrequests_PacketID_idoc_packets": "Packet Request Details",
+      "idoc_isactive": "Is Active",
+      "idoc_name": "Packet Name",
+      "idoc_packetfile": "Packet File",
+      "idoc_packets_AsyncOperations": "System Jobs",
+      "idoc_packets_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_packets_DuplicateBaseRecord": "Duplicate Records (idoc_packets_DuplicateBaseRecord)",
+      "idoc_packets_DuplicateMatchingRecord": "Duplicate Records (idoc_packets_DuplicateMatchingRecord)",
+      "idoc_packets_FileAttachments": "FileAttachments",
+      "idoc_packets_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_packets_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_packets_ProcessSession": "Process Sessions",
+      "idoc_packets_SyncErrors": "Sync Errors",
+      "idoc_packetsid": "Packets",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Packets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Packets (Views)",
+    "Name": "_idoc_packets_views",
+    "RelatedEntityName": "Packets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "016c165a-116f-4ec4-ba63-654461746ff3": "Inactive Packets",
+      "5881c26d-a311-487d-baae-13c427bf26f8": "Packets Associated View",
+      "a4a60c5b-2a8a-48ff-a58f-14cae20ca30f": "Active Packets",
+      "c1315aed-d932-44ce-856a-5322031d1e91": "Packets Lookup View",
+      "e6ac98d8-98a6-4c28-a06e-77db3134e972": "Packets Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Is Active (Packets)",
+    "Name": "idoc_packets_idoc_isactive",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "idoc_isactive",
+        "OptionSetReferenceEntityName": "Packets"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "idoc_isactive",
+    "RelatedEntityName": "Packets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Packets)",
+    "Name": "idoc_packets_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Packets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Packets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Packets)",
+    "Name": "idoc_packets_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Packets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Packets",
+    "Type": "OptionSetInfo"
+  }
+]

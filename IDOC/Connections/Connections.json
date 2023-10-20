@@ -1,0 +1,84 @@
+{
+  "20597c54-aef1-4629-9f83-79f187069fc8": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1658/1.0.1658.3450/excel/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excel",
+      "parameterHints": {
+        "87b51337-2fed-4c9d-9083-67654c9f910d": {
+          "value": "fileSource"
+        }
+      },
+      "parameterHintsV2": {
+        "fileSource": {
+          "value": "87b51337-2fed-4c9d-9083-67654c9f910d"
+        }
+      }
+    },
+    "datasets": {
+      "b!75DMdvqTikiYedwkF7KMgYMArVDUL5tFuDg-jFlkKmOC6Yb0odPxTIMX9c9bfsmw.01USQFA5ETLAS77L4F6NB3P7KZXW4DELMP": {
+        "dataSources": {
+          "IDOC": {
+            "tableName": "IDOC"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "IDOC"
+    ],
+    "dependencies": {
+      "fileSource": "87b51337-2fed-4c9d-9083-67654c9f910d"
+    },
+    "dependents": [],
+    "id": "20597c54-aef1-4629-9f83-79f187069fc8"
+  },
+  "6b23029f-a6ee-44df-a954-444dc0d22e61": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1656/1.0.1656.3432/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://intimetecvisionsoft.sharepoint.com/sites/ListSite": {
+        "dataSources": {
+          "Form Names": {
+            "tableName": "f0af2e7c-1139-4ac2-a672-e081b3ce1c73"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Form Names"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6b23029f-a6ee-44df-a954-444dc0d22e61"
+  },
+  "87b51337-2fed-4c9d-9083-67654c9f910d": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1656/1.0.1656.3432/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "20597c54-aef1-4629-9f83-79f187069fc8"
+    ],
+    "id": "87b51337-2fed-4c9d-9083-67654c9f910d"
+  }
+}

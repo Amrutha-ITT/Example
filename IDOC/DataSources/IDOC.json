@@ -1,0 +1,22 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_excel",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-10-09T17:02:53.9540000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "__PowerAppsId__": "Row id",
+      "Description": "Description",
+      "Requests": "Requests",
+      "Services": "Services"
+    },
+    "DatasetName": "b!75DMdvqTikiYedwkF7KMgYMArVDUL5tFuDg-jFlkKmOC6Yb0odPxTIMX9c9bfsmw.01USQFA5ETLAS77L4F6NB3P7KZXW4DELMP",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "IDOC",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_visittypeofservices",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_visittypeofservice",
+    "MaxGetRowsCount": 2000,
+    "Name": "Visit Type of Services",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_idoc_calloutvisitservices_VisitServiceID_": "Call Out and Visit Services",
+      "idoc_idoc_visit_VisitTypeOfService_idoc_visitt": "Visit Requests",
+      "idoc_name": "Service Name",
+      "idoc_visittypeofservice_AsyncOperations": "System Jobs",
+      "idoc_visittypeofservice_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_visittypeofservice_DuplicateBaseRecord": "Duplicate Records (idoc_visittypeofservice_DuplicateBaseRecord)",
+      "idoc_visittypeofservice_DuplicateMatchingRecord": "Duplicate Records (idoc_visittypeofservice_DuplicateMatchingRecord)",
+      "idoc_visittypeofservice_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_visittypeofservice_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_visittypeofservice_ProcessSession": "Process Sessions",
+      "idoc_visittypeofservice_SyncErrors": "Sync Errors",
+      "idoc_visittypeofserviceid": "Visit Type of Service",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Visit Type of Services",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Visit Type of Services (Views)",
+    "Name": "_idoc_visittypeofservice_views",
+    "RelatedEntityName": "Visit Type of Services",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2224da36-1c5a-46f5-90d5-831712a15f46": "Inactive Visit Type of Services",
+      "955e5937-18f8-4aa1-b33f-d20000ac2ed0": "Visit Type of Service Lookup View",
+      "b5e529e6-81cb-42f1-ba67-7618e6e91c3b": "Visit Type of Service Advanced Find View",
+      "b7e5df05-3beb-4471-8acf-23f199536218": "Active Visit Type of Services",
+      "b9740885-ad47-42e4-ac17-bb5613307623": "Visit Type of Service Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Visit Type of Services)",
+    "Name": "idoc_visittypeofservice_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Visit Type of Services"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Visit Type of Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Visit Type of Services)",
+    "Name": "idoc_visittypeofservice_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Visit Type of Services"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Visit Type of Services",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_residentresponses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_residentresponse",
+    "MaxGetRowsCount": 2000,
+    "Name": "Resident Responses",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestID": "ATC Request ID",
+      "idoc_idoc_atcrequest_ResidentResponseId_idoc_r": "ATC Requests",
+      "idoc_name": "Name",
+      "idoc_residentresponse_AsyncOperations": "System Jobs",
+      "idoc_residentresponse_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_residentresponse_DuplicateBaseRecord": "Duplicate Records (idoc_residentresponse_DuplicateBaseRecord)",
+      "idoc_residentresponse_DuplicateMatchingRecord": "Duplicate Records (idoc_residentresponse_DuplicateMatchingRecord)",
+      "idoc_residentresponse_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_residentresponse_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_residentresponse_ProcessSession": "Process Sessions",
+      "idoc_residentresponse_SyncErrors": "Sync Errors",
+      "idoc_residentresponseid": "Resident Response",
+      "idoc_responsedatetime": "Response Date Time",
+      "idoc_responsemessage": "Response Message",
+      "idoc_responsenumber": "Response Number",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Resident Responses",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Resident Responses (Views)",
+    "Name": "_idoc_residentresponse_views",
+    "RelatedEntityName": "Resident Responses",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "247237f2-a22a-4a13-a1ec-ec2ef4baefc3": "Resident Response Lookup View",
+      "4a99b003-4683-48da-8f71-dafeb2561803": "Active Resident Responses",
+      "b4f5d6b6-3010-4b88-b4b3-e2d1da7a624c": "Resident Response Associated View",
+      "b71ae585-a0fd-48ae-bca9-94d8b3018821": "Resident Response Advanced Find View",
+      "e8f92579-527f-450d-9071-74d9d44e941a": "Inactive Resident Responses"
+    }
+  },
+  {
+    "DisplayName": "Status (Resident Responses)",
+    "Name": "idoc_residentresponse_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Resident Responses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Resident Responses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Resident Responses)",
+    "Name": "idoc_residentresponse_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Resident Responses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Resident Responses",
+    "Type": "OptionSetInfo"
+  }
+]

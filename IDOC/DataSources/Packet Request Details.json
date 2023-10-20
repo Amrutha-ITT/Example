@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_packetrequestses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_packetrequests",
+    "MaxGetRowsCount": 2000,
+    "Name": "Packet Request Details",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestId": "ATC Request Id",
+      "idoc_name": "Name",
+      "idoc_PacketID": "Packet ID",
+      "idoc_packetrequests_AsyncOperations": "System Jobs",
+      "idoc_packetrequests_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_packetrequests_DuplicateBaseRecord": "Duplicate Records (idoc_packetrequests_DuplicateBaseRecord)",
+      "idoc_packetrequests_DuplicateMatchingRecord": "Duplicate Records (idoc_packetrequests_DuplicateMatchingRecord)",
+      "idoc_packetrequests_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_packetrequests_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_packetrequests_ProcessSession": "Process Sessions",
+      "idoc_packetrequests_SyncErrors": "Sync Errors",
+      "idoc_packetrequestsid": "Packet Requests",
+      "idoc_quantity": "Quantity",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Packet Request Details",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Packet Request Details (Views)",
+    "Name": "_idoc_packetrequests_views",
+    "RelatedEntityName": "Packet Request Details",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "08de653e-2a84-4414-b1bd-67ff6c0af16d": "Inactive Packet Requests",
+      "47b4b087-7a23-42d9-9263-057e6939ba86": "Active Packet Requests",
+      "4a948051-5f9d-482d-93e2-5d294049216e": "Packet Requests Advanced Find View",
+      "6e461d21-9999-470c-aa2c-14dcb0085b23": "Packet Requests Lookup View",
+      "e2eabffd-a649-42d2-aa43-06029ade7a3b": "Packet Requests Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Packet Request Details)",
+    "Name": "idoc_packetrequests_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Packet Request Details"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Packet Request Details",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Packet Request Details)",
+    "Name": "idoc_packetrequests_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Packet Request Details"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Packet Request Details",
+    "Type": "OptionSetInfo"
+  }
+]

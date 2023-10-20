@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_rosters",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_roster",
+    "MaxGetRowsCount": 2000,
+    "Name": "Rosters",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_idoc_atcrequest_RosterId_idoc_roster": "ATC Requests",
+      "idoc_idoc_bookhealthhistory_CheckedInByResiden": "Book Health Histories",
+      "idoc_idocno": "IDOC No",
+      "idoc_idocnumber": "IDOC Number",
+      "idoc_lastname": "Last Name",
+      "idoc_name": "First Name",
+      "idoc_roster_AsyncOperations": "System Jobs",
+      "idoc_roster_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_roster_DuplicateBaseRecord": "Duplicate Records (idoc_roster_DuplicateBaseRecord)",
+      "idoc_roster_DuplicateMatchingRecord": "Duplicate Records (idoc_roster_DuplicateMatchingRecord)",
+      "idoc_roster_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_roster_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_roster_ProcessSession": "Process Sessions",
+      "idoc_roster_SyncErrors": "Sync Errors",
+      "idoc_rosterid": "Roster",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Rosters",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Rosters (Views)",
+    "Name": "_idoc_roster_views",
+    "RelatedEntityName": "Rosters",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1b41bbc1-b966-435d-80ba-de88dae1c307": "Roster Lookup View",
+      "4bb4ef8a-d8cd-4cba-a6b1-d24bac270e67": "Inactive Rosters",
+      "a2ee525b-582c-4f2c-b6d8-5df922a9df96": "Roster Advanced Find View",
+      "c79fab45-e1b4-464d-8306-1980e1755615": "Active Rosters",
+      "deda6ac3-effc-493e-a71b-3b94df329bba": "Roster Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Rosters)",
+    "Name": "idoc_roster_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Rosters"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Rosters",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Rosters)",
+    "Name": "idoc_roster_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Rosters"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Rosters",
+    "Type": "OptionSetInfo"
+  }
+]

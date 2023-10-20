@@ -1,0 +1,103 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_legalmails",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_legalmail",
+    "MaxGetRowsCount": 2000,
+    "Name": "Legal Mails",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_AddressDetails": "Address Details ID",
+      "idoc_ATCRequest": "ATC Request ID",
+      "idoc_legalmail_AsyncOperations": "System Jobs",
+      "idoc_legalmail_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_legalmail_DuplicateBaseRecord": "Duplicate Records (idoc_legalmail_DuplicateBaseRecord)",
+      "idoc_legalmail_DuplicateMatchingRecord": "Duplicate Records (idoc_legalmail_DuplicateMatchingRecord)",
+      "idoc_legalmail_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_legalmail_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_legalmail_ProcessSession": "Process Sessions",
+      "idoc_legalmail_SyncErrors": "Sync Errors",
+      "idoc_legalmailid": "Legal Mail",
+      "idoc_mailreceivedondate": "Mail Received On Date",
+      "idoc_mailsentondate": "Mail Sent on Date",
+      "idoc_name": "Case Number",
+      "idoc_temporaryaddress": "Temporary Address",
+      "idoc_typeofmail": "Type Of Mail",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Legal Mails",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Legal Mails (Views)",
+    "Name": "_idoc_legalmail_views",
+    "RelatedEntityName": "Legal Mails",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4cfe4737-e98e-4b9f-a70c-e247cf6ad4a1": "Inactive Legal Mails",
+      "af99cb39-0c01-40ff-b70c-35f9a86de36d": "Legal Mail Advanced Find View",
+      "c25ce7df-b5c9-4653-b997-1fd90fe1be1e": "Active Legal Mails",
+      "cd8c93c9-88a6-40e8-9c07-537b22d80ea8": "Legal Mail Lookup View",
+      "dace8c6f-2ffd-4ecb-8dbf-28a03ee60cc2": "Legal Mail Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Legal Mails)",
+    "Name": "idoc_legalmail_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Legal Mails"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Legal Mails",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Legal Mails)",
+    "Name": "idoc_legalmail_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Legal Mails"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Legal Mails",
+    "Type": "OptionSetInfo"
+  }
+]

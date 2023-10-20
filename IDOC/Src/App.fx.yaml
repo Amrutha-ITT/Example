@@ -1,0 +1,225 @@
+App As appinfo:
+    BackEnabled: =false
+    MinScreenWidth: =300
+    OnStart: |+
+        =ClearCollect(
+            colTabs,
+            {
+                ID: 1,
+                Name: "Packet(s) Request"
+            },
+            {
+                ID: 2,
+                Name: "Book Request"
+            },
+            {
+                ID: 3,
+                Name: "Indigent Supplies"
+            },
+            {
+                ID: 4,
+                Name: "Call Out Request"
+            },
+            {
+                ID: 5,
+                Name: "Visit Request"
+            },
+            {
+                ID: 6,
+                Name: "Legal Mail"
+            },
+            {
+                ID: 7,
+                Name: "E-File Request"
+            },
+            {
+                ID: 8,
+                Name: "Other"
+            }
+        );
+        Set(
+            gvTabSelected,
+            1
+        );
+        Set(
+            AppColors,
+            {
+                DarkBlue: RGBA(
+                    66,
+                    89,
+                    130,
+                    100
+                ),
+                Blue: RGBA(
+                    23,
+                    92,
+                    211,
+                    1
+                ),
+                LightBlue: RGBA(
+                    200,
+                    221,
+                    244,
+                    1
+                ),
+                Grey: RGBA(
+                    197,
+                    197,
+                    197,
+                    1
+                ),
+                DarkGray: RGBA(
+                    86,
+                    85,
+                    84,
+                    1
+                ),
+                LightGray: RGBA(
+                    244,
+                    244,
+                    244,
+                    1
+                ),
+                Orange: RGBA(
+                    240,
+                    96,
+                    35,
+                    1
+                ),
+                LightGrayForTabBorders: RGBA(
+                    16,
+                    24,
+                    40,
+                    0.12
+                ),
+                LightBlueforHeader: RGBA(
+                    235,
+                    236,
+                    237,
+                    1
+                ),
+                Red: RGBA(
+                    255,
+                    0,
+                    0,
+                    1
+                ),
+                GrayOut: RGBA(
+                    143,
+                    143,
+                    143,
+                    0.5
+                ),
+                LightOrange: RGBA(
+                    255,
+                    223,
+                    182,
+                    1
+                )
+            }
+        );
+        Set(
+            AppFonts,
+            {
+                FontStyle: Font.Verdana,
+                fontSize: 11,
+                titleFontSize: 14,
+                subTitleFontSize: 12,
+                FieldHeight: 35,
+                fontSizeForErrorMessage: 8,
+                lblHeightForErrorMessage: 25
+            }
+        );
+        ClearCollect(
+            collPackets,
+            Packets
+        );
+        ClearCollect(
+            collCallOutServices,
+            'Call Out Type of Services'
+        );
+        ClearCollect(
+            collVisitServices,
+            'Visit Type of Services'
+        );
+        ClearCollect(
+            collATCRequest,
+            'ATC Requests'
+        );
+        ClearCollect(
+            CollRosters,
+            Rosters
+        );
+        ClearCollect(
+            collFacility,
+            'Facility Mappings'
+        );
+        ClearCollect(
+            collBookInventory,
+            'Book Inventories'
+        );
+        ClearCollect(
+            collAddressDetails,
+            AddColumns(
+                'Address Details',
+                "Combined Address",
+                'Address 1' & ", " & 'Address 2' & ", " & City & ", " & State & ", " & Zip
+            )
+        );
+        ClearCollect(
+            collCourt,
+            Courts
+        );
+        ClearCollect(
+            collResponse,
+            'Resident Responses'
+        );
+        ClearCollect(
+            collParalegal,
+            Paralegals
+        );
+        ClearCollect(
+            collCallOutandVisitServices,
+            'Call Out/Visit Services'
+        );
+        ClearCollect(
+            collBookDetails,
+            'Book Requests'
+        );
+        ClearCollect(
+            collPacketRequest,
+            'Packet Request Details'
+        );
+        //Set(gvNavBarWidth,{Screen1: 150, Screen2: 200,  Screen3: 220, ScreenMax: 250 });
+        ClearCollect(
+            collPacketsCount,
+            AddColumns(
+                Packets,
+                "Count",
+                1
+            )
+        );
+        //ClearCollect(collConcatAddress, AddColumns('Address Details', "Combined Address", 'Address 1' & ", " & 'Address 2'));
+        Set(
+            gvNavBarMinWidth,
+            56
+        );
+        
+        Set(
+            gv_SortOrder,
+            SortOrder.Descending
+        );
+        
+        
+        
+        
+    SizeBreakpoints: =[600, 900, 1200,1400]
+    Theme: =GreenTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

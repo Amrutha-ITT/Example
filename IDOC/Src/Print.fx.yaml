@@ -1,0 +1,562 @@
+"Print As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Height: |+
+        =If(Self.Printing, Container53.Height, Max(App.Height, App.MinScreenHeight))
+        
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: |-
+        =ForAll(Filter(
+                    galPacketRequestATCRequest.AllItems,
+                    cbxPacketsATCRequest.Value = true
+                ), LookUp(IDOC, Requests=ThisRecord.Requests,Description));
+        
+                Set(gvPDF, PDF(Container4));
+        
+                //Notify("ok");
+
+    Container4 As groupContainer.verticalAutoLayoutContainer:
+        Height: |-
+            =//Parent.Height-100
+            
+            Container53.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =9
+
+        Container53 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: |-
+                =/*  If(Print.Printing, If('htmlE-FilingPrint'.Visible=true, 'htmlE-FilingPrint'.Height+'htmlE-FilingPrint'.Y,If(htmlLegalMailPrint.Visible=true, htmlLegalMailPrint.Height+htmlLegalMailPrint.Y, If(galVisitRequestPrint.Visible=true, galVisitRequestPrint.Height+galVisitRequestPrint.Y, If(galCallOutRequestPrint.Visible=true, galCallOutRequestPrint.Height+galCallOutRequestPrint.Y, If(htmlIndigentSupplyPrint.Visible=true, htmlIndigentSupplyPrint.Height+htmlIndigentSupplyPrint.Y, If(htmlExtensionNotePrint.Visible=true, htmlExtensionNotePrint.Height+htmlExtensionNotePrint.Y, If(htmlBookNotePrint.Visible=true, htmlBookNotePrint.Height+htmlBookNotePrint.Y, If(galPackeRequestPrint.Visible=true, galPackeRequestPrint.Height+galPackeRequestPrint.Y)))))))), 700) */
+                
+                htmlFooterTextPrint.Height+htmlFooterTextPrint.Y
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =700
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingLeft: =20
+            PaddingRight: =20
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            Width: =Parent.Width
+            ZIndex: =1
+
+            htmlResidentDetailsPrint As htmlViewer:
+                AutoHeight: =true
+                Font: =AppFonts.FontStyle
+                Height: =500
+                HtmlText: |-
+                    ="<center>
+                    <h2>
+                    " & LookUp(
+                        'Facility Mappings',
+                        'Facility Name' = cbxFacilityATCRequest.Selected.'Facility Name'
+                    ).'Acronym of Facility' & " – ATC Response 
+                    </h2></center>
+                    <h4>Date:   " &Now()&" <br> 
+                    IDOC #:  " & 'cmbMainScreenIDOC#ATCRequest'.Selected.'IDOC No' & " <br>
+                    First Name: " & txtMainScreenFirstNameATCRequest & "              <br>
+                    Last Name: " & txtMainScreenLastNameATCRequest & " <br>
+                    Unit: " & txtMainScreenUnitNumberATCRequest & "   <br>
+                    </h4>
+                    <p>
+                    <Table style='width:50%;background-color: rgb(209,213,216)'><tr><th>Response Message</th><th> Response Date</th></tr>" & Concat(
+                        galMessageATCRequest.AllItems,
+                        "<tr>
+                            <td style='width:50%;background-color: rgb(255,255,255)'> " & lblResponseMessageATCRequest & "</td><td style='width:50%;background-color: rgb(255,255,255)'>" & 'lblDate&TimeMessageATCRequest' & "</td></tr>"
+                    ) & " </Table>
+                     </p>
+                     <br> 
+                    " & If(
+                        lvFlag8=true,
+                        "<b> <h3><u>Packet Request:</u></h3> </b>  Please find attached the following self-help packet(s) that you requested. These packets contain information and instructions on how to complete the forms, please read through them carefully.<br> 
+                    <h4>List of Packet Descriptions </h4> "
+                    ) & "
+                    "
+                Size: =AppFonts.fontSize
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =1
+
+            galPackeRequestPrint As gallery.variableTemplateHeightGallery:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =Self.TemplateHeight*Self.AllItemsCount
+                Items: |-
+                    =ForAll(Filter(
+                                galPacketRequestATCRequest.AllItems,
+                                cbxPacketsATCRequest.Value = true
+                            ), LookUp(IDOC, Requests="Packet Request" && 'Packet Name'=ThisRecord.Services))
+                            
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =30
+                Visible: =lvFlag8=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =2
+
+                lblPackeRequestDescriptionPrint As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Font: =AppFonts.FontStyle
+                    Height: =25
+                    OnSelect: =Select(Parent)
+                    Size: =AppFonts.fontSize
+                    Text: =ThisItem.Description
+                    Width: =Parent.Width-lblPackeRequestServicePrint.Width
+                    X: =lblPackeRequestServicePrint.Width
+                    ZIndex: =2
+
+                lblPackeRequestServicePrint As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Font: =AppFonts.FontStyle
+                    Height: =25
+                    OnSelect: =Select(Parent)
+                    Size: =AppFonts.fontSize
+                    Text: =If(IsBlank(ThisItem.Description), ThisItem.Services, ThisItem.Services &"  -")
+                    Width: =10*Len(ThisItem.Services)
+                    ZIndex: =3
+
+            HtmlBookRequestPrint As htmlViewer:
+                Font: =AppFonts.FontStyle
+                Height: =80
+                HtmlText: |-
+                    ="
+                    <b><h3><u> Book Request </u></h3></b>
+                    You have checked out the following legal book(s): 
+                    
+                    
+                    
+                    "
+                PaddingBottom: =0
+                PaddingTop: =0
+                Visible: |
+                    =lvFlag1=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =3
+
+            galBookRequestPrint As gallery.variableTemplateHeightGallery:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =Self.TemplateHeight*Self.AllItemsCount
+                Items: |-
+                    =collBookDetails
+                    
+                    
+                                   
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =30
+                Visible: =lvFlag1=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =4
+
+                lblBookDetailsPrint As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Font: =AppFonts.FontStyle
+                    Height: =25
+                    OnSelect: =Select(Parent)
+                    PaddingTop: =0
+                    Size: =AppFonts.fontSize
+                    Text: |-
+                        = //cmbBookATCREquest.Selected.'Book Id' &" " & cmbBookATCREquest.Selected.'Book Title' & " with a due date of " & DateValue(DatePicker1_11.SelectedDate)
+                          //LookUp('Book Requests', 'ATC Request Id'.'ATC Request'= gvNewRecord.'ATC Request','Book Id'.'Book Id') &" " & LookUp('Book Requests', 'ATC Request Id'.'ATC Request'= gvNewRecord.'ATC Request','Book Id'.'Book Title')
+                        
+                          ThisItem.'Book Id'.'Book Id'&" " & ThisItem.'Book Id'.'Book Title' & " with a due date of " & DateValue(ThisItem.'Book Due Date')
+                        
+                         
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+            htmlBookNotePrint As htmlViewer:
+                Font: =AppFonts.FontStyle
+                Height: =50
+                HtmlText: |-
+                    ="
+                    "&LookUp(IDOC, Requests="Book Request" && Services="Details").Description &"
+                    
+                    
+                    
+                    "
+                Size: =AppFonts.fontSize
+                Visible: |
+                    =lvFlag1=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =5
+
+            htmlExtensionPrint As htmlViewer:
+                Font: =AppFonts.FontStyle
+                Height: =90
+                HtmlText: |-
+                    ="
+                    <h3><u> Extension </u></h3>
+                    An extension has been granted for the following book(s): 
+                    
+                    "
+                Size: =AppFonts.fontSize
+                Visible: |-
+                    =/*lvFlag1=true && CountRows(Filter(
+                                galBookDetailsATCRequest.AllItems As obj, IsBlank(obj.'dateCheckIn/ExtendToATCRequest'.SelectedDate)))<> 0 */
+                    
+                                false
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =6
+
+            galBookExtensionPrint As gallery.variableTemplateHeightGallery:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =Self.TemplateHeight*Self.AllItemsCount
+                Items: =collBookDetails
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =40
+                Visible: |-
+                    =/*lvFlag1=true && CountRows(Filter(
+                                galBookDetailsATCRequest.AllItems As obj, IsBlank(obj.'dateCheckIn/ExtendToATCRequest'.SelectedDate)))<> 0 */
+                    
+                                false
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =7
+
+                lblBookExtensionPrint As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Font: =AppFonts.FontStyle
+                    OnSelect: =Select(Parent)
+                    Size: =AppFonts.fontSize
+                    Text: = ThisItem.'Book Id'.'Book Id' &" " & ThisItem.'Book Id'.'Book Title' & " with a due date of " & ThisItem.'Book Due Date'
+                    Width: =1
+                    ZIndex: =2
+
+            htmlExtensionNotePrint As htmlViewer:
+                Font: =AppFonts.FontStyle
+                Height: =90
+                HtmlText: |-
+                    ="
+                    "& LookUp(IDOC, Requests="Book Request" && Services="Extension").Description &"
+                    
+                     
+                    
+                    "
+                Size: =AppFonts.fontSize
+                Visible: |-
+                    =/*lvFlag1=true && CountRows(Filter(
+                                galBookDetailsATCRequest.AllItems As obj, IsBlank(obj.'dateCheckIn/ExtendToATCRequest'.SelectedDate)))<> 0 */
+                    
+                                false
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =8
+
+            htmlIndigentSupplyPrint As htmlViewer:
+                Font: =AppFonts.FontStyle
+                Height: =100
+                HtmlText: |-
+                    =""&If(lvFlag2=true, "<b>
+                    <h3><u>Indigent Supplies: </u></h3> </b>"& If(rdoOptionsIsPersonIndigentATCRequest.Selected.Value="No",LookUp(IDOC,Requests="Indigent Supply").Description , " Please find attached the "& txtDescriptionATCRequest &" that you requested. ")) &""
+                Size: =AppFonts.fontSize
+                Visible: =lvFlag2=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =9
+
+            htmlCallOutRequestPrint As htmlViewer:
+                AutoHeight: =true
+                Font: =AppFonts.FontStyle
+                HtmlText: |-
+                    ="
+                    <b>
+                    <h3><u>Call Out Request: </u></h3> </b>
+                    
+                    
+                    "& If(DateValue(Now()) > DateValue( dateServiceDateCallOutATCRequest.SelectedDate), LookUp(IDOC, Requests="Call Out Request" && Services ="Show").Description, LookUp(IDOC, Requests="Call Out Request" && Services ="No Show").Description ) &" <br>
+                    Service date: "& DateValue(dateServiceDateCallOutATCRequest.SelectedDate)&" <br>
+                    From Time: "& ddServiceDateFromCallOutATCRequest.Selected.Value &"  <br>
+                    To Time: "&  ddServiceDateToCallOutATCRequest.Selected.Value &"
+                    
+                    "
+                Size: =AppFonts.fontSize
+                Visible: =lvFlag3=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =10
+
+            galCallOutRequestPrint As gallery.variableTemplateHeightGallery:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =Self.TemplateHeight*Self.AllItemsCount
+                Items: |-
+                    =ForAll(
+                                Filter(
+                                    galServiesCallOutATCRequest.AllItems,
+                                    cbxServiesCallOutATCRequest.Value = true
+                                ), LookUp(IDOC, Requests="Call Out Request" && 'Service Name'=ThisRecord.Services))
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =40
+                Visible: =lvFlag3=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =11
+
+                lblCallOutServicesPrint As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: =ThisItem.Services
+                    Width: =1
+                    ZIndex: =1
+
+                lblCallOutDescriptionPrint As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: =ThisItem.Description
+                    Width: =Parent.Width-lblCallOutServicesPrint.Width
+                    X: =1
+                    ZIndex: =2
+
+            htmlVisitRequestPrint As htmlViewer:
+                AutoHeight: =true
+                Font: =AppFonts.FontStyle
+                HtmlText: |-
+                    ="
+                    <b>
+                    <h3><u>Visit Request: </u></h3> </b>
+                    
+                    
+                    "& If(DateValue(Now()) > DateValue( dateServiceDateVisitATCRequest.SelectedDate), LookUp(IDOC, Requests="Visit Request" && Services ="Show").Description, LookUp(IDOC, Requests="Visit Request" && Services ="No Show").Description ) &" <br>
+                    Service date: "& DateValue(dateServiceDateVisitATCRequest.SelectedDate)&" <br>
+                    From Time: "& ddServiceDateFromATCRequest.Selected.Value &"  <br>
+                    To Time: "&  ddServiceDateToATCRequest.Selected.Value &"
+                    
+                    "
+                Size: =AppFonts.fontSize
+                Visible: =lvFlag4=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =12
+
+            galVisitRequestPrint As gallery.variableTemplateHeightGallery:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DelayItemLoading: =true
+                FillPortions: =0
+                Height: =Self.TemplateHeight*Self.AllItemsCount
+                Items: |-
+                    =ForAll(
+                                Filter(
+                                    galServiesCallOutATCRequest.AllItems,
+                                    cbxServiesCallOutATCRequest.Value = true
+                                ), LookUp(IDOC, Requests="Call Out Request" && 'Service Name'=ThisRecord.Services))
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =40
+                Visible: =lvFlag4=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =13
+
+                lblVisitServicesPrint As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: =ThisItem.Services
+                    Width: =1
+                    ZIndex: =1
+
+                lblVisitDescriptionPrint As label:
+                    BorderColor: =RGBA(32, 54, 71, 1)
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    OnSelect: =Select(Parent)
+                    Size: =13
+                    Text: =ThisItem.Description
+                    Width: =Parent.Width-lblVisitServicesPrint.Width
+                    X: =1
+                    ZIndex: =2
+
+            htmlLegalMailPrint As htmlViewer:
+                Font: =AppFonts.FontStyle
+                Height: =140
+                HtmlText: |-
+                    ="
+                    <b>
+                    <h3><u>Legal Mail: </u></h3> </b>
+                    Per your Access to Courts form, you requested mailing services.<br> 
+                    Item to be mailed: " &txtTypeOfMailATCRequest.Text &" "&txtCaseNumberATCRequest&" received on  "& dateReceivedOnATCRequest &" "&If(cbxRegisteredAddressATCRequest.Value=true,  txtRegisteredAddressATCRequest.Text , cmbRegisteredAddressATCRequest.Selected.'Combined Address') &" <br><br>
+                    You provided self-addressed envelopes. Your mail has been sent out. 
+                    "
+                Size: =AppFonts.fontSize
+                Visible: =lvFlag5=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =14
+
+            "'htmlE-FilingPrint' As htmlViewer":
+                Font: =AppFonts.FontStyle
+                Height: =120
+                HtmlText: |-
+                    ="
+                    <b>
+                    <h3><u>E-File Request: </u></h3> </b>
+                    Per your Access to Courts form, you requested e-filing services.<br> 
+                    Item to be mailed: " &txtTypeOfFilingATCRequest.Text &" "&txtCaseNumberEFileATCRequest&" received on  "& dateFilingReceivedOnATCRequest &" "&If(cbxCourtATCRequest.Value=true,  txtCourtATCRequest.Text , cmbCourtATCRequest.Selected.'Court Name') &" <br>"
+                Size: =AppFonts.fontSize
+                Visible: =lvFlag6=true
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =15
+
+            htmlFooterTextPrint As htmlViewer:
+                Font: =AppFonts.FontStyle
+                Height: =70
+                HtmlText: ="  <h4><b>All requests must be submitted through the pink Access To Court (ATC) request form.</b> </h4>"
+                Size: =AppFonts.fontSize
+                Width: =Parent.Width-Parent.PaddingLeft-Parent.PaddingRight
+                ZIndex: =16
+
+    btnPrintPrint As button:
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =AppColors.DarkBlue
+        Font: =AppFonts.FontStyle
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =AppColors.DarkBlue
+        OnSelect: =Print()
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(Self.Fill,50%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =AppFonts.fontSize
+        Text: ="Print "
+        Visible: =If(Print.Printing=true,false, true)
+        Width: =100
+        X: =Parent.Width-Self.Width-20
+        Y: =Parent.Height-60
+        ZIndex: =10
+
+    Button2_1 As button:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =1
+        Font: =AppFonts.FontStyle
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        HoverBorderColor: =
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =
+        OnSelect: =Navigate(Home)
+        PressedColor: =ColorFade(RGBA(0,0,0,1),50%)
+        PressedFill: =
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =AppFonts.fontSize
+        Text: ="Cancel"
+        Width: =80
+        X: =Parent.Width-Self.Width-btnPrintPrint.Width-50
+        Y: =Parent.Height-60
+        ZIndex: =11
+
+    PdfViewer2 As pdfViewer:
+        Document: =gvPDF
+        Height: =Parent.Height-100
+        Visible: =false
+        Width: =Parent.Width
+        ZIndex: =12
+
+    ATCAttachmentATCRequest_1 As attachments:
+        BorderColor: =AppColors.Grey
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =
+        DropTargetBorderColor: =AppColors.Grey
+        FocusedBorderThickness: =1
+        Font: =AppFonts.FontStyle
+        Height: =45
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(205, 209, 213, 1)
+        IsInDataCard: =true
+        ItemColor: =RGBA(0,0, 0, 1)
+        ItemFill: =RGBA(0, 0, 0, 0)
+        ItemHoverColor: =RGBA(0, 0, 0, 1)
+        ItemHoverFill: =RGBA(0, 0, 0, 0)
+        Items: |-
+            ={Name: "test",
+            Value: gvPDF}
+        MaxAttachments: =10
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =
+        Size: =AppFonts.fontSize
+        Tooltip: =
+        Width: =136
+        X: =785
+        Y: =708
+        ZIndex: =13
+
+    Image1Attachment As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =237
+        Image: =First(ATCAttachmentATCRequest_1.Attachments).Value
+        Width: =510
+        Y: =468
+        ZIndex: =14
+

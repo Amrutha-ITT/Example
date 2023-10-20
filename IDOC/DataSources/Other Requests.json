@@ -1,0 +1,101 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "idoc_otherrequestses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "idoc_otherrequests",
+    "MaxGetRowsCount": 2000,
+    "Name": "Other Requests",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "idoc_ATCRequestID": "ATC Request ID",
+      "idoc_denialdate": "Denial Date",
+      "idoc_description": "Description",
+      "idoc_name": "Name",
+      "idoc_otherrequests_AsyncOperations": "System Jobs",
+      "idoc_otherrequests_BulkDeleteFailures": "Bulk Delete Failures",
+      "idoc_otherrequests_DuplicateBaseRecord": "Duplicate Records (idoc_otherrequests_DuplicateBaseRecord)",
+      "idoc_otherrequests_DuplicateMatchingRecord": "Duplicate Records (idoc_otherrequests_DuplicateMatchingRecord)",
+      "idoc_otherrequests_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "idoc_otherrequests_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "idoc_otherrequests_ProcessSession": "Process Sessions",
+      "idoc_otherrequests_SyncErrors": "Sync Errors",
+      "idoc_otherrequestsid": "Other Requests",
+      "idoc_requestdate": "Request Date",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Other Requests",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Other Requests (Views)",
+    "Name": "_idoc_otherrequests_views",
+    "RelatedEntityName": "Other Requests",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "084da2a6-86b1-48d2-9a8c-392b1cd789a7": "Other Requests Lookup View",
+      "0dcc40f3-a38b-4d93-a310-4e09a3b3b5c6": "Active Other Requests",
+      "4d4d24d2-2ba5-417a-be72-f373106f04d5": "Other Requests Associated View",
+      "89f54456-1b1c-4914-8d40-0b5a6bce26c8": "Inactive Other Requests",
+      "d999341e-4196-4a84-8971-20a2d61a1d7f": "Other Requests Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Other Requests)",
+    "Name": "idoc_otherrequests_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Other Requests"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Other Requests",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Other Requests)",
+    "Name": "idoc_otherrequests_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Other Requests"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Other Requests",
+    "Type": "OptionSetInfo"
+  }
+]
